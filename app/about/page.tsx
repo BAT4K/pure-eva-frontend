@@ -2,10 +2,9 @@ import { Metadata } from "next"
 import { AboutHero } from "@/components/about/about-hero"
 import { OurStory } from "@/components/about/our-story"
 import { CoreValues } from "@/components/about/core-values"
-import { AboutFooter } from "@/components/about/about-footer"
 
 export const metadata: Metadata = {
-  title: "About Us | Pure Eva",
+  title: "Our Story",
   description: "Discover the story behind Pure Eva - where nature meets science to create conscious, effective skincare for radiant, healthy skin.",
 }
 
@@ -15,7 +14,6 @@ export default function AboutPage() {
       <AboutHero />
       <OurStory />
       <CoreValues />
-      <AboutFooter />
     </main>
   )
 }

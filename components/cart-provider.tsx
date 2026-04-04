@@ -1,0 +1,86 @@
+"use client"
+
+import React, { createContext, useContext, useState, ReactNode } from "react"
+import { createCheckout } from "@/app/actions"
+
+interface CartItem {
+  title: string;
+  price: string;
+  imageUrl: string;
+  imageAlt: string;
+  variantId: string;
+  quantity: number;
+}
+
+interface CartContextType {
+  isCartOpen: boolean;
+  setIsCartOpen: (val: boolean) => void;
+  cartItem: CartItem | null;
+  addToCart: (item: Omit<CartItem, "quantity">) => void;
+  updateQuantity: (quantity: number) => void;
+  isCheckingOut: boolean;
+  handleCheckout: () => Promise<void>;
+}
+
+const CartContext = createContext<CartContextType | undefined>(undefined);
+
+export function CartProvider({ children }: { children: ReactNode }) {
+  const [isCartOpen, setIsCartOpen] = useState(false);
+  const [cartItem, setCartItem] = useState<CartItem | null>(null);
+  const [isCheckingOut, setIsCheckingOut] = useState(false);
+
+  const addToCart = (item: Omit<CartItem, "quantity">) => {
+    setCartItem((prev) => {
+      if (prev && prev.variantId === item.variantId) {
+        return { ...prev, quantity: prev.quantity + 1 };
+      }
+      return { ...item, quantity: 1 };
+    });
+    setIsCartOpen(true);
+  };
+
+  const updateQuantity = (quantity: number) => {
+    if (quantity <= 0) {
+      setCartItem(null);
+    } else {
+      setCartItem((prev) => prev ? { ...prev, quantity } : null);
+    }
+  };
+
+  const handleCheckout = async () => {
+    if (!cartItem) return;
+    setIsCheckingOut(true);
+    const checkoutUrl = await createCheckout(cartItem.variantId, cartItem.quantity);
+    
+    if (checkoutUrl) {
+      window.location.href = checkoutUrl;
+    } else {
+      alert("Something went wrong. Please try again.");
+      setIsCheckingOut(false);
+    }
+  };
+
+  return (
+    <CartContext.Provider
+      value={{
+        isCartOpen,
+        setIsCartOpen,
+        cartItem,
+        addToCart,
+        updateQuantity,
+        isCheckingOut,
+        handleCheckout,
+      }}
+    >
+      {children}
+    </CartContext.Provider>
+  );
+}
+
+export function useCart() {
+  const context = useContext(CartContext);
+  if (context === undefined) {
+    throw new Error("useCart must be used within a CartProvider");
+  }
+  return context;
+}

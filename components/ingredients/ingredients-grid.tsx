@@ -1,43 +1,44 @@
 "use client"
 
-import { Flower2, Droplets, Leaf, Sun, Heart, Sparkles } from "lucide-react"
+import { ScrollReveal } from "@/components/ui/scroll-reveal"
+import { Droplets, Sparkles, Shield, Beaker, Leaf, Heart } from "lucide-react"
 
 const ingredients = [
   {
-    name: "Damask Rose",
-    description: "Rich in antioxidants and vitamins A and C, Damask Rose hydrates deeply while promoting cell regeneration for a youthful, radiant complexion.",
-    icon: Flower2,
-    origin: "Bulgaria",
-  },
-  {
-    name: "Hyaluronic Acid",
-    description: "A powerful humectant that holds up to 1000x its weight in water, providing intense hydration and plumping fine lines for smoother skin.",
-    icon: Droplets,
-    origin: "Plant-derived",
-  },
-  {
-    name: "Aloe Vera",
-    description: "Soothes and calms irritated skin while providing gentle hydration. Rich in enzymes, vitamins, and minerals that promote healing.",
-    icon: Leaf,
-    origin: "Organic Farms",
-  },
-  {
-    name: "Vitamin E",
-    description: "A potent antioxidant that protects against environmental damage while nourishing and strengthening the skin barrier.",
-    icon: Sun,
-    origin: "Natural Sources",
-  },
-  {
-    name: "Jojoba Oil",
-    description: "Closely mimics skin&apos;s natural sebum, providing balanced moisturization without clogging pores. Rich in vitamins and minerals.",
-    icon: Heart,
-    origin: "Arizona",
-  },
-  {
-    name: "Green Tea Extract",
-    description: "Packed with polyphenols and catechins, it fights free radicals, reduces inflammation, and helps protect against UV damage.",
+    name: "Salicylic Acid (0.5%)",
+    description: "A gentle BHA that penetrates deep into pores to dissolve excess sebum, gently exfoliate dead skin cells, and combat breakouts.",
     icon: Sparkles,
-    origin: "Japan",
+    origin: "Active Exfoliant",
+  },
+  {
+    name: "Niacinamide (0.5–1%)",
+    description: "Vitamin B3 works to visibly minimize enlarged pores, tighten lax pores, improve uneven skin tone, and soften fine lines.",
+    icon: Shield,
+    origin: "Skin Barrier Support",
+  },
+  {
+    name: "Glycerin (3–4%)",
+    description: "A powerful humectant that draws moisture into the skin, ensuring your face feels hydrated and never stripped after cleansing.",
+    icon: Droplets,
+    origin: "Hydration Agent",
+  },
+  {
+    name: "Allantoin (0.2%)",
+    description: "A naturally occurring compound that soothes irritated skin, encourages cell turnover, and provides gentle healing properties.",
+    icon: Heart,
+    origin: "Soothing Extract",
+  },
+  {
+    name: "Cocamidopropyl Betaine",
+    description: "A gentle surfactant derived from coconut oil that creates a rich, satisfying lather without disrupting the skin's natural lipid barrier.",
+    icon: Leaf,
+    origin: "Coconut-Derived",
+  },
+  {
+    name: "Citric Acid",
+    description: "An AHA naturally found in citrus fruits that helps maintain the optimal skin pH balance (4.5–5) while offering mild antioxidant properties.",
+    icon: Beaker,
+    origin: "pH Balancer",
   },
 ]
 
@@ -47,7 +48,9 @@ export function IngredientsGrid() {
       <div className="mx-auto max-w-7xl">
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {ingredients.map((ingredient, index) => (
-            <IngredientCard key={ingredient.name} ingredient={ingredient} index={index} />
+            <ScrollReveal key={ingredient.name} delay={index * 0.1}>
+              <IngredientCard ingredient={ingredient} index={index} />
+            </ScrollReveal>
           ))}
         </div>
       </div>
@@ -73,8 +76,8 @@ function IngredientCard({
       <div className="absolute -right-8 -top-8 h-24 w-24 rounded-full bg-[#A88B67]/5 transition-transform duration-500 group-hover:scale-150" />
       
       {/* Botanical illustration placeholder */}
-      <div className="relative mb-6 flex aspect-square max-w-[140px] items-center justify-center rounded-2xl bg-gradient-to-br from-[#F7F4F0] to-[#EDE9E4]">
-        <div className="flex flex-col items-center justify-center">
+      <div className="relative mb-6 flex aspect-square max-w-[140px] items-center justify-center overflow-hidden rounded-2xl bg-gradient-to-br from-[#F7F4F0] to-[#EDE9E4]">
+        <div className="absolute inset-0 flex flex-col items-center justify-center transition-transform duration-700 ease-out group-hover:scale-105">
           <div className="rounded-full bg-white/80 p-4 shadow-sm">
             <Icon className="h-10 w-10 text-[#A88B67]" strokeWidth={1.5} />
           </div>

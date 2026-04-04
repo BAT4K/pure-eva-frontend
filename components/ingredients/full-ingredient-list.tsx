@@ -10,59 +10,19 @@ import {
 
 const ingredientCategories = [
   {
-    title: "Natural Facial Cleanser - Full INCI List",
+    title: "Urban Reset Gel Cleanser - Full INCI List",
     ingredients: [
-      "Aqua (Water)",
-      "Rosa Damascena (Damask Rose) Flower Water",
-      "Glycerin (Plant-derived)",
-      "Coco-Glucoside (Coconut-derived Surfactant)",
-      "Aloe Barbadensis Leaf Juice",
-      "Sodium Hyaluronate (Hyaluronic Acid)",
-      "Simmondsia Chinensis (Jojoba) Seed Oil",
-      "Camellia Sinensis (Green Tea) Leaf Extract",
-      "Tocopherol (Vitamin E)",
-      "Chamomilla Recutita (Chamomile) Flower Extract",
-      "Calendula Officinalis Flower Extract",
-      "Citric Acid",
-      "Sodium Benzoate",
-      "Potassium Sorbate",
-    ],
-  },
-  {
-    title: "Hydrating Day Cream - Full INCI List",
-    ingredients: [
-      "Aqua (Water)",
-      "Helianthus Annuus (Sunflower) Seed Oil",
-      "Cetearyl Alcohol (Plant-derived Emulsifier)",
-      "Glycerin (Plant-derived)",
-      "Rosa Damascena (Damask Rose) Flower Water",
-      "Sodium Hyaluronate (Hyaluronic Acid)",
-      "Squalane (Olive-derived)",
-      "Shea Butter",
-      "Niacinamide (Vitamin B3)",
-      "Tocopherol (Vitamin E)",
-      "Xanthan Gum",
-      "Citric Acid",
-      "Sodium Benzoate",
-      "Potassium Sorbate",
-    ],
-  },
-  {
-    title: "Renewal Night Serum - Full INCI List",
-    ingredients: [
-      "Aqua (Water)",
-      "Propanediol (Plant-derived)",
-      "Sodium Hyaluronate (Hyaluronic Acid)",
-      "Bakuchiol (Retinol Alternative)",
-      "Rosa Canina (Rosehip) Seed Oil",
-      "Tocopherol (Vitamin E)",
-      "Ascorbic Acid (Vitamin C)",
-      "Camellia Sinensis (Green Tea) Leaf Extract",
-      "Centella Asiatica Extract",
-      "Glycerin (Plant-derived)",
-      "Xanthan Gum",
-      "Citric Acid",
-      "Sodium Benzoate",
+      "Purified Water (q.s.)",
+      "Cocamidopropyl Betaine (12–14%)",
+      "Sodium Lauroyl Sarcosinate (6–8%)",
+      "Glycerin (3–4%)",
+      "Salicylic Acid (0.5%)",
+      "Niacinamide (0.5–1%)",
+      "Allantoin (0.2%)",
+      "PEG-120 Methyl Glucose Dioleate (0.6–0.8%)",
+      "Euxyl PE 9010 (0.8–1%)",
+      "Sodium Gluconate (0.1%)",
+      "Citric Acid (pH 4.5–5)",
     ],
   },
 ]
@@ -83,8 +43,8 @@ export function FullIngredientList() {
             Complete Ingredient Lists
           </h2>
           <p className="mx-auto mt-4 max-w-xl text-[#2C2C2C]/60">
-            We believe in complete transparency. Here you&apos;ll find the full INCI 
-            (International Nomenclature of Cosmetic Ingredients) lists for all our products.
+            We believe in complete transparency. Here you&apos;ll find the exact 
+            formulation and concentration ranges for the Urban Reset Gel Cleanser.
           </p>
         </div>
 
