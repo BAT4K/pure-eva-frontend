@@ -14,6 +14,7 @@ const getProductQuery = `
           id
           title
           description
+          descriptionHtml
           images(first: 1) {
             edges {
               node {
@@ -27,6 +28,10 @@ const getProductQuery = `
               node {
                 id
                 price {
+                  amount
+                  currencyCode
+                }
+                compareAtPrice {
                   amount
                   currencyCode
                 }
@@ -56,7 +61,9 @@ export default async function Home() {
   const product = productData.body.data.products.edges[0].node;
   const productTitle = product.title;
   const productDescription = product.description;
+  const descriptionHtml = product.descriptionHtml;
   const productPrice = product.variants.edges[0].node.price.amount;
+  const compareAtPrice = product.variants.edges[0].node.compareAtPrice?.amount || null;
   const variantId = product.variants.edges[0].node.id;
   
   const productImageUrl = product.images.edges[0]?.node?.url || '';
@@ -67,7 +74,9 @@ export default async function Home() {
       <ProductHero 
         title={productTitle} 
         description={productDescription} 
+        descriptionHtml={descriptionHtml}
         price={productPrice}
+        compareAtPrice={compareAtPrice}
         imageUrl={productImageUrl}
         imageAlt={productImageAlt}
         variantId={variantId}

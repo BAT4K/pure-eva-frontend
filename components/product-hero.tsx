@@ -1,21 +1,26 @@
 "use client"
 
+import { useState } from "react"
+import { motion } from "framer-motion"
 import Image from "next/image"
-import { ShoppingBag, Leaf, Droplets, Sparkles } from "lucide-react"
+import { ShoppingBag, Leaf, Droplets, Sparkles, ChevronDown, ChevronUp } from "lucide-react"
 import { useCart } from "./cart-provider"
 import { ScrollReveal } from "@/components/ui/scroll-reveal"
 
 interface ProductHeroProps {
   title: string;
   description: string;
+  descriptionHtml: string;
   price: string;
+  compareAtPrice?: string | null;
   imageUrl: string;
   imageAlt: string;
   variantId: string;
 }
 
-export default function ProductHero({ title, description, price, imageUrl, imageAlt, variantId }: ProductHeroProps) {
+export default function ProductHero({ title, description, descriptionHtml, price, compareAtPrice, imageUrl, imageAlt, variantId }: ProductHeroProps) {
   const { addToCart } = useCart();
+  const [isExpanded, setIsExpanded] = useState(false);
 
   const handleAddToCart = () => {
     addToCart({ title, price, imageUrl, imageAlt, variantId });
@@ -67,10 +72,43 @@ export default function ProductHero({ title, description, price, imageUrl, image
             <ScrollReveal delay={0.3}>
               <div className="mb-6 flex items-baseline gap-3">
                 <span className="font-serif text-3xl text-[#2C2C2C]">₹{price}</span>
+                {compareAtPrice && (
+                  <>
+                    <span className="text-xl text-[#2C2C2C]/50 line-through">₹{compareAtPrice}</span>
+                    <span className="rounded-full bg-[#B87A7A]/10 px-2.5 py-0.5 text-xs font-semibold tracking-wide text-[#B87A7A]">
+                      SALE
+                    </span>
+                  </>
+                )}
               </div>
-              <p className="mb-8 max-w-md leading-relaxed text-[#2C2C2C]/70 line-clamp-4">
-                {description}
-              </p>
+              <div className="mb-6 max-w-md">
+                <div className="relative">
+                  <motion.div 
+                    initial={false}
+                    animate={{ height: isExpanded ? "250px" : "120px" }}
+                    transition={{ duration: 0.5, ease: [0.25, 0.1, 0.25, 1] }}
+                    className={`leading-relaxed text-[#2C2C2C]/70 [&>p]:mb-4 [&>ul]:mb-4 [&>ul]:list-disc [&>ul]:pl-5 ${isExpanded ? "overflow-y-auto pr-2 [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-thumb]:bg-[#E5E0DA] [&::-webkit-scrollbar]:w-1.5" : "overflow-hidden"}`}
+                    dangerouslySetInnerHTML={{ __html: descriptionHtml }}
+                  />
+                  {!isExpanded && (
+                    <div className="pointer-events-none absolute bottom-0 left-0 right-0 h-12 bg-gradient-to-t from-[#F7F4F0] to-transparent" />
+                  )}
+                </div>
+                <button 
+                  type="button"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    setIsExpanded(!isExpanded);
+                  }}
+                  className="group mt-2 flex items-center gap-1 text-sm font-medium text-[#B87A7A] transition-colors hover:text-[#A66B6B]"
+                >
+                  {isExpanded ? (
+                    <>Read Less <ChevronUp className="h-4 w-4 transition-transform group-hover:-translate-y-0.5" /></>
+                  ) : (
+                    <>Read More <ChevronDown className="h-4 w-4 transition-transform group-hover:translate-y-0.5" /></>
+                  )}
+                </button>
+              </div>
             </ScrollReveal>
 
             <ScrollReveal delay={0.4}>

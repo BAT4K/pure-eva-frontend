@@ -12,6 +12,7 @@ export async function shopifyFetch({ query, variables = {} }: { query: string, v
         'X-Shopify-Storefront-Access-Token': storefrontAccessToken!,
       },
       body: JSON.stringify({ query, variables }),
+      next: { revalidate: 60 },
     });
 
     return {
