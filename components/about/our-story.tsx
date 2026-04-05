@@ -15,6 +15,7 @@ export function OurStory() {
                 src="/about-hero.jpeg" 
                 alt="Pure Eva Journey" 
                 fill 
+                priority 
                 sizes="(max-width: 768px) 100vw, 50vw"
                 className="object-cover transition-transform duration-1000 ease-out group-hover:scale-105 z-0"
               />
