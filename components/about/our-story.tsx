@@ -1,4 +1,4 @@
-import { Flower2 } from "lucide-react"
+import Image from "next/image"
 import { ScrollReveal } from "@/components/ui/scroll-reveal"
 
 export function OurStory() {
@@ -7,32 +7,29 @@ export function OurStory() {
       <div className="mx-auto max-w-7xl">
         <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-20">
           <ScrollReveal delay={0.2} className="relative">
-            <div className="group relative aspect-[4/5] w-full overflow-hidden rounded-3xl bg-gradient-to-br from-[#EDE9E4] to-[#E5E0DA] shadow-[0_25px_60px_-15px_rgba(0,0,0,0.08)]">
-              {/* Decorative elements */}
-              <div className="absolute -left-8 -top-8 h-40 w-40 rounded-full bg-[#B87A7A]/10 blur-3xl z-10" />
-              <div className="absolute -bottom-10 -right-10 h-48 w-48 rounded-full bg-[#A88B67]/10 blur-3xl z-10" />
+            {/* The Image Container */}
+            <div className="group relative aspect-[4/5] w-full overflow-hidden rounded-3xl shadow-[0_25px_60px_-15px_rgba(0,0,0,0.08)]">
               
-              {/* Placeholder content with subtle zoom */}
-              <div className="absolute inset-0 flex flex-col items-center justify-center p-8 transition-transform duration-700 ease-out group-hover:scale-105 z-20">
-                <div className="mb-4 rounded-full bg-white/60 p-6 shadow-lg backdrop-blur-sm">
-                  <Flower2 className="h-12 w-12 text-[#B87A7A]" />
-                </div>
-                <p className="text-center font-serif text-lg text-[#2C2C2C]/60">
-                  Botanical Garden
-                </p>
-                <p className="mt-1 text-center text-sm text-[#2C2C2C]/40">
-                  Where it all began
-                </p>
-              </div>
+              {/* Your Custom Image */}
+              <Image 
+                src="/about-hero.jpeg" 
+                alt="Pure Eva Journey" 
+                fill 
+                sizes="(max-width: 768px) 100vw, 50vw"
+                className="object-cover transition-transform duration-1000 ease-out group-hover:scale-105 z-0"
+              />
+              
+              {/* Subtle dark overlay */}
+              <div className="absolute inset-0 bg-[#2C2C2C]/5 z-10" />
 
-              {/* Year badge */}
-              <div className="absolute bottom-6 left-6 rounded-full bg-white/90 px-4 py-2 shadow-lg backdrop-blur-sm">
+              {/* Year badge - Moved to TOP LEFT to avoid bottle text */}
+              <div className="absolute top-6 left-6 rounded-full bg-white/90 px-4 py-2 shadow-lg backdrop-blur-sm z-20">
                 <span className="font-serif text-sm text-[#A88B67]">Est. 2025</span>
               </div>
             </div>
 
-            {/* Floating accent card */}
-            <div className="absolute -bottom-6 -right-6 hidden rounded-2xl bg-white p-6 shadow-xl lg:block z-30">
+            {/* Floating accent card - Moved to TOP RIGHT to clear the bottom area */}
+            <div className="absolute -top-6 -right-6 hidden rounded-2xl bg-white p-6 shadow-xl lg:block z-30">
               <p className="font-serif text-3xl text-[#B87A7A]">6</p>
               <p className="text-sm text-[#2C2C2C]/60">Boys on a Mission</p>
             </div>
