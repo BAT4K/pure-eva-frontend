@@ -12,7 +12,7 @@ export function OurStory() {
               
               {/* Your Custom Image */}
               <Image 
-                src="/about-hero.jpeg" 
+                src="/about-hero-v2.jpeg" 
                 alt="Pure Eva Journey" 
                 fill 
                 priority 
