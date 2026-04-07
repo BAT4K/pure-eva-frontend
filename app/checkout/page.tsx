@@ -129,6 +129,9 @@ export default function CheckoutPage() {
     );
   }
 
+  // TypeScript strict type guard override
+  if (!cartItem) return null;
+
   return (
     <div className="min-h-screen bg-white pt-24 lg:pt-36">
       <div className="mx-auto flex max-w-7xl flex-col-reverse lg:flex-row">
