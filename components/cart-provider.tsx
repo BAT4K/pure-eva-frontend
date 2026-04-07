@@ -1,7 +1,7 @@
 "use client"
 
-import React, { createContext, useContext, useState, useEffect, ReactNode } from "react"
-import { createCheckout, fetchShopifyCart, updateCartLine } from "@/app/actions"
+import React, { createContext, useContext, useState, ReactNode } from "react"
+import { useRouter } from "next/navigation"
 
 interface CartItem {
   title: string;
@@ -10,7 +10,6 @@ interface CartItem {
   imageAlt: string;
   variantId: string;
   quantity: number;
-  lineId?: string;
 }
 
 interface CartContextType {
@@ -29,102 +28,43 @@ export function CartProvider({ children }: { children: ReactNode }) {
   const [isCartOpen, setIsCartOpen] = useState(false);
   const [cartItem, setCartItem] = useState<CartItem | null>(null);
   const [isCheckingOut, setIsCheckingOut] = useState(false);
-  const [cartId, setCartId] = useState<string | null>(null);
-  const [checkoutUrl, setCheckoutUrl] = useState<string | null>(null);
 
-  useEffect(() => {
-    const initCart = async () => {
-      const savedCartId = localStorage.getItem('shopify_cart_id');
-      if (savedCartId) {
-        const cart = await fetchShopifyCart(savedCartId);
-        if (cart && cart.lines.edges.length > 0) {
-          const lineNode = cart.lines.edges[0].node;
-          setCartId(cart.id);
-          setCheckoutUrl(cart.checkoutUrl);
-          setCartItem({
-            title: lineNode.merchandise.product.title,
-            price: lineNode.merchandise.price.amount,
-            imageUrl: lineNode.merchandise.product.images?.edges[0]?.node?.url || '',
-            imageAlt: lineNode.merchandise.product.images?.edges[0]?.node?.altText || lineNode.merchandise.product.title,
-            variantId: lineNode.merchandise.id,
-            quantity: lineNode.quantity,
-            lineId: lineNode.id
-          });
-        } else {
-          localStorage.removeItem('shopify_cart_id');
-        }
-      }
-    };
-    initCart();
-  }, []);
-
-  const addToCart = async (item: Omit<CartItem, "quantity">) => {
-    let newQuantity = 1;
+  const addToCart = (item: Omit<CartItem, "quantity">) => {
     setCartItem((prev) => {
       if (prev && prev.variantId === item.variantId) {
-        newQuantity = prev.quantity + 1;
-        return { ...prev, quantity: newQuantity };
+        return { ...prev, quantity: prev.quantity + 1 };
       }
       return { ...item, quantity: 1 };
     });
     setIsCartOpen(true);
-
-    if (cartId && cartItem?.lineId && cartItem.variantId === item.variantId) {
-      await updateCartLine(cartId, cartItem.lineId, newQuantity);
-    } else {
-      const cart = await createCheckout(item.variantId, newQuantity);
-      if (cart) {
-        setCartId(cart.id);
-        setCheckoutUrl(cart.checkoutUrl);
-        localStorage.setItem('shopify_cart_id', cart.id);
-        
-        const lineNode = cart.lines.edges[0]?.node;
-        if (lineNode) {
-          setCartItem((prev) => prev ? { ...prev, lineId: lineNode.id } : prev);
-        }
-      }
-    }
   };
 
-  const updateQuantity = async (quantity: number) => {
+  const updateQuantity = (quantity: number) => {
     if (quantity <= 0) {
       setCartItem(null);
     } else {
       setCartItem((prev) => prev ? { ...prev, quantity } : null);
     }
-
-    if (cartId && cartItem?.lineId) {
-      await updateCartLine(cartId, cartItem.lineId, quantity);
-    } else if (cartItem) {
-      // Fallback if lineId somehow missing but user is pressing + button rapidly
-      const cart = await createCheckout(cartItem.variantId, quantity);
-      if (cart) {
-        setCartId(cart.id);
-        setCheckoutUrl(cart.checkoutUrl);
-        localStorage.setItem('shopify_cart_id', cart.id);
-        const lineNode = cart.lines.edges[0]?.node;
-        if (lineNode) {
-          setCartItem((prev) => prev ? { ...prev, lineId: lineNode.id } : prev);
-        }
-      }
-    }
   };
+
+  const loadRazorpayScript = () => {
+    return new Promise((resolve) => {
+      const script = document.createElement("script");
+      script.src = "https://checkout.razorpay.com/v1/checkout.js";
+      script.onload = () => resolve(true);
+      script.onerror = () => resolve(false);
+      document.body.appendChild(script);
+    });
+  };
+
+  const router = useRouter();
 
   const handleCheckout = async () => {
     if (!cartItem) return;
     setIsCheckingOut(true);
-    
-    if (checkoutUrl) {
-      window.location.href = checkoutUrl;
-    } else {
-      const cart = await createCheckout(cartItem.variantId, cartItem.quantity);
-      if (cart) {
-        window.location.href = cart.checkoutUrl;
-      } else {
-        alert("Something went wrong. Please try again.");
-        setIsCheckingOut(false);
-      }
-    }
+    setIsCartOpen(false);
+    router.push("/checkout");
+    setIsCheckingOut(false);
   };
 
   return (
