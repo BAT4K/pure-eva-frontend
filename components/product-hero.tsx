@@ -47,7 +47,13 @@ export default function ProductHero({ title, description, descriptionHtml, price
 
             <ScrollReveal delay={0.2}>
               <h1 className="mb-4 font-serif text-4xl leading-tight text-[#2C2C2C] md:text-5xl lg:text-6xl">
-                {title}
+                {title.split(/(Cleanser)/i).map((part, i) => 
+                  part.toLowerCase() === 'cleanser' ? (
+                    <span key={i} className="text-[#B87A7A]">{part}</span>
+                  ) : (
+                    part
+                  )
+                )}
               </h1>
             </ScrollReveal>
 

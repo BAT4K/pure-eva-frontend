@@ -42,7 +42,7 @@ export function HeroProduct({ price = 229, compareAtPrice = 299 }: HeroProductPr
             <div className="h-px w-8 bg-[#A88B67]/40" />
           </div>
           <h2 className="font-serif text-3xl text-[#2C2C2C] md:text-4xl lg:text-5xl">
-            Meet Our Hero Product
+            Discover The Difference
           </h2>
         </div>
 
@@ -90,13 +90,13 @@ export function HeroProduct({ price = 229, compareAtPrice = 299 }: HeroProductPr
             </span>
             
             <h3 className="mb-6 font-serif text-3xl text-[#2C2C2C] md:text-4xl">
-              Natural Facial
+              Urban Reset Gel
               <br />
               <span className="text-[#B87A7A]">Cleanser</span>
             </h3>
 
             <p className="mb-8 max-w-lg leading-relaxed text-[#2C2C2C]/60">
-              Our award-winning cleanser combines the purest botanical extracts with 
+              Our signature cleanser combines the purest botanical extracts with 
               advanced skincare science. Experience a gentle yet effective cleanse that 
               respects your skin&apos;s natural balance while delivering visible results.
             </p>
@@ -118,7 +118,7 @@ export function HeroProduct({ price = 229, compareAtPrice = 299 }: HeroProductPr
 
             {/* CTA */}
             <Link
-              href="/shop"
+              href="/store"
               className="group inline-flex items-center gap-3 rounded-full bg-[#B87A7A] px-10 py-4 text-sm font-medium uppercase tracking-wider text-white shadow-lg shadow-[#B87A7A]/25 transition-all hover:bg-[#A66B6B] hover:shadow-xl hover:shadow-[#B87A7A]/30"
             >
               <ShoppingBag className="h-4 w-4 transition-transform group-hover:-translate-y-0.5" />

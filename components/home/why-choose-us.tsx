@@ -20,8 +20,8 @@ export function WhyChooseUs() {
       icon: ShieldCheck,
       title: "Dermatologist Tested",
       description: "Rigorously tested and approved by dermatologists. Safe for all skin types, including sensitive skin.",
-      stat: "5000+",
-      statLabel: "Happy Customers",
+      stat: "0%",
+      statLabel: "Harsh Chemicals",
     },
   ]
 

@@ -32,11 +32,11 @@ export function SiteHeader() {
           </Link>
           <nav className="hidden items-center gap-8 text-base tracking-wide md:flex">
             <Link
-              href="/shop"
-              className={`group relative transition-colors duration-300 ${pathname === '/shop' ? 'text-[#B87A7A] font-medium' : 'text-[#2C2C2C]/80 hover:text-[#B87A7A]'}`}
+              href="/store"
+              className={`group relative transition-colors duration-300 ${pathname === '/store' ? 'text-[#B87A7A] font-medium' : 'text-[#2C2C2C]/80 hover:text-[#B87A7A]'}`}
             >
-              Shop
-              <span className={`absolute inset-x-0 -bottom-1 h-[1px] bg-[#B87A7A] transition-transform duration-500 ease-out origin-center ${pathname === '/shop' ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'}`} />
+              Store
+              <span className={`absolute inset-x-0 -bottom-1 h-[1px] bg-[#B87A7A] transition-transform duration-500 ease-out origin-center ${pathname === '/store' ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'}`} />
             </Link>
             <Link
               href="/about"
@@ -112,7 +112,7 @@ export function SiteHeader() {
               {/* Navigation Links with Stagger */}
               <nav className="flex flex-1 flex-col gap-6 overflow-y-auto px-6 py-12">
                 {[
-                  { name: 'Shop', href: '/shop' },
+                  { name: 'Store', href: '/store' },
                   { name: 'About', href: '/about' },
                   { name: 'Policies', href: '/policies' },
                 ].map((item, i) => (

@@ -3,7 +3,7 @@ import { shopifyFetch } from '@/lib/shopify'
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   // 1. Static Routes
-  const routes = ['', '/shop', '/about', '/policies'].map((route) => ({
+  const routes = ['', '/store', '/about', '/policies'].map((route) => ({
     url: `https://pureeva.shop${route}`,
     lastModified: new Date().toISOString(),
     changeFrequency: 'weekly' as const,

@@ -6,7 +6,7 @@ import { Leaf } from "lucide-react"
 
 const footerLinks = {
   shop: [
-    { label: "Shop the Cleanser", href: "/shop" },
+    { label: "Shop the Cleanser", href: "/store" },
   ],
   company: [
     { label: "Our Story", href: "/about" },

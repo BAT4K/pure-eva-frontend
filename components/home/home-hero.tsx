@@ -37,7 +37,7 @@ export function HomeHero() {
 
             <ScrollReveal delay={0.4}>
               <Link
-                href="/shop"
+                href="/store"
                 className="group inline-flex items-center gap-3 rounded-full bg-[#B87A7A] px-10 py-4 text-sm font-medium uppercase tracking-wider text-white shadow-lg transition-all duration-500 hover:scale-[1.02] hover:bg-[#A66B6B] hover:shadow-2xl hover:shadow-[#B87A7A]/30"
               >
                 <ShoppingBag className="h-4 w-4 transition-transform group-hover:-translate-y-0.5" />
