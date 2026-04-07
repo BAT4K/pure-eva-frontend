@@ -18,19 +18,28 @@ export function SiteHeader() {
     <>
       <header className="fixed top-0 left-0 w-full z-50 bg-[#F7F4F0]/80 backdrop-blur-md border-b border-[#E5E0DA]/40 px-6 py-4 md:px-12 lg:px-20">
         <div className="mx-auto flex max-w-7xl items-center justify-between">
-          <Link href="/" className="relative z-[60] font-serif text-2xl tracking-wide text-[#2C2C2C] hover:opacity-80 transition-opacity">
-            Pure Eva
+          <Link href="/" className="relative z-[60] flex items-center hover:opacity-80 transition-opacity">
+            <Image
+              src="/pure-eva-logov2.png"
+              alt="Pure Eva"
+              width={240}
+              height={96}
+              /* Manage size manually here: */
+              /* h-[80px] specifies exact pixel height, change this for larger/smaller logo */
+              className="h-[60px] md:h-[80px] w-auto object-contain"
+              priority
+            />
           </Link>
-          <nav className="hidden items-center gap-8 text-sm tracking-wide md:flex">
-            <Link 
-              href="/shop" 
+          <nav className="hidden items-center gap-8 text-base tracking-wide md:flex">
+            <Link
+              href="/shop"
               className={`group relative transition-colors duration-300 ${pathname === '/shop' ? 'text-[#B87A7A] font-medium' : 'text-[#2C2C2C]/80 hover:text-[#B87A7A]'}`}
             >
               Shop
               <span className={`absolute inset-x-0 -bottom-1 h-[1px] bg-[#B87A7A] transition-transform duration-500 ease-out origin-center ${pathname === '/shop' ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'}`} />
             </Link>
-            <Link 
-              href="/about" 
+            <Link
+              href="/about"
               className={`group relative transition-colors duration-300 ${pathname === '/about' ? 'text-[#B87A7A] font-medium' : 'text-[#2C2C2C]/80 hover:text-[#B87A7A]'}`}
             >
               About
@@ -38,11 +47,11 @@ export function SiteHeader() {
             </Link>
           </nav>
           <div className="relative z-[60] flex items-center gap-2">
-            <button 
+            <button
               onClick={() => setIsCartOpen(true)}
               className="relative p-2 text-[#2C2C2C] transition-colors hover:text-[#B87A7A]"
             >
-              <ShoppingBag className="h-5 w-5" />
+              <ShoppingBag className="h-6 w-6" />
               {cartQuantity > 0 && (
                 <span className="absolute -right-0 -top-0 flex h-4 w-4 items-center justify-center rounded-full bg-[#B87A7A] text-[10px] text-white">
                   {cartQuantity}
@@ -53,7 +62,7 @@ export function SiteHeader() {
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               className="p-2 text-[#2C2C2C] md:hidden"
             >
-              {isMobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+              {isMobileMenuOpen ? <X className="h-7 w-7" /> : <Menu className="h-7 w-7" />}
             </button>
           </div>
         </div>
@@ -64,7 +73,7 @@ export function SiteHeader() {
         {isMobileMenuOpen && (
           <>
             {/* Backdrop */}
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
@@ -81,10 +90,18 @@ export function SiteHeader() {
             >
               {/* Drawer Header */}
               <div className="flex items-center justify-between border-b border-[#E5E0DA] px-6 py-8">
-                <Link href="/" onClick={() => setIsMobileMenuOpen(false)} className="font-serif text-2xl tracking-wide text-[#2C2C2C]">
-                  Pure Eva
+                <Link href="/" onClick={() => setIsMobileMenuOpen(false)} className="flex items-center hover:opacity-80 transition-opacity">
+                  <Image
+                    src="/pure-eva-logov2.png"
+                    alt="Pure Eva"
+                    width={200}
+                    height={80}
+                    priority
+                    /* Manage mobile menu logo size here: */
+                    className="h-[60px] w-auto object-contain"
+                  />
                 </Link>
-                <button 
+                <button
                   onClick={() => setIsMobileMenuOpen(false)}
                   className="rounded-full p-2 text-[#2C2C2C]/60 transition-colors hover:bg-white/50 hover:text-[#2C2C2C]"
                 >
@@ -99,7 +116,7 @@ export function SiteHeader() {
                   { name: 'About', href: '/about' },
                   { name: 'Policies', href: '/policies' },
                 ].map((item, i) => (
-                  <motion.div 
+                  <motion.div
                     key={item.href}
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
@@ -117,7 +134,7 @@ export function SiteHeader() {
               </nav>
 
               {/* Mini Footer */}
-              <motion.div 
+              <motion.div
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.5, duration: 0.5 }}
@@ -138,22 +155,21 @@ export function SiteHeader() {
 
       {/* --- CART DRAWER OVERLAY --- */}
       {isCartOpen && (
-        <div 
+        <div
           className="fixed inset-0 z-40 bg-black/20 backdrop-blur-sm transition-opacity"
           onClick={() => setIsCartOpen(false)}
         />
       )}
 
       {/* --- CART DRAWER UI --- */}
-      <div 
-        className={`fixed top-0 right-0 z-50 h-full w-full max-w-md bg-[#F7F4F0] shadow-2xl transition-transform duration-300 ease-in-out ${
-          isCartOpen ? "translate-x-0" : "translate-x-full"
-        }`}
+      <div
+        className={`fixed top-0 right-0 z-50 h-full w-full max-w-md bg-[#F7F4F0] shadow-2xl transition-transform duration-300 ease-in-out ${isCartOpen ? "translate-x-0" : "translate-x-full"
+          }`}
       >
         <div className="flex h-full flex-col">
           <div className="flex items-center justify-between border-b border-[#E5E0DA] p-6">
             <h2 className="font-serif text-2xl text-[#2C2C2C]">Your Cart</h2>
-            <button 
+            <button
               onClick={() => setIsCartOpen(false)}
               className="rounded-full p-2 text-[#2C2C2C]/60 hover:bg-[#F7F4F0] hover:text-[#2C2C2C] transition-colors"
             >
@@ -166,7 +182,7 @@ export function SiteHeader() {
               <div className="flex h-full flex-col items-center justify-center text-center">
                 <ShoppingBag className="mb-4 h-12 w-12 text-[#E5E0DA]" />
                 <p className="text-[#2C2C2C]/60">Your cart is beautifully empty.</p>
-                <button 
+                <button
                   onClick={() => setIsCartOpen(false)}
                   className="mt-6 text-sm font-medium uppercase tracking-wide text-[#B87A7A] hover:underline"
                 >
@@ -178,16 +194,16 @@ export function SiteHeader() {
                 <div className="relative h-24 w-20 flex-shrink-0 overflow-hidden rounded-xl bg-[#F7F4F0]">
                   {cartItem.imageUrl && <Image src={cartItem.imageUrl} alt={cartItem.imageAlt} fill className="object-cover" />}
                 </div>
-                
+
                 <div className="flex flex-1 flex-col justify-between">
                   <div>
                     <h3 className="font-serif text-lg text-[#2C2C2C] line-clamp-1">{cartItem.title}</h3>
                     <p className="text-sm text-[#2C2C2C]/60">₹{cartItem.price}</p>
                   </div>
-                  
+
                   <div className="flex items-center justify-between">
                     <div className="flex items-center rounded-full border border-[#E5E0DA] bg-white px-2 py-1">
-                      <button 
+                      <button
                         onClick={() => updateQuantity(cartItem.quantity - 1)}
                         className="p-1 text-[#2C2C2C]/60 hover:text-[#2C2C2C]"
                       >
@@ -196,15 +212,15 @@ export function SiteHeader() {
                       <span className="w-8 text-center text-sm font-medium text-[#2C2C2C]">
                         {cartItem.quantity}
                       </span>
-                      <button 
+                      <button
                         onClick={() => updateQuantity(cartItem.quantity + 1)}
                         className="p-1 text-[#2C2C2C]/60 hover:text-[#2C2C2C]"
                       >
                         <Plus className="h-3 w-3" />
                       </button>
                     </div>
-                    
-                    <button 
+
+                    <button
                       onClick={() => updateQuantity(0)}
                       className="p-2 text-[#2C2C2C]/40 hover:text-[#B87A7A] transition-colors"
                     >
@@ -222,7 +238,7 @@ export function SiteHeader() {
                 <span className="text-[#A88B67] text-sm tracking-wide uppercase font-sans">Subtotal</span>
                 <span className="text-[#A88B67]">₹{(parseFloat(cartItem.price) * cartItem.quantity).toFixed(2)}</span>
               </div>
-              <button 
+              <button
                 onClick={handleCheckout}
                 disabled={isCheckingOut}
                 className="flex w-full items-center justify-center gap-2 rounded-full bg-[#B87A7A] px-8 py-4 text-sm font-medium uppercase tracking-wider text-white transition-all hover:bg-[#B87A7A]/90 disabled:opacity-70"

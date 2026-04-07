@@ -1,12 +1,13 @@
 import { ShoppingBag, Leaf } from "lucide-react"
 import Link from "next/link"
+import Image from "next/image"
 import { ScrollReveal } from "@/components/ui/scroll-reveal"
 
 export function HomeHero() {
   return (
     <section className="relative min-h-screen overflow-hidden bg-[#F7F4F0]">
       {/* Hero Content */}
-      <div className="relative px-6 pb-20 pt-16 md:px-12 md:pb-28 md:pt-24 lg:px-20 lg:pb-32 lg:pt-32">
+      <div className="relative px-6 pb-20 pt-[120px] md:px-12 md:pb-28 lg:px-20 lg:pb-32 lg:pt-[150px]">
         <div className="mx-auto grid max-w-7xl items-center gap-12 lg:grid-cols-2 lg:gap-20">
           {/* Left - Text Content */}
           <div className="order-2 lg:order-1">
@@ -76,16 +77,15 @@ export function HomeHero() {
                 <div className="absolute -bottom-10 -right-10 h-56 w-56 rounded-full bg-[#A88B67]/8 blur-3xl" />
                 
                 <div className="group relative aspect-[4/5] w-full overflow-hidden rounded-[2rem] bg-gradient-to-br from-[#EDE9E4] to-[#E5E0DA] shadow-[0_30px_80px_-20px_rgba(0,0,0,0.12)]">
-                  <div className="absolute inset-0 flex flex-col items-center justify-center p-8 transition-transform duration-700 ease-out group-hover:scale-105">
-                    <div className="mb-6 rounded-full bg-white/60 p-8 shadow-lg backdrop-blur-sm">
-                      <Leaf className="h-16 w-16 text-[#B87A7A]" />
-                    </div>
-                    <p className="text-center font-serif text-xl text-[#2C2C2C]/50">
-                      Lifestyle Image
-                    </p>
-                    <p className="mt-2 text-center text-sm text-[#2C2C2C]/30">
-                      Botanical Beauty
-                    </p>
+                  <div className="absolute inset-0 transition-transform duration-700 ease-out group-hover:scale-105">
+                    <Image
+                      src="/hero-botanical-cleanser.jpg"
+                      alt="Botanical Cleanser"
+                      fill
+                      priority
+                      className="object-cover"
+                      sizes="(max-width: 1024px) 100vw, 50vw"
+                    />
                   </div>
 
                 {/* Floating badge */}

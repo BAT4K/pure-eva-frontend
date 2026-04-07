@@ -5,7 +5,7 @@ export function AboutHero() {
   return (
     <section className="relative overflow-hidden bg-[#F7F4F0]">
       {/* Hero Content - Adjusted for fixed header */}
-      <div className="relative px-6 pb-24 pt-0 md:px-12 md:pb-32 md:pt-24 lg:px-20 lg:pb-40 lg:pt-32">
+      <div className="relative px-6 pb-24 pt-[120px] md:px-12 md:pb-32 lg:px-20 lg:pb-40 lg:pt-[150px]">
         {/* Decorative elements */}
         <div className="absolute -right-20 top-0 h-96 w-96 rounded-full bg-[#B87A7A]/5 blur-3xl" />
         <div className="absolute -left-20 bottom-0 h-80 w-80 rounded-full bg-[#A88B67]/5 blur-3xl" />

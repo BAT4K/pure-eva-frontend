@@ -1,5 +1,6 @@
 import { Droplets, Leaf, Sparkles, ShoppingBag } from "lucide-react"
 import Link from "next/link"
+import Image from "next/image"
 
 interface HeroProductProps {
   price?: number;
@@ -53,14 +54,16 @@ export function HeroProduct({ price = 229, compareAtPrice = 299 }: HeroProductPr
             <div className="absolute -left-8 top-1/4 h-40 w-40 rounded-full bg-[#B87A7A]/10 blur-3xl" />
             <div className="absolute -right-8 bottom-1/4 h-48 w-48 rounded-full bg-[#A88B67]/10 blur-3xl" />
             
-            <div className="relative aspect-square w-full overflow-hidden rounded-[2rem] bg-gradient-to-br from-white to-[#EDE9E4] shadow-[0_25px_60px_-15px_rgba(0,0,0,0.1)]">
-              {/* Image placeholder */}
-              <div className="absolute inset-0 flex flex-col items-center justify-center p-8">
-                <div className="mb-6 rounded-full bg-[#F7F4F0] p-8 shadow-inner">
-                  <Droplets className="h-16 w-16 text-[#B87A7A]" />
-                </div>
-                <p className="font-serif text-xl text-[#2C2C2C]/50">Natural Facial Cleanser</p>
-                <p className="mt-2 text-sm text-[#2C2C2C]/30">250ml / 8.4 fl oz</p>
+            <div className="relative aspect-square w-full overflow-hidden rounded-[2rem] bg-gradient-to-br from-white to-[#EDE9E4] shadow-[0_25px_60px_-15px_rgba(0,0,0,0.1)] group">
+              {/* Actual Image */}
+              <div className="absolute inset-0 transition-transform duration-700 ease-out group-hover:scale-105">
+                <Image
+                  src="/pure-eva-cleanser-ingredients.jpg"
+                  alt="Pure Eva Cleanser Ingredients"
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                />
               </div>
 
               {/* Price tag */}
