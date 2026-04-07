@@ -1,7 +1,13 @@
 import { Droplets, Leaf, Sparkles, ShoppingBag } from "lucide-react"
 import Link from "next/link"
 
-export function HeroProduct() {
+interface HeroProductProps {
+  price?: number;
+  compareAtPrice?: number;
+}
+
+export function HeroProduct({ price = 229, compareAtPrice = 299 }: HeroProductProps) {
+  const discountAmount = compareAtPrice > price ? Math.round(compareAtPrice - price) : 0;
   const benefits = [
     {
       icon: Droplets,
@@ -59,14 +65,18 @@ export function HeroProduct() {
 
               {/* Price tag */}
               <div className="absolute right-6 top-6 flex flex-col items-center rounded-2xl bg-white/90 px-4 py-3 shadow-lg backdrop-blur-sm">
-                <span className="font-serif text-2xl text-[#2C2C2C]">₹229</span>
-                <span className="text-xs text-[#2C2C2C]/40 line-through">₹299</span>
+                <span className="font-serif text-2xl text-[#2C2C2C]">₹{price}</span>
+                {compareAtPrice > price && (
+                  <span className="text-xs text-[#2C2C2C]/40 line-through">₹{compareAtPrice}</span>
+                )}
               </div>
 
               {/* Badge */}
-              <div className="absolute bottom-6 left-6 rounded-full bg-[#B87A7A] px-4 py-2 text-xs font-medium uppercase tracking-wider text-white shadow-lg">
-                Save 17%
-              </div>
+              {discountAmount > 0 && (
+                <div className="absolute bottom-6 left-6 rounded-full bg-[#B87A7A] px-4 py-2 text-xs font-medium uppercase tracking-wider text-white shadow-lg">
+                  Save ₹{discountAmount}
+                </div>
+              )}
             </div>
           </div>
 
