@@ -192,7 +192,7 @@ export function SiteHeader() {
             ) : (
               <div className="flex gap-4">
                 <div className="relative h-24 w-20 flex-shrink-0 overflow-hidden rounded-xl bg-[#F7F4F0]">
-                  {cartItem.imageUrl && <Image src={cartItem.imageUrl} alt={cartItem.imageAlt} fill className="object-cover" />}
+                  {cartItem.imageUrl && <Image src={cartItem.imageUrl} alt={cartItem.imageAlt} fill sizes="80px" className="object-cover" />}
                 </div>
 
                 <div className="flex flex-1 flex-col justify-between">

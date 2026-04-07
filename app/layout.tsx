@@ -17,11 +17,25 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://pureeva.shop'),
   title: {
     template: "%s | Pure Eva",
     default: "Pure Eva | Botanical Skincare",
   },
   description: "Cleanse, hydrate, and reveal your natural radiance with our 100% botanical facial cleanser.",
+  openGraph: {
+    title: "Pure Eva | Botanical Skincare",
+    description: "Cleanse, hydrate, and reveal your natural radiance with our 100% botanical facial cleanser.",
+    url: 'https://pureeva.shop',
+    siteName: 'Pure Eva',
+    locale: 'en_US',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: "Pure Eva | Botanical Skincare",
+    description: "Cleanse, hydrate, and reveal your natural radiance with our 100% botanical facial cleanser.",
+  },
 };
 
 export default function RootLayout({
