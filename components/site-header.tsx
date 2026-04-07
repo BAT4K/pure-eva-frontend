@@ -77,7 +77,7 @@ export function SiteHeader() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              className="fixed inset-0 z-40 bg-black/20 backdrop-blur-sm md:hidden"
+              className="fixed inset-0 z-[60] bg-black/20 backdrop-blur-sm md:hidden"
               onClick={() => setIsMobileMenuOpen(false)}
             />
             {/* Drawer */}
@@ -86,7 +86,7 @@ export function SiteHeader() {
               animate={{ x: 0 }}
               exit={{ x: "-100%" }}
               transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
-              className="fixed inset-y-0 left-0 z-50 flex w-[90%] max-w-sm flex-col bg-[#F7F4F0] shadow-2xl md:hidden"
+              className="fixed inset-y-0 left-0 z-[70] flex w-[90%] max-w-sm flex-col bg-[#F7F4F0] shadow-2xl md:hidden"
             >
               {/* Drawer Header */}
               <div className="flex items-center justify-between border-b border-[#E5E0DA] px-6 py-8">
@@ -156,14 +156,14 @@ export function SiteHeader() {
       {/* --- CART DRAWER OVERLAY --- */}
       {isCartOpen && (
         <div
-          className="fixed inset-0 z-40 bg-black/20 backdrop-blur-sm transition-opacity"
+          className="fixed inset-0 z-[60] bg-black/20 backdrop-blur-sm transition-opacity"
           onClick={() => setIsCartOpen(false)}
         />
       )}
 
       {/* --- CART DRAWER UI --- */}
       <div
-        className={`fixed top-0 right-0 z-50 h-full w-full max-w-md bg-[#F7F4F0] shadow-2xl transition-transform duration-300 ease-in-out ${isCartOpen ? "translate-x-0" : "translate-x-full"
+        className={`fixed top-0 right-0 z-[70] h-full w-full max-w-md bg-[#F7F4F0] shadow-2xl transition-transform duration-300 ease-in-out ${isCartOpen ? "translate-x-0" : "translate-x-full"
           }`}
       >
         <div className="flex h-full flex-col">
