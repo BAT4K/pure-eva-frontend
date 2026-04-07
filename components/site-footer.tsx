@@ -10,7 +10,6 @@ const footerLinks = {
   ],
   company: [
     { label: "Our Story", href: "/about" },
-    { label: "Ingredients", href: "/ingredients" },
     { label: "Sustainability", href: "/about" },
     { label: "Press", href: "/about" },
   ],

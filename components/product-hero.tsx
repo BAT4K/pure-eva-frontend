@@ -3,7 +3,7 @@
 import { useState } from "react"
 import { motion } from "framer-motion"
 import Image from "next/image"
-import { ShoppingBag, Leaf, Droplets, Sparkles, ChevronDown, ChevronUp } from "lucide-react"
+import { ShoppingBag, Leaf, Droplets, Sparkles, ChevronDown, ChevronUp, Plus, Minus } from "lucide-react"
 import { useCart } from "./cart-provider"
 import { ScrollReveal } from "@/components/ui/scroll-reveal"
 
@@ -21,6 +21,7 @@ interface ProductHeroProps {
 export default function ProductHero({ title, description, descriptionHtml, price, compareAtPrice, imageUrl, imageAlt, variantId }: ProductHeroProps) {
   const { addToCart } = useCart();
   const [isExpanded, setIsExpanded] = useState(false);
+  const [showIngredients, setShowIngredients] = useState(false);
 
   const handleAddToCart = () => {
     addToCart({ title, price, imageUrl, imageAlt, variantId });
@@ -33,29 +34,10 @@ export default function ProductHero({ title, description, descriptionHtml, price
       <div className="mx-auto max-w-7xl pt-24">
 
         {/* Hero Content */}
-        <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-20">
-          {/* Left - Product Image */}
-          <ScrollReveal delay={0.2} className="order-2 lg:order-1">
-            <div className="relative aspect-[4/5] w-full overflow-hidden rounded-3xl bg-gradient-to-br from-[#EDE9E4] to-[#E5E0DA] shadow-[0_25px_60px_-15px_rgba(0,0,0,0.1)] group">
-              <div className="absolute -left-6 -top-6 h-32 w-32 rounded-full bg-[#B87A7A]/10 blur-2xl" />
-              <div className="absolute -bottom-8 -right-8 h-40 w-40 rounded-full bg-[#A88B67]/10 blur-2xl" />
-              
-              <div className="absolute inset-0 transition-transform duration-700 ease-out group-hover:scale-105">
-                {imageUrl ? (
-                  <Image src={imageUrl} alt={imageAlt} fill className="object-cover" priority />
-                ) : (
-                  <div className="absolute inset-0 flex flex-col items-center justify-center p-8">
-                    <div className="mb-4 rounded-full bg-white/60 p-6 shadow-lg backdrop-blur-sm">
-                      <Droplets className="h-12 w-12 text-[#B87A7A]" />
-                    </div>
-                  </div>
-                )}
-              </div>
-            </div>
-          </ScrollReveal>
-
-          {/* Right - Product Info */}
-          <div className="order-1 lg:order-2">
+        <div className="flex flex-col lg:grid lg:grid-cols-2 lg:items-start gap-12 lg:gap-20 relative">
+          
+          {/* 1. Header Block: Mobile Top / Desktop Right Top */}
+          <div className="order-1 lg:col-start-2 lg:row-start-1 flex flex-col pt-4 lg:pt-0">
             <ScrollReveal delay={0.1}>
               <div className="mb-4 flex items-center gap-2">
                 <Leaf className="h-4 w-4 text-[#A88B67]" />
@@ -70,7 +52,7 @@ export default function ProductHero({ title, description, descriptionHtml, price
             </ScrollReveal>
 
             <ScrollReveal delay={0.3}>
-              <div className="mb-6 flex items-baseline gap-3">
+              <div className="flex items-baseline gap-3">
                 <span className="font-serif text-3xl text-[#2C2C2C]">₹{price}</span>
                 {compareAtPrice && (
                   <>
@@ -81,7 +63,40 @@ export default function ProductHero({ title, description, descriptionHtml, price
                   </>
                 )}
               </div>
-              <div className="mb-6 max-w-md">
+            </ScrollReveal>
+          </div>
+
+          {/* 2. Left - Product Image: Mobile Middle / Desktop Left */}
+          <ScrollReveal delay={0.2} className="order-2 lg:col-start-1 lg:row-start-1 lg:row-span-2 self-start w-full">
+            <div className="relative aspect-[4/5] w-full overflow-hidden rounded-3xl bg-gradient-to-br from-[#EDE9E4] to-[#E5E0DA] shadow-[0_25px_60px_-15px_rgba(0,0,0,0.1)] group">
+              <div className="absolute -left-6 -top-6 h-32 w-32 rounded-full bg-[#B87A7A]/10 blur-2xl" />
+              <div className="absolute -bottom-8 -right-8 h-40 w-40 rounded-full bg-[#A88B67]/10 blur-2xl" />
+              
+              <div className="absolute inset-0 transition-transform duration-700 ease-out group-hover:scale-105">
+                {imageUrl ? (
+                  <Image 
+                    src={imageUrl} 
+                    alt={imageAlt} 
+                    fill 
+                    className="object-cover" 
+                    priority 
+                    sizes="(max-width: 1024px) 100vw, 50vw"
+                  />
+                ) : (
+                  <div className="absolute inset-0 flex flex-col items-center justify-center p-8">
+                    <div className="mb-4 rounded-full bg-white/60 p-6 shadow-lg backdrop-blur-sm">
+                      <Droplets className="h-12 w-12 text-[#B87A7A]" />
+                    </div>
+                  </div>
+                )}
+              </div>
+            </div>
+          </ScrollReveal>
+
+          {/* 3. Details Block: Mobile Bottom / Desktop Right Bottom */}
+          <div className="order-3 lg:col-start-2 lg:row-start-2">
+            <ScrollReveal delay={0.3}>
+              <div className="mb-6 max-w-md mt-6 lg:mt-0">
                 <div className="relative">
                   <motion.div 
                     initial={false}
@@ -147,6 +162,60 @@ export default function ProductHero({ title, description, descriptionHtml, price
                   </svg>
                   30-Day Returns
                 </span>
+              </div>
+
+              {/* Ingredients Accordion */}
+              <div className="mt-8 border-t border-[#E5E0DA] pt-6">
+                <button
+                  type="button"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    setShowIngredients(!showIngredients);
+                  }}
+                  className="flex w-full items-center justify-between font-serif text-lg text-[#2C2C2C] hover:text-[#B87A7A] transition-colors"
+                >
+                  Full Ingredient List
+                  {showIngredients ? <Minus className="h-5 w-5" /> : <Plus className="h-5 w-5" />}
+                </button>
+                <motion.div
+                  layout
+                  initial={false}
+                  animate={{ height: showIngredients ? "auto" : 0, opacity: showIngredients ? 1 : 0 }}
+                  transition={{ duration: 0.4, ease: [0.25, 0.1, 0.25, 1] }}
+                  className="overflow-hidden"
+                >
+                  {/* Part A: Hero Actives */}
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pt-6">
+                    <div>
+                      <h4 className="font-serif text-[#2C2C2C] text-base">Salicylic Acid (BHA)</h4>
+                      <p className="text-xs text-[#2C2C2C]/60 mt-1 leading-relaxed">
+                        Gently exfoliates dead skin cells, dissolves excess sebum, and combats active breakouts.
+                      </p>
+                    </div>
+                    <div>
+                      <h4 className="font-serif text-[#2C2C2C] text-base">Niacinamide (Vitamin B3)</h4>
+                      <p className="text-xs text-[#2C2C2C]/60 mt-1 leading-relaxed">
+                        Visibly minimizes enlarged pores, improves uneven skin tone, and fortifies the lipid barrier.
+                      </p>
+                    </div>
+                  </div>
+
+                  {/* Part B: Full List as Pills */}
+                  <div className="h-px w-full bg-[#E5E0DA] my-6" />
+                  <p className="text-xs uppercase tracking-widest text-[#A88B67] mb-4">
+                    All Ingredients
+                  </p>
+                  <div className="flex flex-wrap gap-2 pb-2">
+                    {["Aqua", "Glycerin", "Cocamidopropyl Betaine", "Allantoin", "Citric Acid", "Aloe Barbadensis Leaf Extract", "Chamomilla Recutita Extract", "Panthenol", "Sodium Hyaluronate"].map((ingredient) => (
+                      <span 
+                        key={ingredient}
+                        className="rounded-full border border-[#E5E0DA] bg-white/50 px-3 py-1.5 text-[11px] text-[#2C2C2C]/70 shadow-sm"
+                      >
+                        {ingredient}
+                      </span>
+                    ))}
+                  </div>
+                </motion.div>
               </div>
             </ScrollReveal>
           </div>

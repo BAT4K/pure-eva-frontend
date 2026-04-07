@@ -36,13 +36,6 @@ export function SiteHeader() {
               About
               <span className={`absolute inset-x-0 -bottom-1 h-[1px] bg-[#B87A7A] transition-transform duration-500 ease-out origin-center ${pathname === '/about' ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'}`} />
             </Link>
-            <Link 
-              href="/ingredients" 
-              className={`group relative transition-colors duration-300 ${pathname === '/ingredients' ? 'text-[#B87A7A] font-medium' : 'text-[#2C2C2C]/80 hover:text-[#B87A7A]'}`}
-            >
-              Ingredients
-              <span className={`absolute inset-x-0 -bottom-1 h-[1px] bg-[#B87A7A] transition-transform duration-500 ease-out origin-center ${pathname === '/ingredients' ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'}`} />
-            </Link>
           </nav>
           <div className="relative z-[60] flex items-center gap-2">
             <button 
@@ -104,7 +97,6 @@ export function SiteHeader() {
                 {[
                   { name: 'Shop', href: '/shop' },
                   { name: 'About', href: '/about' },
-                  { name: 'Ingredients', href: '/ingredients' },
                   { name: 'Policies', href: '/policies' },
                 ].map((item, i) => (
                   <motion.div 
