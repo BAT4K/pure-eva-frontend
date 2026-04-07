@@ -31,7 +31,7 @@ export default function ProductHero({ title, description, descriptionHtml, price
     <section className="min-h-screen bg-background px-6 py-12 md:px-12 lg:px-20 relative overflow-hidden">
       
       {/* Normalized top padding for sticky header */}
-      <div className="mx-auto max-w-7xl pt-12 lg:pt-20">
+      <div className="mx-auto max-w-7xl pt-4 lg:pt-8">
 
         {/* Hero Content */}
         <div className="flex flex-col lg:grid lg:grid-cols-2 lg:items-start gap-12 lg:gap-20 relative">

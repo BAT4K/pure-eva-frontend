@@ -90,8 +90,8 @@ export function SiteFooter() {
         <div className="mx-auto max-w-7xl">
           <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-5 md:gap-10">
             {/* Brand Column */}
-            <div className="lg:col-span-2">
-              <div className="flex justify-center lg:justify-start">
+            <div className="lg:col-span-2 flex flex-col items-start text-left">
+              <div className="flex justify-start">
                 <Link href="/" className="inline-block hover:opacity-80 transition-opacity">
                   <Image
                     src="/pure-eva-logov2.png"
@@ -116,7 +116,7 @@ export function SiteFooter() {
               </div>
 
               {/* Social Links */}
-              <div className="mt-6 flex gap-4 justify-center lg:justify-start">
+              <div className="mt-6 flex gap-4 justify-start">
                 {[
                   { name: "Instagram", url: "https://www.instagram.com/pure.eva25/", icon: FaInstagram },
                   { name: "LinkedIn", url: "https://www.linkedin.com/company/pure-eva/", icon: FaLinkedinIn }

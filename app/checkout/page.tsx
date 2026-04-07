@@ -133,7 +133,7 @@ export default function CheckoutPage() {
   if (!cartItem) return null;
 
   return (
-    <div className="min-h-screen bg-background pt-24 lg:pt-36">
+    <div className="min-h-screen bg-background">
       <div className="mx-auto flex max-w-7xl flex-col-reverse lg:flex-row">
         
         {/* Left Side - Checkout Form */}
@@ -187,7 +187,7 @@ export default function CheckoutPage() {
 
         {/* Right Side - Order Summary */}
         <div className="w-full border-b border-[#B2EBF2] bg-background px-6 pb-12 pt-8 lg:w-[480px] lg:border-b-0 lg:border-l lg:pt-8 lg:pl-12 lg:pr-6 xl:pr-12">
-          <div className="sticky top-24 lg:top-36">
+          <div className="sticky top-24 lg:top-32">
             <h2 className="mb-6 font-serif text-xl border-b border-[#B2EBF2] pb-4 text-[#212121]">Order Summary</h2>
             
             <div className="mb-8 flex items-start gap-4">
