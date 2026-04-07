@@ -26,7 +26,7 @@ export function WhyChooseUs() {
   ]
 
   return (
-    <section className="border-t border-[#B2EBF2] bg-white/40 px-6 py-20 md:px-12 md:py-28 lg:px-20 lg:py-32">
+    <section className="border-t border-[#B2EBF2] bg-background/40 px-6 py-20 md:px-12 md:py-28 lg:px-20 lg:py-32">
       <div className="mx-auto max-w-7xl">
         {/* Section Header */}
         <div className="mb-16 text-center">
@@ -47,16 +47,16 @@ export function WhyChooseUs() {
           {reasons.map((reason, index) => (
             <div 
               key={reason.title}
-              className="group relative overflow-hidden rounded-3xl bg-[#FFFFFF] p-8 transition-all hover:shadow-lg lg:p-10"
+              className="group relative overflow-hidden rounded-3xl bg-white border border-[#B2EBF2]/40 p-8 shadow-sm transition-all hover:shadow-xl hover:shadow-[#B2EBF2]/20 lg:p-10"
             >
               {/* Decorative number */}
-              <span className="absolute -right-4 -top-6 font-serif text-[120px] leading-none text-[#A5D6A7]/5">
+              <span className="absolute -right-4 -top-6 font-serif text-[120px] leading-none text-[#34D399]/5">
                 {index + 1}
               </span>
 
               {/* Icon */}
-              <div className="relative mb-6 inline-flex h-16 w-16 items-center justify-center rounded-2xl bg-white shadow-md transition-transform group-hover:-translate-y-1 group-hover:shadow-lg">
-                <reason.icon className="h-7 w-7 text-[#A5D6A7]" />
+              <div className="relative mb-6 inline-flex h-16 w-16 items-center justify-center rounded-2xl bg-[#E0F7FA]/30 border border-[#B2EBF2]/40 shadow-sm transition-transform group-hover:-translate-y-1 group-hover:shadow-md">
+                <reason.icon className="h-7 w-7 text-[#34D399]" />
               </div>
 
               {/* Content */}
@@ -70,12 +70,12 @@ export function WhyChooseUs() {
 
               {/* Stat */}
               <div className="relative flex items-baseline gap-2 border-t border-[#B2EBF2] pt-6">
-                <span className="font-serif text-3xl text-[#A5D6A7]">{reason.stat}</span>
+                <span className="font-serif text-3xl text-[#34D399]">{reason.stat}</span>
                 <span className="text-sm text-[#212121]/50">{reason.statLabel}</span>
               </div>
 
               {/* Hover accent */}
-              <div className="absolute bottom-0 left-0 h-1 w-0 bg-[#A5D6A7] transition-all duration-300 group-hover:w-full" />
+              <div className="absolute bottom-0 left-0 h-1 w-0 bg-[#34D399] transition-all duration-300 group-hover:w-full" />
             </div>
           ))}
         </div>
@@ -87,7 +87,7 @@ export function WhyChooseUs() {
           </p>
           <a
             href="/about"
-            className="inline-flex items-center gap-2 text-sm font-medium uppercase tracking-wider text-[#A5D6A7] transition-colors hover:text-[#81C784]"
+            className="inline-flex items-center gap-2 text-sm font-medium uppercase tracking-wider text-[#34D399] transition-colors hover:text-[#10B981]"
           >
             Learn More About Us
             <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">

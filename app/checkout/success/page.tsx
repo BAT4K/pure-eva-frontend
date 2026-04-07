@@ -10,13 +10,13 @@ export default async function CheckoutSuccess({
   const paymentId = resolvedParams.payment_id;
 
   return (
-    <main className="min-h-screen bg-[#FFFFFF] flex items-center justify-center px-6 py-24">
-      <div className="max-w-md w-full bg-white/60 p-10 rounded-3xl shadow-xl backdrop-blur-md text-center border border-[#B2EBF2]">
+    <main className="min-h-screen bg-background flex items-center justify-center px-6 py-24">
+      <div className="max-w-md w-full bg-white p-10 rounded-3xl shadow-xl backdrop-blur-md text-center border border-[#B2EBF2]/40">
         
         {/* Success Icon */}
-        <div className="mx-auto flex h-20 w-20 items-center justify-center rounded-full bg-[#A5D6A7]/10 mb-8 relative">
-          <div className="absolute inset-0 rounded-full animate-ping bg-[#A5D6A7]/20 opacity-75"></div>
-          <Check className="h-10 w-10 text-[#A5D6A7]" />
+        <div className="mx-auto flex h-20 w-20 items-center justify-center rounded-full bg-[#34D399]/10 mb-8 relative">
+          <div className="absolute inset-0 rounded-full animate-ping bg-[#34D399]/20 opacity-75"></div>
+          <Check className="h-10 w-10 text-[#34D399]" />
         </div>
 
         {/* Messaging */}
@@ -29,7 +29,7 @@ export default async function CheckoutSuccess({
 
         {/* Order Info */}
         {paymentId && (
-          <div className="bg-[#FFFFFF] rounded-2xl p-4 mb-8 border border-[#B2EBF2]">
+          <div className="bg-background/50 rounded-2xl p-4 mb-8 border border-[#B2EBF2]/30">
             <p className="text-xs uppercase tracking-widest text-[#4DD0E1] mb-1">
               Transaction ID
             </p>
@@ -47,7 +47,7 @@ export default async function CheckoutSuccess({
         {/* Back to store */}
         <Link
           href="/store"
-          className="group flex items-center justify-center gap-3 w-full rounded-full bg-[#A5D6A7] px-8 py-4 text-sm font-medium uppercase tracking-wider text-white shadow-lg transition-all hover:bg-[#81C784] hover:shadow-xl hover:shadow-[#A5D6A7]/30"
+          className="group flex items-center justify-center gap-3 w-full rounded-full bg-[#34D399] px-8 py-4 text-sm font-medium uppercase tracking-wider text-white shadow-lg transition-all hover:bg-[#10B981] hover:shadow-xl hover:shadow-[#34D399]/30"
         >
           <ShoppingBag className="h-4 w-4 transition-transform group-hover:-translate-y-0.5" />
           Continue Shopping

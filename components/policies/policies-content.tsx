@@ -163,12 +163,12 @@ export function PoliciesContent() {
   const currentPolicy = policyContent[activePolicy]
 
   return (
-    <section className="px-6 pb-20 md:px-12 lg:px-20">
+    <section className="px-6 py-12 md:px-12 md:py-16 lg:px-20 lg:py-20">
       <div className="mx-auto max-w-7xl">
-        <div className="flex flex-col gap-12 lg:flex-row lg:gap-16">
+        <div className="grid grid-cols-1 gap-12 lg:grid-cols-12 lg:gap-8 xl:gap-16">
           {/* Sticky Sidebar Navigation */}
-          <aside className="lg:w-72 lg:flex-shrink-0">
-            <nav className="lg:sticky lg:top-8">
+          <aside className="lg:col-span-4 xl:col-span-3">
+            <nav className="lg:sticky lg:top-32">
               <h2 className="mb-4 text-xs font-medium uppercase tracking-wider text-[#212121]/50">
                 Policies
               </h2>
@@ -181,15 +181,15 @@ export function PoliciesContent() {
                     <li key={policy.id}>
                       <button
                         onClick={() => setActivePolicy(policy.id as keyof typeof policyContent)}
-                        className={`flex w-full items-center gap-3 whitespace-nowrap rounded-xl px-4 py-3 text-left transition-all lg:rounded-lg ${
+                        className={`flex w-full items-center gap-3 whitespace-nowrap rounded-xl px-4 py-3 text-left transition-all lg:whitespace-normal xl:whitespace-nowrap lg:rounded-lg ${
                           isActive
-                            ? "bg-white text-[#A5D6A7] shadow-md shadow-[#A5D6A7]/5"
+                            ? "bg-white text-[#34D399] shadow-md shadow-[#34D399]/5"
                             : "text-[#212121]/70 hover:bg-white/50 hover:text-[#212121]"
                         }`}
                       >
-                        <Icon className={`h-4 w-4 flex-shrink-0 ${isActive ? "text-[#A5D6A7]" : "text-[#212121]/40"}`} />
+                        <Icon className={`h-4 w-4 flex-shrink-0 ${isActive ? "text-[#34D399]" : "text-[#212121]/40"}`} />
                         <span className="text-sm font-medium">{policy.label}</span>
-                        <ChevronRight className={`ml-auto hidden h-4 w-4 lg:block ${isActive ? "text-[#A5D6A7]" : "text-[#212121]/20"}`} />
+                        <ChevronRight className={`ml-auto hidden h-4 w-4 lg:block ${isActive ? "text-[#34D399]" : "text-[#212121]/20"}`} />
                       </button>
                     </li>
                   )
@@ -197,7 +197,7 @@ export function PoliciesContent() {
               </ul>
               
               {/* Help Box */}
-              <div className="mt-8 hidden rounded-2xl border border-[#B2EBF2] bg-white/60 p-6 lg:block">
+              <div className="mt-8 hidden rounded-2xl border border-[#B2EBF2] bg-white p-6 shadow-sm lg:block">
                 <h3 className="mb-2 font-serif text-lg text-[#212121]">
                   Need Help?
                 </h3>
@@ -206,7 +206,7 @@ export function PoliciesContent() {
                 </p>
                 <a
                   href="mailto:pureeva25@gmail.com"
-                  className="inline-flex items-center gap-2 text-sm font-medium text-[#A5D6A7] transition-colors hover:text-[#81C784]"
+                  className="inline-flex items-center gap-2 text-sm font-medium text-[#34D399] transition-colors hover:text-[#10B981]"
                 >
                   Contact Us
                   <ChevronRight className="h-4 w-4" />
@@ -216,8 +216,8 @@ export function PoliciesContent() {
           </aside>
 
           {/* Policy Content */}
-          <article className="min-w-0 flex-1">
-            <div className="rounded-3xl border border-[#B2EBF2] bg-white/80 p-8 shadow-xl shadow-[#212121]/[0.02] md:p-10 lg:p-12">
+          <article className="min-w-0 lg:col-span-8 xl:col-span-9">
+            <div className="rounded-3xl border border-[#B2EBF2] bg-white p-8 shadow-2xl shadow-[#212121]/[0.05] md:p-10 lg:p-12">
               {/* Header */}
               <header className="mb-10 border-b border-[#B2EBF2] pb-8">
                 <h1 className="font-serif text-3xl text-[#212121] md:text-4xl">
@@ -259,7 +259,7 @@ export function PoliciesContent() {
                   </div>
                   <a
                     href="mailto:pureeva25@gmail.com"
-                    className="inline-flex items-center justify-center gap-2 rounded-full bg-[#A5D6A7] px-6 py-3 text-sm font-medium text-white shadow-lg shadow-[#A5D6A7]/20 transition-all hover:bg-[#81C784] hover:shadow-xl"
+                    className="inline-flex items-center justify-center gap-2 rounded-full bg-[#34D399] px-6 py-3 text-sm font-medium text-white shadow-lg shadow-[#34D399]/20 transition-all hover:bg-[#10B981] hover:shadow-xl"
                   >
                     Contact Support
                   </a>

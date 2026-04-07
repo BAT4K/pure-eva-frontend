@@ -16,7 +16,7 @@ export function SiteHeader() {
 
   return (
     <>
-      <header className="fixed top-0 left-0 w-full z-50 bg-[#FFFFFF]/80 backdrop-blur-md border-b border-[#B2EBF2]/40 px-6 py-4 md:px-12 lg:px-20">
+      <header className="sticky top-0 z-50 backdrop-blur-md bg-[#FAFAF9]/85 border-b border-gray-200/50 px-6 py-4 md:px-12 lg:px-20">
         <div className="mx-auto flex max-w-7xl items-center justify-between">
           <Link href="/" className="relative z-[60] flex items-center hover:opacity-80 transition-opacity">
             <Image
@@ -33,27 +33,27 @@ export function SiteHeader() {
           <nav className="hidden items-center gap-8 text-base tracking-wide md:flex">
             <Link
               href="/store"
-              className={`group relative transition-colors duration-300 ${pathname === '/store' ? 'text-[#A5D6A7] font-medium' : 'text-[#212121]/80 hover:text-[#A5D6A7]'}`}
+              className={`group relative transition-colors duration-300 ${pathname === '/store' ? 'text-[#34D399] font-medium' : 'text-[#212121]/80 hover:text-[#34D399]'}`}
             >
               Store
-              <span className={`absolute inset-x-0 -bottom-1 h-[1px] bg-[#A5D6A7] transition-transform duration-500 ease-out origin-center ${pathname === '/store' ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'}`} />
+              <span className={`absolute inset-x-0 -bottom-1 h-[1px] bg-[#34D399] transition-transform duration-500 ease-out origin-center ${pathname === '/store' ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'}`} />
             </Link>
             <Link
               href="/about"
-              className={`group relative transition-colors duration-300 ${pathname === '/about' ? 'text-[#A5D6A7] font-medium' : 'text-[#212121]/80 hover:text-[#A5D6A7]'}`}
+              className={`group relative transition-colors duration-300 ${pathname === '/about' ? 'text-[#34D399] font-medium' : 'text-[#212121]/80 hover:text-[#34D399]'}`}
             >
               About
-              <span className={`absolute inset-x-0 -bottom-1 h-[1px] bg-[#A5D6A7] transition-transform duration-500 ease-out origin-center ${pathname === '/about' ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'}`} />
+              <span className={`absolute inset-x-0 -bottom-1 h-[1px] bg-[#34D399] transition-transform duration-500 ease-out origin-center ${pathname === '/about' ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'}`} />
             </Link>
           </nav>
           <div className="relative z-[60] flex items-center gap-2">
             <button
               onClick={() => setIsCartOpen(true)}
-              className="relative p-2 text-[#212121] transition-colors hover:text-[#A5D6A7]"
+              className="relative p-2 text-[#212121] transition-colors hover:text-[#34D399]"
             >
               <ShoppingBag className="h-6 w-6" />
               {cartQuantity > 0 && (
-                <span className="absolute -right-0 -top-0 flex h-4 w-4 items-center justify-center rounded-full bg-[#A5D6A7] text-[10px] text-white">
+                <span className="absolute -right-0 -top-0 flex h-4 w-4 items-center justify-center rounded-full bg-[#34D399] text-[10px] text-white">
                   {cartQuantity}
                 </span>
               )}
@@ -86,7 +86,7 @@ export function SiteHeader() {
               animate={{ x: 0 }}
               exit={{ x: "-100%" }}
               transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
-              className="fixed inset-y-0 left-0 z-[70] flex w-[90%] max-w-sm flex-col bg-[#FFFFFF] shadow-2xl md:hidden"
+              className="fixed inset-y-0 left-0 z-[70] flex w-[90%] max-w-sm flex-col bg-background shadow-2xl md:hidden"
             >
               {/* Drawer Header */}
               <div className="flex items-center justify-between border-b border-[#B2EBF2] px-6 py-8">
@@ -103,7 +103,7 @@ export function SiteHeader() {
                 </Link>
                 <button
                   onClick={() => setIsMobileMenuOpen(false)}
-                  className="rounded-full p-2 text-[#212121]/60 transition-colors hover:bg-white/50 hover:text-[#212121]"
+                  className="rounded-full p-2 text-[#212121]/60 transition-colors hover:bg-background/50 hover:text-[#212121]"
                 >
                   <X className="h-6 w-6" />
                 </button>
@@ -125,7 +125,7 @@ export function SiteHeader() {
                     <Link
                       href={item.href}
                       onClick={() => setIsMobileMenuOpen(false)}
-                      className={`block py-2 font-serif text-4xl transition-colors ${pathname === item.href ? 'text-[#A5D6A7]' : 'text-[#212121] hover:text-[#A5D6A7]'}`}
+                      className={`block py-2 font-serif text-4xl transition-colors ${pathname === item.href ? 'text-[#34D399]' : 'text-[#212121] hover:text-[#34D399]'}`}
                     >
                       {item.name}
                     </Link>
@@ -140,12 +140,12 @@ export function SiteHeader() {
                 transition={{ delay: 0.5, duration: 0.5 }}
                 className="border-t border-[#B2EBF2] px-6 py-8"
               >
-                <a href="mailto:pureeva25@gmail.com" className="mb-4 block text-sm text-[#212121]/60 hover:text-[#A5D6A7]">
+                <a href="mailto:pureeva25@gmail.com" className="mb-4 block text-sm text-[#212121]/60 hover:text-[#34D399]">
                   pureeva25@gmail.com
                 </a>
                 <div className="flex gap-6 text-sm text-[#212121]/60">
-                  <a href="https://www.instagram.com/pure.eva25/" target="_blank" rel="noopener noreferrer" className="hover:text-[#A5D6A7]">Instagram</a>
-                  <a href="https://www.linkedin.com/company/pure-eva/" target="_blank" rel="noopener noreferrer" className="hover:text-[#A5D6A7]">LinkedIn</a>
+                  <a href="https://www.instagram.com/pure.eva25/" target="_blank" rel="noopener noreferrer" className="hover:text-[#34D399]">Instagram</a>
+                  <a href="https://www.linkedin.com/company/pure-eva/" target="_blank" rel="noopener noreferrer" className="hover:text-[#34D399]">LinkedIn</a>
                 </div>
               </motion.div>
             </motion.div>
@@ -163,7 +163,7 @@ export function SiteHeader() {
 
       {/* --- CART DRAWER UI --- */}
       <div
-        className={`fixed top-0 right-0 z-[70] h-full w-full max-w-md bg-[#FFFFFF] shadow-2xl transition-transform duration-300 ease-in-out ${isCartOpen ? "translate-x-0" : "translate-x-full"
+        className={`fixed top-0 right-0 z-[70] h-full w-full max-w-md bg-background shadow-2xl transition-transform duration-300 ease-in-out ${isCartOpen ? "translate-x-0" : "translate-x-full"
           }`}
       >
         <div className="flex h-full flex-col">
@@ -171,7 +171,7 @@ export function SiteHeader() {
             <h2 className="font-serif text-2xl text-[#212121]">Your Cart</h2>
             <button
               onClick={() => setIsCartOpen(false)}
-              className="rounded-full p-2 text-[#212121]/60 hover:bg-[#FFFFFF] hover:text-[#212121] transition-colors"
+              className="rounded-full p-2 text-[#212121]/60 hover:bg-background hover:text-[#212121] transition-colors"
             >
               <X className="h-5 w-5" />
             </button>
@@ -184,14 +184,14 @@ export function SiteHeader() {
                 <p className="text-[#212121]/60">Your cart is beautifully empty.</p>
                 <button
                   onClick={() => setIsCartOpen(false)}
-                  className="mt-6 text-sm font-medium uppercase tracking-wide text-[#A5D6A7] hover:underline"
+                  className="mt-6 text-sm font-medium uppercase tracking-wide text-[#34D399] hover:underline"
                 >
                   Continue Shopping
                 </button>
               </div>
             ) : (
               <div className="flex gap-4">
-                <div className="relative h-24 w-20 flex-shrink-0 overflow-hidden rounded-xl bg-[#FFFFFF]">
+                <div className="relative h-24 w-20 flex-shrink-0 overflow-hidden rounded-xl bg-white border border-[#B2EBF2]/40 shadow-sm">
                   {cartItem.imageUrl && <Image src={cartItem.imageUrl} alt={cartItem.imageAlt} fill sizes="80px" className="object-cover" />}
                 </div>
 
@@ -202,7 +202,7 @@ export function SiteHeader() {
                   </div>
 
                   <div className="flex items-center justify-between">
-                    <div className="flex items-center rounded-full border border-[#B2EBF2] bg-white px-2 py-1">
+                    <div className="flex items-center rounded-full border border-[#B2EBF2] bg-background px-2 py-1">
                       <button
                         onClick={() => updateQuantity(cartItem.quantity - 1)}
                         className="p-1 text-[#212121]/60 hover:text-[#212121]"
@@ -222,7 +222,7 @@ export function SiteHeader() {
 
                     <button
                       onClick={() => updateQuantity(0)}
-                      className="p-2 text-[#212121]/40 hover:text-[#A5D6A7] transition-colors"
+                      className="p-2 text-[#212121]/40 hover:text-[#34D399] transition-colors"
                     >
                       <Trash2 className="h-4 w-4" />
                     </button>
@@ -233,7 +233,7 @@ export function SiteHeader() {
           </div>
 
           {cartQuantity > 0 && cartItem && (
-            <div className="border-t border-[#B2EBF2] bg-[#FFFFFF] p-6">
+            <div className="border-t border-[#B2EBF2] bg-background p-6">
               <div className="mb-4 flex items-center justify-between font-serif text-lg text-[#212121]">
                 <span className="text-[#4DD0E1] text-sm tracking-wide uppercase font-sans">Subtotal</span>
                 <span className="text-[#4DD0E1]">₹{(parseFloat(cartItem.price) * cartItem.quantity).toFixed(2)}</span>
@@ -241,7 +241,7 @@ export function SiteHeader() {
               <button
                 onClick={handleCheckout}
                 disabled={isCheckingOut}
-                className="flex w-full items-center justify-center gap-2 rounded-full bg-[#A5D6A7] px-8 py-4 text-sm font-medium uppercase tracking-wider text-white transition-all hover:bg-[#A5D6A7]/90 disabled:opacity-70"
+                className="flex w-full items-center justify-center gap-2 rounded-full bg-[#34D399] px-8 py-4 text-sm font-medium uppercase tracking-wider text-white transition-all hover:bg-[#34D399]/90 disabled:opacity-70"
               >
                 {isCheckingOut ? (
                   <Loader2 className="h-5 w-5 animate-spin" />

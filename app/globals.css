@@ -4,18 +4,18 @@
 
 :root {
   /* Pure Eva Brand Colors */
-  --eva-beige: #FFFFFF;
-  --eva-rose: #A5D6A7;
+  --eva-beige: #FAFAF9;
+  --eva-rose: #34D399;
   --eva-gold: #4DD0E1;
   --eva-charcoal: #212121;
   
-  --background: #FFFFFF;
+  --background: #FAFAF9;
   --foreground: #212121;
-  --card: #FFFFFF;
+  --card: #FAFAF9;
   --card-foreground: #212121;
-  --popover: #FFFFFF;
+  --popover: #FAFAF9;
   --popover-foreground: #212121;
-  --primary: #A5D6A7;
+  --primary: #34D399;
   --primary-foreground: #FFFFFF;
   --secondary: #4DD0E1;
   --secondary-foreground: #FFFFFF;
@@ -27,7 +27,7 @@
   --destructive-foreground: oklch(0.577 0.245 27.325);
   --border: #B2EBF2;
   --input: #B2EBF2;
-  --ring: #A5D6A7;
+  --ring: #34D399;
   --chart-1: oklch(0.646 0.222 41.116);
   --chart-2: oklch(0.6 0.118 184.704);
   --chart-3: oklch(0.398 0.07 227.392);

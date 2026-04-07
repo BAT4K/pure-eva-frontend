@@ -13,13 +13,13 @@ export default function Store() {
     return (
       <main className="flex min-h-screen flex-col items-center justify-center p-24 bg-[#FFFFFF]">
         <h1 className="text-2xl text-[#212121] mb-4">Connection Issue</h1>
-        <p className="text-[#A5D6A7]">Could not load store data. Please try again.</p>
+        <p className="text-[#34D399]">Could not load store data. Please try again.</p>
       </main>
     );
   }
 
   return (
-    <main className="min-h-screen bg-[#FFFFFF]">
+    <main className="min-h-screen bg-background">
       <ProductHero 
         title={product.title} 
         description={product.description} 

@@ -16,7 +16,7 @@ export default function Home() {
   const compareAtPrice = product && product.compareAtPrice ? parseFloat(product.compareAtPrice) : 299;
 
   return (
-    <main className="bg-[#FFFFFF]">
+    <main className="bg-background">
       <HomeHero />
       <SocialProof />
       <HeroProduct price={price} compareAtPrice={compareAtPrice} />

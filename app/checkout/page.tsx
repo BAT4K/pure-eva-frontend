@@ -85,7 +85,7 @@ export default function CheckoutPage() {
           contact: formData.phone
         },
         theme: {
-          color: "#A5D6A7"
+          color: "#34D399"
         }
       };
 
@@ -106,13 +106,13 @@ export default function CheckoutPage() {
 
   if (!cartItem && !isSuccess) {
     return (
-      <div className="flex h-screen flex-col items-center justify-center bg-[#FFFFFF] px-6">
+      <div className="flex h-screen flex-col items-center justify-center bg-background px-6">
         <ShoppingBag className="mb-6 h-16 w-16 text-[#4DD0E1]/40" />
         <h2 className="mb-2 font-serif text-3xl text-[#212121]">Your cart feels light</h2>
         <p className="mb-8 text-[#212121]/60 text-center">Add our signature cleanser to proceed to checkout.</p>
         <Link 
           href="/store"
-          className="rounded-full bg-[#A5D6A7] px-8 py-3 text-sm font-medium uppercase tracking-wide text-white transition-colors hover:bg-[#81C784]"
+          className="rounded-full bg-[#34D399] px-8 py-3 text-sm font-medium uppercase tracking-wide text-white transition-colors hover:bg-[#10B981]"
         >
           Return to Store
         </Link>
@@ -122,8 +122,8 @@ export default function CheckoutPage() {
 
   if (isSuccess) {
     return (
-      <div className="flex h-screen flex-col items-center justify-center bg-[#FFFFFF] px-6">
-        <Loader2 className="h-10 w-10 animate-spin text-[#A5D6A7] mb-4" />
+      <div className="flex h-screen flex-col items-center justify-center bg-background px-6">
+        <Loader2 className="h-10 w-10 animate-spin text-[#34D399] mb-4" />
         <p className="font-serif text-xl tracking-wide text-[#212121]">Finalizing your order...</p>
       </div>
     );
@@ -133,12 +133,12 @@ export default function CheckoutPage() {
   if (!cartItem) return null;
 
   return (
-    <div className="min-h-screen bg-white pt-24 lg:pt-36">
+    <div className="min-h-screen bg-background pt-24 lg:pt-36">
       <div className="mx-auto flex max-w-7xl flex-col-reverse lg:flex-row">
         
         {/* Left Side - Checkout Form */}
         <div className="flex-1 px-6 pb-12 pt-8 md:px-12 lg:pb-20 lg:pt-8 lg:pr-20">
-          <Link href="/store" className="mb-8 flex items-center gap-2 text-sm text-[#A5D6A7] transition-colors hover:text-[#81C784]">
+          <Link href="/store" className="mb-8 flex items-center gap-2 text-sm text-[#34D399] transition-colors hover:text-[#10B981]">
             <ArrowLeft className="h-4 w-4" />
             <span className="font-medium uppercase tracking-wider">Back to Store</span>
           </Link>
@@ -153,8 +153,8 @@ export default function CheckoutPage() {
             <section>
               <h2 className="mb-4 text-sm font-medium uppercase tracking-widest text-[#4DD0E1]">Contact Information</h2>
               <div className="space-y-4">
-                <input required type="email" name="email" value={formData.email} onChange={handleInputChange} placeholder="Email address" className="w-full rounded-lg border border-[#B2EBF2] bg-[#FFFFFF]/50 px-4 py-3 outline-none transition-colors focus:border-[#A5D6A7] focus:bg-white text-sm" />
-                <input required type="tel" name="phone" value={formData.phone} onChange={handleInputChange} placeholder="Phone number" className="w-full rounded-lg border border-[#B2EBF2] bg-[#FFFFFF]/50 px-4 py-3 outline-none transition-colors focus:border-[#A5D6A7] focus:bg-white text-sm" />
+                <input required type="email" name="email" value={formData.email} onChange={handleInputChange} placeholder="Email address" className="w-full rounded-lg border border-[#B2EBF2] bg-background/50 px-4 py-3 outline-none transition-colors focus:border-[#34D399] focus:bg-background text-sm" />
+                <input required type="tel" name="phone" value={formData.phone} onChange={handleInputChange} placeholder="Phone number" className="w-full rounded-lg border border-[#B2EBF2] bg-background/50 px-4 py-3 outline-none transition-colors focus:border-[#34D399] focus:bg-background text-sm" />
               </div>
             </section>
 
@@ -162,18 +162,18 @@ export default function CheckoutPage() {
             <section>
               <h2 className="mb-4 text-sm font-medium uppercase tracking-widest text-[#4DD0E1]">Shipping Address</h2>
               <div className="grid grid-cols-2 gap-4">
-                <input required type="text" name="firstName" value={formData.firstName} onChange={handleInputChange} placeholder="First name" className="w-full rounded-lg border border-[#B2EBF2] bg-[#FFFFFF]/50 px-4 py-3 outline-none transition-colors focus:border-[#A5D6A7] focus:bg-white text-sm" />
-                <input required type="text" name="lastName" value={formData.lastName} onChange={handleInputChange} placeholder="Last name" className="w-full rounded-lg border border-[#B2EBF2] bg-[#FFFFFF]/50 px-4 py-3 outline-none transition-colors focus:border-[#A5D6A7] focus:bg-white text-sm" />
-                <input required type="text" name="address" value={formData.address} onChange={handleInputChange} placeholder="Address" className="col-span-2 w-full rounded-lg border border-[#B2EBF2] bg-[#FFFFFF]/50 px-4 py-3 outline-none transition-colors focus:border-[#A5D6A7] focus:bg-white text-sm" />
-                <input required type="text" name="city" value={formData.city} onChange={handleInputChange} placeholder="City" className="w-full rounded-lg border border-[#B2EBF2] bg-[#FFFFFF]/50 px-4 py-3 outline-none transition-colors focus:border-[#A5D6A7] focus:bg-white text-sm" />
-                <input required type="text" name="pincode" value={formData.pincode} onChange={handleInputChange} placeholder="PIN code" className="w-full rounded-lg border border-[#B2EBF2] bg-[#FFFFFF]/50 px-4 py-3 outline-none transition-colors focus:border-[#A5D6A7] focus:bg-white text-sm" />
+                <input required type="text" name="firstName" value={formData.firstName} onChange={handleInputChange} placeholder="First name" className="w-full rounded-lg border border-[#B2EBF2] bg-background/50 px-4 py-3 outline-none transition-colors focus:border-[#34D399] focus:bg-background text-sm" />
+                <input required type="text" name="lastName" value={formData.lastName} onChange={handleInputChange} placeholder="Last name" className="w-full rounded-lg border border-[#B2EBF2] bg-background/50 px-4 py-3 outline-none transition-colors focus:border-[#34D399] focus:bg-background text-sm" />
+                <input required type="text" name="address" value={formData.address} onChange={handleInputChange} placeholder="Address" className="col-span-2 w-full rounded-lg border border-[#B2EBF2] bg-background/50 px-4 py-3 outline-none transition-colors focus:border-[#34D399] focus:bg-background text-sm" />
+                <input required type="text" name="city" value={formData.city} onChange={handleInputChange} placeholder="City" className="w-full rounded-lg border border-[#B2EBF2] bg-background/50 px-4 py-3 outline-none transition-colors focus:border-[#34D399] focus:bg-background text-sm" />
+                <input required type="text" name="pincode" value={formData.pincode} onChange={handleInputChange} placeholder="PIN code" className="w-full rounded-lg border border-[#B2EBF2] bg-background/50 px-4 py-3 outline-none transition-colors focus:border-[#34D399] focus:bg-background text-sm" />
               </div>
             </section>
 
             <button 
               type="submit" 
               disabled={isLoading}
-              className="mt-8 flex w-full items-center justify-center gap-2 rounded-full bg-[#A5D6A7] px-8 py-4 text-sm font-medium uppercase tracking-wider text-white shadow-lg transition-all hover:bg-[#81C784] disabled:opacity-70"
+              className="mt-8 flex w-full items-center justify-center gap-2 rounded-full bg-[#34D399] px-8 py-4 text-sm font-medium uppercase tracking-wider text-white shadow-lg transition-all hover:bg-[#10B981] disabled:opacity-70"
             >
               {isLoading ? <Loader2 className="h-5 w-5 animate-spin" /> : "Pay SECURELY Now"}
             </button>
@@ -186,7 +186,7 @@ export default function CheckoutPage() {
         </div>
 
         {/* Right Side - Order Summary */}
-        <div className="w-full border-b border-[#B2EBF2] bg-[#FFFFFF] px-6 pb-12 pt-8 lg:w-[480px] lg:border-b-0 lg:border-l lg:pt-8 lg:pl-12 lg:pr-6 xl:pr-12">
+        <div className="w-full border-b border-[#B2EBF2] bg-background px-6 pb-12 pt-8 lg:w-[480px] lg:border-b-0 lg:border-l lg:pt-8 lg:pl-12 lg:pr-6 xl:pr-12">
           <div className="sticky top-24 lg:top-36">
             <h2 className="mb-6 font-serif text-xl border-b border-[#B2EBF2] pb-4 text-[#212121]">Order Summary</h2>
             

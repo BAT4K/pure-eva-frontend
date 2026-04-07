@@ -30,8 +30,8 @@ export function OurStory() {
             </div>
 
             {/* Floating accent card - Moved to TOP RIGHT to clear the bottom area */}
-            <div className="absolute -top-6 -right-6 hidden rounded-2xl bg-white p-6 shadow-xl lg:block z-30">
-              <p className="font-serif text-3xl text-[#A5D6A7]">6</p>
+            <div className="absolute -top-6 -right-6 hidden rounded-2xl bg-white border border-[#B2EBF2]/40 p-6 shadow-xl lg:block z-30 transition-transform hover:-translate-y-1">
+              <p className="font-serif text-3xl text-[#34D399]">6</p>
               <p className="text-sm text-[#212121]/60">Boys on a Mission</p>
             </div>
           </ScrollReveal>
@@ -50,7 +50,7 @@ export function OurStory() {
               <h2 className="mb-6 font-serif text-3xl leading-tight text-[#212121] md:text-4xl lg:text-5xl">
                 From Curiosity
                 <br />
-                <span className="text-[#A5D6A7]">To Creation</span>
+                <span className="text-[#34D399]">To Creation</span>
               </h2>
             </ScrollReveal>
 

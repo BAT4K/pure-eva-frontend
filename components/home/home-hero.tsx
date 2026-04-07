@@ -5,16 +5,16 @@ import { ScrollReveal } from "@/components/ui/scroll-reveal"
 
 export function HomeHero() {
   return (
-    <section className="relative min-h-screen overflow-hidden bg-[#FFFFFF]">
+    <section className="relative min-h-screen overflow-hidden bg-background">
       {/* Hero Content */}
-      <div className="relative px-6 pb-20 pt-[120px] md:px-12 md:pb-28 lg:px-20 lg:pb-32 lg:pt-[150px]">
+      <div className="relative px-6 pb-20 pt-12 md:px-12 md:pb-28 lg:px-20 lg:pb-32 lg:pt-20">
         <div className="mx-auto grid max-w-7xl items-center gap-12 lg:grid-cols-2 lg:gap-20">
           {/* Left - Text Content */}
           <div className="order-2 lg:order-1">
             <ScrollReveal delay={0.1}>
               <div className="mb-6 flex items-center gap-2">
                 <Leaf className="h-4 w-4 text-[#4DD0E1]" />
-                <span className="text-xs uppercase tracking-[0.2em] text-[#4DD0E1]">
+                <span className="text-xs font-semibold uppercase tracking-[0.2em] text-[#4DD0E1]">
                   Botanical Skincare
                 </span>
               </div>
@@ -24,12 +24,12 @@ export function HomeHero() {
               <h1 className="mb-6 font-serif text-4xl leading-[1.1] text-[#212121] md:text-5xl lg:text-6xl xl:text-7xl">
                 Reveal Your
                 <br />
-                <span className="text-[#A5D6A7]">Natural Radiance</span>
+                <span className="text-[#34D399]">Natural Radiance</span>
               </h1>
             </ScrollReveal>
 
             <ScrollReveal delay={0.3}>
-              <p className="mb-10 max-w-lg text-lg leading-relaxed text-[#212121]/60">
+              <p className="mb-10 max-w-lg text-lg leading-relaxed text-gray-700">
                 Experience the gentle power of nature with our carefully crafted 
                 skincare. Pure ingredients, remarkable results.
               </p>
@@ -38,7 +38,7 @@ export function HomeHero() {
             <ScrollReveal delay={0.4}>
               <Link
                 href="/store"
-                className="group inline-flex items-center gap-3 rounded-full bg-[#A5D6A7] px-10 py-4 text-sm font-medium uppercase tracking-wider text-white shadow-lg transition-all duration-500 hover:scale-[1.02] hover:bg-[#81C784] hover:shadow-2xl hover:shadow-[#A5D6A7]/30"
+                className="group inline-flex items-center gap-3 rounded-full bg-[#34D399] px-10 py-4 text-sm font-medium uppercase tracking-wider text-white shadow-lg transition-all duration-500 hover:scale-[1.02] hover:bg-[#10B981] hover:shadow-2xl hover:shadow-[#34D399]/30"
               >
                 <ShoppingBag className="h-4 w-4 transition-transform group-hover:-translate-y-0.5" />
                 Shop The Cleanser
@@ -46,7 +46,7 @@ export function HomeHero() {
             </ScrollReveal>
 
             <ScrollReveal delay={0.5}>
-              <div className="mt-10 flex flex-wrap items-center gap-6 text-xs text-[#212121]/50">
+              <div className="mt-10 flex flex-wrap items-center gap-6 text-xs font-medium text-gray-700">
                 <span className="flex items-center gap-1.5">
                   <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M5 13l4 4L19 7" />
@@ -73,7 +73,7 @@ export function HomeHero() {
           <div className="order-1 lg:order-2">
             <ScrollReveal delay={0.3}>
               <div className="relative">
-                <div className="absolute -left-10 -top-10 h-48 w-48 rounded-full bg-[#A5D6A7]/8 blur-3xl" />
+                <div className="absolute -left-10 -top-10 h-48 w-48 rounded-full bg-[#34D399]/8 blur-3xl" />
                 <div className="absolute -bottom-10 -right-10 h-56 w-56 rounded-full bg-[#4DD0E1]/8 blur-3xl" />
                 
                 <div className="group relative aspect-[4/5] w-full overflow-hidden rounded-[2rem] bg-gradient-to-br from-[#E0F7FA] to-[#B2EBF2] shadow-[0_30px_80px_-20px_rgba(0,0,0,0.12)]">
@@ -89,13 +89,13 @@ export function HomeHero() {
                   </div>
 
                 {/* Floating badge */}
-                <div className="absolute left-6 top-6 rounded-full bg-white/90 px-4 py-2 text-xs font-medium tracking-wide text-[#4DD0E1] shadow-md backdrop-blur-sm">
+                <div className="absolute left-6 top-6 rounded-full bg-background/90 px-4 py-2 text-xs font-medium tracking-wide text-[#4DD0E1] shadow-md backdrop-blur-sm">
                   New Collection
                 </div>
 
                 {/* Bottom accent */}
-                <div className="absolute bottom-6 right-6 flex items-center gap-2 rounded-full bg-white/90 px-4 py-2 text-xs text-[#212121]/70 shadow-md backdrop-blur-sm">
-                  <span className="h-2 w-2 rounded-full bg-[#A5D6A7]" />
+                <div className="absolute bottom-6 right-6 flex items-center gap-2 rounded-full bg-background/90 px-4 py-2 text-xs font-medium text-gray-800 shadow-md backdrop-blur-sm">
+                  <span className="h-2 w-2 rounded-full bg-[#34D399]" />
                   100% Natural
                 </div>
                 </div>

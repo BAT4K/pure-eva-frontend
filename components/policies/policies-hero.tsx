@@ -4,20 +4,20 @@ export function PoliciesHero() {
   return (
     <section className="relative overflow-hidden bg-[#FFFFFF]">
       {/* Hero Content - Adjusted for fixed header */}
-      <div className="relative px-6 pb-12 pt-[120px] md:px-12 md:pb-16 lg:px-20 lg:pb-20 lg:pt-[150px]">
+      <div className="relative px-6 pb-12 pt-12 md:px-12 md:pb-16 lg:px-20 lg:pb-20 lg:pt-20">
         {/* Decorative elements */}
-        <div className="absolute -right-20 top-0 h-64 w-64 rounded-full bg-[#A5D6A7]/5 blur-3xl" />
+        <div className="absolute -right-20 top-0 h-64 w-64 rounded-full bg-[#34D399]/5 blur-3xl" />
         
         <div className="relative mx-auto max-w-7xl text-center">
           {/* Tagline */}
           <div className="mb-6 flex items-center justify-center gap-3">
-            <div className="h-px w-8 bg-[#A5D6A7]/40" />
-            <FileText className="h-4 w-4 text-[#A5D6A7]" />
-            <span className="text-xs uppercase tracking-[0.25em] text-[#A5D6A7]">
+            <div className="h-px w-8 bg-[#34D399]/40" />
+            <FileText className="h-4 w-4 text-[#34D399]" />
+            <span className="text-xs uppercase tracking-[0.25em] text-[#34D399]">
               Transparency
             </span>
-            <FileText className="h-4 w-4 text-[#A5D6A7]" />
-            <div className="h-px w-8 bg-[#A5D6A7]/40" />
+            <FileText className="h-4 w-4 text-[#34D399]" />
+            <div className="h-px w-8 bg-[#34D399]/40" />
           </div>
 
           {/* Main Heading */}

@@ -8,7 +8,7 @@ export function SocialProof() {
   ]
 
   return (
-    <section className="border-y border-[#B2EBF2] bg-white/40 px-6 py-12 md:px-12 md:py-16 lg:px-20">
+    <section className="border-y border-[#B2EBF2] bg-white px-6 py-12 shadow-[0_8px_40px_-20px_rgba(0,0,0,0.05)] md:px-12 md:py-16 lg:px-20 relative z-10">
       <div className="mx-auto max-w-7xl">
         {/* Header */}
         <p className="mb-10 text-center text-xs uppercase tracking-[0.25em] text-[#212121]/40">
@@ -25,7 +25,7 @@ export function SocialProof() {
               <span className="font-serif text-xl tracking-[0.15em] text-[#212121]/30 transition-colors group-hover:text-[#212121]/50 md:text-2xl">
                 {promise.name}
               </span>
-              <span className="mt-1 text-[10px] uppercase tracking-wider text-[#A5D6A7]/50">
+              <span className="mt-1 text-[10px] uppercase tracking-wider text-[#34D399]/50">
                 {promise.subtitle}
               </span>
             </div>
@@ -35,7 +35,7 @@ export function SocialProof() {
         {/* Testimonial Quote */}
         <div className="mx-auto mt-14 max-w-2xl text-center">
           <div className="mb-4 flex justify-center">
-            <svg className="h-6 w-6 text-[#A5D6A7]/30" fill="currentColor" viewBox="0 0 24 24">
+            <svg className="h-6 w-6 text-[#34D399]/30" fill="currentColor" viewBox="0 0 24 24">
               <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
             </svg>
           </div>

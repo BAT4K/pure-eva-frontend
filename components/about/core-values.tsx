@@ -5,7 +5,7 @@ const values = [
     icon: Droplets,
     title: "Pure",
     description: "We source only the finest natural ingredients, free from parabens, sulfates, and synthetic fragrances. Every formula is a testament to nature's power.",
-    accent: "#A5D6A7",
+    accent: "#34D399",
   },
   {
     icon: Heart,
@@ -17,7 +17,7 @@ const values = [
     icon: Sparkles,
     title: "Effective",
     description: "We blend traditional botanical wisdom with modern science to create products that deliver visible results. Your glow is our proof.",
-    accent: "#A5D6A7",
+    accent: "#34D399",
   },
 ]
 
@@ -37,7 +37,7 @@ export function CoreValues() {
           
           <h2 className="mx-auto max-w-2xl font-serif text-3xl leading-tight text-[#212121] md:text-4xl lg:text-5xl">
             Our Core
-            <span className="text-[#A5D6A7]"> Values</span>
+            <span className="text-[#34D399]"> Values</span>
           </h2>
           
           <p className="mx-auto mt-6 max-w-xl text-[#212121]/60">
@@ -53,7 +53,7 @@ export function CoreValues() {
             return (
               <div
                 key={index}
-                className="group relative rounded-3xl bg-white/70 p-8 shadow-[0_4px_30px_-10px_rgba(0,0,0,0.06)] backdrop-blur-sm transition-all duration-300 hover:bg-white hover:shadow-[0_8px_40px_-10px_rgba(0,0,0,0.1)] lg:p-10"
+                className="group relative rounded-3xl bg-white p-8 border border-[#B2EBF2]/40 shadow-[0_8px_40px_-10px_rgba(33,33,33,0.06)] transition-all duration-300 hover:shadow-[0_12px_50px_-10px_rgba(33,33,33,0.12)] hover:-translate-y-1 lg:p-10"
               >
                 {/* Decorative corner */}
                 <div 

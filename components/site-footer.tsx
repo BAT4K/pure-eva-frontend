@@ -2,7 +2,10 @@
 
 import { useState } from "react"
 import Link from "next/link"
+import Image from "next/image"
 import { Leaf } from "lucide-react"
+import { FaInstagram, FaLinkedinIn } from "react-icons/fa6"
+
 
 const footerLinks = {
   shop: [
@@ -38,7 +41,7 @@ export function SiteFooter() {
   }
 
   return (
-    <footer className="border-t border-[#B2EBF2] bg-white/30">
+    <footer className="border-t border-[#B2EBF2] bg-background/30">
       {/* Newsletter Section */}
       <div className="border-b border-[#B2EBF2] px-6 py-16 md:px-12 lg:px-20">
         <div className="mx-auto max-w-7xl text-center">
@@ -65,7 +68,7 @@ export function SiteFooter() {
               onChange={(e) => setEmail(e.target.value)}
               required
               placeholder="Your email address"
-              className="flex-1 rounded-full border border-[#B2EBF2] bg-white px-6 py-3.5 text-sm text-[#212121] placeholder:text-[#212121]/40 focus:border-[#A5D6A7] focus:outline-none focus:ring-2 focus:ring-[#A5D6A7]/20"
+              className="flex-1 rounded-full border border-[#B2EBF2] bg-background px-6 py-3.5 text-sm text-[#212121] placeholder:text-[#212121]/40 focus:border-[#34D399] focus:outline-none focus:ring-2 focus:ring-[#34D399]/20"
             />
             <button
               type="submit"
@@ -73,7 +76,7 @@ export function SiteFooter() {
               className={`flex min-w-[160px] items-center justify-center whitespace-nowrap rounded-full px-8 py-3.5 text-sm font-medium uppercase tracking-wider text-white shadow-lg transition-all active:scale-95 ${
                 isSubscribed 
                   ? "bg-[#8E9B79] shadow-[#8E9B79]/20" 
-                  : "bg-[#A5D6A7] shadow-[#A5D6A7]/20 hover:bg-[#81C784] hover:shadow-xl hover:shadow-[#A5D6A7]/25"
+                  : "bg-[#34D399] shadow-[#34D399]/20 hover:bg-[#10B981] hover:shadow-xl hover:shadow-[#34D399]/25"
               }`}
             >
               {isSubscribed ? "Welcome! ✨" : "Subscribe"}
@@ -88,9 +91,18 @@ export function SiteFooter() {
           <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-5 md:gap-10">
             {/* Brand Column */}
             <div className="lg:col-span-2">
-              <Link href="/" className="inline-block font-serif text-2xl tracking-wide text-[#212121]">
-                Pure Eva
-              </Link>
+              <div className="flex justify-center lg:justify-start">
+                <Link href="/" className="inline-block hover:opacity-80 transition-opacity">
+                  <Image
+                    src="/pure-eva-logov2.png"
+                    alt="Pure Eva"
+                    width={240}
+                    height={96}
+                    className="h-[60px] md:h-[80px] w-auto object-contain"
+                    priority
+                  />
+                </Link>
+              </div>
               <p className="mt-4 max-w-xs text-sm leading-relaxed text-[#212121]/60">
                 Natural skincare crafted with love, inspired by botanical wisdom, 
                 and designed to reveal your skin&apos;s natural radiance.
@@ -98,26 +110,26 @@ export function SiteFooter() {
               
               <div className="mt-6 flex flex-col gap-1 text-sm text-[#212121]/70">
                 <p>Questions? Reach out to us:</p>
-                <a href="mailto:pureeva25@gmail.com" className="text-[#A5D6A7] hover:underline">
+                <a href="mailto:pureeva25@gmail.com" className="text-[#34D399] hover:underline">
                   pureeva25@gmail.com
                 </a>
               </div>
 
               {/* Social Links */}
-              <div className="mt-6 flex gap-4">
+              <div className="mt-6 flex gap-4 justify-center lg:justify-start">
                 {[
-                  { name: "Instagram", url: "https://www.instagram.com/pure.eva25/" },
-                  { name: "LinkedIn", url: "https://www.linkedin.com/company/pure-eva/" }
+                  { name: "Instagram", url: "https://www.instagram.com/pure.eva25/", icon: FaInstagram },
+                  { name: "LinkedIn", url: "https://www.linkedin.com/company/pure-eva/", icon: FaLinkedinIn }
                 ].map((social) => (
                   <a
                     key={social.name}
                     href={social.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex h-10 px-4 items-center justify-center rounded-full border border-[#B2EBF2] text-[#212121]/60 text-xs font-medium transition-all hover:border-[#A5D6A7] hover:text-[#A5D6A7]"
+                    className="flex h-10 w-10 items-center justify-center rounded-full border border-[#B2EBF2] text-[#212121]/60 transition-all hover:border-[#34D399] hover:text-[#34D399] hover:bg-[#34D399]/5"
                     aria-label={social.name}
                   >
-                    {social.name}
+                    <social.icon className="h-5 w-5" />
                   </a>
                 ))}
               </div>
@@ -133,10 +145,10 @@ export function SiteFooter() {
                   <li key={link.label}>
                     <Link
                       href={link.href}
-                      className="group relative inline-block text-sm text-[#212121]/60 transition-colors duration-300 hover:text-[#A5D6A7] py-1"
+                      className="group relative inline-block text-sm text-[#212121]/60 transition-colors duration-300 hover:text-[#34D399] py-1"
                     >
                       {link.label}
-                      <span className="absolute inset-x-0 -bottom-0.5 h-[1px] scale-x-0 bg-[#A5D6A7] transition-transform duration-500 ease-out origin-left group-hover:scale-x-100" />
+                      <span className="absolute inset-x-0 -bottom-0.5 h-[1px] scale-x-0 bg-[#34D399] transition-transform duration-500 ease-out origin-left group-hover:scale-x-100" />
                     </Link>
                   </li>
                 ))}
@@ -152,10 +164,10 @@ export function SiteFooter() {
                   <li key={link.label}>
                     <Link
                       href={link.href}
-                      className="group relative inline-block text-sm text-[#212121]/60 transition-colors duration-300 hover:text-[#A5D6A7] py-1"
+                      className="group relative inline-block text-sm text-[#212121]/60 transition-colors duration-300 hover:text-[#34D399] py-1"
                     >
                       {link.label}
-                      <span className="absolute inset-x-0 -bottom-0.5 h-[1px] scale-x-0 bg-[#A5D6A7] transition-transform duration-500 ease-out origin-left group-hover:scale-x-100" />
+                      <span className="absolute inset-x-0 -bottom-0.5 h-[1px] scale-x-0 bg-[#34D399] transition-transform duration-500 ease-out origin-left group-hover:scale-x-100" />
                     </Link>
                   </li>
                 ))}
@@ -171,10 +183,10 @@ export function SiteFooter() {
                   <li key={link.label}>
                     <Link
                       href={link.href}
-                      className="group relative inline-block text-sm text-[#212121]/60 transition-colors duration-300 hover:text-[#A5D6A7] py-1"
+                      className="group relative inline-block text-sm text-[#212121]/60 transition-colors duration-300 hover:text-[#34D399] py-1"
                     >
                       {link.label}
-                      <span className="absolute inset-x-0 -bottom-0.5 h-[1px] scale-x-0 bg-[#A5D6A7] transition-transform duration-500 ease-out origin-left group-hover:scale-x-100" />
+                      <span className="absolute inset-x-0 -bottom-0.5 h-[1px] scale-x-0 bg-[#34D399] transition-transform duration-500 ease-out origin-left group-hover:scale-x-100" />
                     </Link>
                   </li>
                 ))}
@@ -188,10 +200,10 @@ export function SiteFooter() {
               &copy; {new Date().getFullYear()} Pure Eva. All rights reserved.
             </p>
             <div className="flex gap-6 text-xs text-[#212121]/50">
-              <Link href="/policies" className="transition-colors hover:text-[#A5D6A7]">
+              <Link href="/policies" className="transition-colors hover:text-[#34D399]">
                 Privacy Policy
               </Link>
-              <Link href="/policies" className="transition-colors hover:text-[#A5D6A7]">
+              <Link href="/policies" className="transition-colors hover:text-[#34D399]">
                 Terms of Service
               </Link>
             </div>

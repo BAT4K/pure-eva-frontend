@@ -99,7 +99,7 @@ function IngredientCard({
       </div>
 
       {/* Bottom accent line */}
-      <div className="absolute bottom-0 left-0 h-1 w-0 bg-gradient-to-r from-[#4DD0E1] to-[#A5D6A7] transition-all duration-300 group-hover:w-full" />
+      <div className="absolute bottom-0 left-0 h-1 w-0 bg-gradient-to-r from-[#4DD0E1] to-[#34D399] transition-all duration-300 group-hover:w-full" />
     </article>
   )
 }

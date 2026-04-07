@@ -7,7 +7,7 @@ export function IngredientsHero() {
       <div className="relative px-6 pb-16 pt-32 md:px-12 md:pb-24 md:pt-40 lg:px-20 lg:pb-28 lg:pt-48">
         {/* Decorative elements */}
         <div className="absolute -right-20 top-0 h-80 w-80 rounded-full bg-[#4DD0E1]/8 blur-3xl" />
-        <div className="absolute -left-20 bottom-0 h-64 w-64 rounded-full bg-[#A5D6A7]/5 blur-3xl" />
+        <div className="absolute -left-20 bottom-0 h-64 w-64 rounded-full bg-[#34D399]/5 blur-3xl" />
         
         <div className="relative mx-auto max-w-7xl text-center">
           {/* Tagline */}
