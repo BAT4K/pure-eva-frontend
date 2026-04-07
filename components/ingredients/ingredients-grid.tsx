@@ -73,33 +73,33 @@ function IngredientCard({
       style={{ animationDelay: `${index * 100}ms` }}
     >
       {/* Decorative accent */}
-      <div className="absolute -right-8 -top-8 h-24 w-24 rounded-full bg-[#A88B67]/5 transition-transform duration-500 group-hover:scale-150" />
+      <div className="absolute -right-8 -top-8 h-24 w-24 rounded-full bg-[#4DD0E1]/5 transition-transform duration-500 group-hover:scale-150" />
       
       {/* Botanical illustration placeholder */}
-      <div className="relative mb-6 flex aspect-square max-w-[140px] items-center justify-center overflow-hidden rounded-2xl bg-gradient-to-br from-[#F7F4F0] to-[#EDE9E4]">
+      <div className="relative mb-6 flex aspect-square max-w-[140px] items-center justify-center overflow-hidden rounded-2xl bg-gradient-to-br from-[#FFFFFF] to-[#E0F7FA]">
         <div className="absolute inset-0 flex flex-col items-center justify-center transition-transform duration-700 ease-out group-hover:scale-105">
           <div className="rounded-full bg-white/80 p-4 shadow-sm">
-            <Icon className="h-10 w-10 text-[#A88B67]" strokeWidth={1.5} />
+            <Icon className="h-10 w-10 text-[#4DD0E1]" strokeWidth={1.5} />
           </div>
         </div>
         {/* Origin badge */}
-        <span className="absolute bottom-2 right-2 rounded-full bg-white/90 px-2 py-0.5 text-[10px] font-medium tracking-wide text-[#A88B67] shadow-sm">
+        <span className="absolute bottom-2 right-2 rounded-full bg-white/90 px-2 py-0.5 text-[10px] font-medium tracking-wide text-[#4DD0E1] shadow-sm">
           {ingredient.origin}
         </span>
       </div>
 
       {/* Content */}
       <div className="relative">
-        <h3 className="mb-2 font-serif text-xl text-[#2C2C2C]">
+        <h3 className="mb-2 font-serif text-xl text-[#212121]">
           {ingredient.name}
         </h3>
-        <p className="text-sm leading-relaxed text-[#2C2C2C]/60">
+        <p className="text-sm leading-relaxed text-[#212121]/60">
           {ingredient.description}
         </p>
       </div>
 
       {/* Bottom accent line */}
-      <div className="absolute bottom-0 left-0 h-1 w-0 bg-gradient-to-r from-[#A88B67] to-[#B87A7A] transition-all duration-300 group-hover:w-full" />
+      <div className="absolute bottom-0 left-0 h-1 w-0 bg-gradient-to-r from-[#4DD0E1] to-[#A5D6A7] transition-all duration-300 group-hover:w-full" />
     </article>
   )
 }

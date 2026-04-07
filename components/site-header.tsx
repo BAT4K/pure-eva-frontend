@@ -16,7 +16,7 @@ export function SiteHeader() {
 
   return (
     <>
-      <header className="fixed top-0 left-0 w-full z-50 bg-[#F7F4F0]/80 backdrop-blur-md border-b border-[#E5E0DA]/40 px-6 py-4 md:px-12 lg:px-20">
+      <header className="fixed top-0 left-0 w-full z-50 bg-[#FFFFFF]/80 backdrop-blur-md border-b border-[#B2EBF2]/40 px-6 py-4 md:px-12 lg:px-20">
         <div className="mx-auto flex max-w-7xl items-center justify-between">
           <Link href="/" className="relative z-[60] flex items-center hover:opacity-80 transition-opacity">
             <Image
@@ -33,34 +33,34 @@ export function SiteHeader() {
           <nav className="hidden items-center gap-8 text-base tracking-wide md:flex">
             <Link
               href="/store"
-              className={`group relative transition-colors duration-300 ${pathname === '/store' ? 'text-[#B87A7A] font-medium' : 'text-[#2C2C2C]/80 hover:text-[#B87A7A]'}`}
+              className={`group relative transition-colors duration-300 ${pathname === '/store' ? 'text-[#A5D6A7] font-medium' : 'text-[#212121]/80 hover:text-[#A5D6A7]'}`}
             >
               Store
-              <span className={`absolute inset-x-0 -bottom-1 h-[1px] bg-[#B87A7A] transition-transform duration-500 ease-out origin-center ${pathname === '/store' ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'}`} />
+              <span className={`absolute inset-x-0 -bottom-1 h-[1px] bg-[#A5D6A7] transition-transform duration-500 ease-out origin-center ${pathname === '/store' ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'}`} />
             </Link>
             <Link
               href="/about"
-              className={`group relative transition-colors duration-300 ${pathname === '/about' ? 'text-[#B87A7A] font-medium' : 'text-[#2C2C2C]/80 hover:text-[#B87A7A]'}`}
+              className={`group relative transition-colors duration-300 ${pathname === '/about' ? 'text-[#A5D6A7] font-medium' : 'text-[#212121]/80 hover:text-[#A5D6A7]'}`}
             >
               About
-              <span className={`absolute inset-x-0 -bottom-1 h-[1px] bg-[#B87A7A] transition-transform duration-500 ease-out origin-center ${pathname === '/about' ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'}`} />
+              <span className={`absolute inset-x-0 -bottom-1 h-[1px] bg-[#A5D6A7] transition-transform duration-500 ease-out origin-center ${pathname === '/about' ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'}`} />
             </Link>
           </nav>
           <div className="relative z-[60] flex items-center gap-2">
             <button
               onClick={() => setIsCartOpen(true)}
-              className="relative p-2 text-[#2C2C2C] transition-colors hover:text-[#B87A7A]"
+              className="relative p-2 text-[#212121] transition-colors hover:text-[#A5D6A7]"
             >
               <ShoppingBag className="h-6 w-6" />
               {cartQuantity > 0 && (
-                <span className="absolute -right-0 -top-0 flex h-4 w-4 items-center justify-center rounded-full bg-[#B87A7A] text-[10px] text-white">
+                <span className="absolute -right-0 -top-0 flex h-4 w-4 items-center justify-center rounded-full bg-[#A5D6A7] text-[10px] text-white">
                   {cartQuantity}
                 </span>
               )}
             </button>
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="p-2 text-[#2C2C2C] md:hidden"
+              className="p-2 text-[#212121] md:hidden"
             >
               {isMobileMenuOpen ? <X className="h-7 w-7" /> : <Menu className="h-7 w-7" />}
             </button>
@@ -86,10 +86,10 @@ export function SiteHeader() {
               animate={{ x: 0 }}
               exit={{ x: "-100%" }}
               transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
-              className="fixed inset-y-0 left-0 z-[70] flex w-[90%] max-w-sm flex-col bg-[#F7F4F0] shadow-2xl md:hidden"
+              className="fixed inset-y-0 left-0 z-[70] flex w-[90%] max-w-sm flex-col bg-[#FFFFFF] shadow-2xl md:hidden"
             >
               {/* Drawer Header */}
-              <div className="flex items-center justify-between border-b border-[#E5E0DA] px-6 py-8">
+              <div className="flex items-center justify-between border-b border-[#B2EBF2] px-6 py-8">
                 <Link href="/" onClick={() => setIsMobileMenuOpen(false)} className="flex items-center hover:opacity-80 transition-opacity">
                   <Image
                     src="/pure-eva-logov2.png"
@@ -103,7 +103,7 @@ export function SiteHeader() {
                 </Link>
                 <button
                   onClick={() => setIsMobileMenuOpen(false)}
-                  className="rounded-full p-2 text-[#2C2C2C]/60 transition-colors hover:bg-white/50 hover:text-[#2C2C2C]"
+                  className="rounded-full p-2 text-[#212121]/60 transition-colors hover:bg-white/50 hover:text-[#212121]"
                 >
                   <X className="h-6 w-6" />
                 </button>
@@ -125,7 +125,7 @@ export function SiteHeader() {
                     <Link
                       href={item.href}
                       onClick={() => setIsMobileMenuOpen(false)}
-                      className={`block py-2 font-serif text-4xl transition-colors ${pathname === item.href ? 'text-[#B87A7A]' : 'text-[#2C2C2C] hover:text-[#B87A7A]'}`}
+                      className={`block py-2 font-serif text-4xl transition-colors ${pathname === item.href ? 'text-[#A5D6A7]' : 'text-[#212121] hover:text-[#A5D6A7]'}`}
                     >
                       {item.name}
                     </Link>
@@ -138,14 +138,14 @@ export function SiteHeader() {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.5, duration: 0.5 }}
-                className="border-t border-[#E5E0DA] px-6 py-8"
+                className="border-t border-[#B2EBF2] px-6 py-8"
               >
-                <a href="mailto:pureeva25@gmail.com" className="mb-4 block text-sm text-[#2C2C2C]/60 hover:text-[#B87A7A]">
+                <a href="mailto:pureeva25@gmail.com" className="mb-4 block text-sm text-[#212121]/60 hover:text-[#A5D6A7]">
                   pureeva25@gmail.com
                 </a>
-                <div className="flex gap-6 text-sm text-[#2C2C2C]/60">
-                  <a href="https://www.instagram.com/pure.eva25/" target="_blank" rel="noopener noreferrer" className="hover:text-[#B87A7A]">Instagram</a>
-                  <a href="https://www.linkedin.com/company/pure-eva/" target="_blank" rel="noopener noreferrer" className="hover:text-[#B87A7A]">LinkedIn</a>
+                <div className="flex gap-6 text-sm text-[#212121]/60">
+                  <a href="https://www.instagram.com/pure.eva25/" target="_blank" rel="noopener noreferrer" className="hover:text-[#A5D6A7]">Instagram</a>
+                  <a href="https://www.linkedin.com/company/pure-eva/" target="_blank" rel="noopener noreferrer" className="hover:text-[#A5D6A7]">LinkedIn</a>
                 </div>
               </motion.div>
             </motion.div>
@@ -163,15 +163,15 @@ export function SiteHeader() {
 
       {/* --- CART DRAWER UI --- */}
       <div
-        className={`fixed top-0 right-0 z-[70] h-full w-full max-w-md bg-[#F7F4F0] shadow-2xl transition-transform duration-300 ease-in-out ${isCartOpen ? "translate-x-0" : "translate-x-full"
+        className={`fixed top-0 right-0 z-[70] h-full w-full max-w-md bg-[#FFFFFF] shadow-2xl transition-transform duration-300 ease-in-out ${isCartOpen ? "translate-x-0" : "translate-x-full"
           }`}
       >
         <div className="flex h-full flex-col">
-          <div className="flex items-center justify-between border-b border-[#E5E0DA] p-6">
-            <h2 className="font-serif text-2xl text-[#2C2C2C]">Your Cart</h2>
+          <div className="flex items-center justify-between border-b border-[#B2EBF2] p-6">
+            <h2 className="font-serif text-2xl text-[#212121]">Your Cart</h2>
             <button
               onClick={() => setIsCartOpen(false)}
-              className="rounded-full p-2 text-[#2C2C2C]/60 hover:bg-[#F7F4F0] hover:text-[#2C2C2C] transition-colors"
+              className="rounded-full p-2 text-[#212121]/60 hover:bg-[#FFFFFF] hover:text-[#212121] transition-colors"
             >
               <X className="h-5 w-5" />
             </button>
@@ -180,41 +180,41 @@ export function SiteHeader() {
           <div className="flex-1 overflow-y-auto p-6">
             {cartQuantity === 0 || !cartItem ? (
               <div className="flex h-full flex-col items-center justify-center text-center">
-                <ShoppingBag className="mb-4 h-12 w-12 text-[#E5E0DA]" />
-                <p className="text-[#2C2C2C]/60">Your cart is beautifully empty.</p>
+                <ShoppingBag className="mb-4 h-12 w-12 text-[#B2EBF2]" />
+                <p className="text-[#212121]/60">Your cart is beautifully empty.</p>
                 <button
                   onClick={() => setIsCartOpen(false)}
-                  className="mt-6 text-sm font-medium uppercase tracking-wide text-[#B87A7A] hover:underline"
+                  className="mt-6 text-sm font-medium uppercase tracking-wide text-[#A5D6A7] hover:underline"
                 >
                   Continue Shopping
                 </button>
               </div>
             ) : (
               <div className="flex gap-4">
-                <div className="relative h-24 w-20 flex-shrink-0 overflow-hidden rounded-xl bg-[#F7F4F0]">
+                <div className="relative h-24 w-20 flex-shrink-0 overflow-hidden rounded-xl bg-[#FFFFFF]">
                   {cartItem.imageUrl && <Image src={cartItem.imageUrl} alt={cartItem.imageAlt} fill sizes="80px" className="object-cover" />}
                 </div>
 
                 <div className="flex flex-1 flex-col justify-between">
                   <div>
-                    <h3 className="font-serif text-lg text-[#2C2C2C] line-clamp-1">{cartItem.title}</h3>
-                    <p className="text-sm text-[#2C2C2C]/60">₹{cartItem.price}</p>
+                    <h3 className="font-serif text-lg text-[#212121] line-clamp-1">{cartItem.title}</h3>
+                    <p className="text-sm text-[#212121]/60">₹{cartItem.price}</p>
                   </div>
 
                   <div className="flex items-center justify-between">
-                    <div className="flex items-center rounded-full border border-[#E5E0DA] bg-white px-2 py-1">
+                    <div className="flex items-center rounded-full border border-[#B2EBF2] bg-white px-2 py-1">
                       <button
                         onClick={() => updateQuantity(cartItem.quantity - 1)}
-                        className="p-1 text-[#2C2C2C]/60 hover:text-[#2C2C2C]"
+                        className="p-1 text-[#212121]/60 hover:text-[#212121]"
                       >
                         <Minus className="h-3 w-3" />
                       </button>
-                      <span className="w-8 text-center text-sm font-medium text-[#2C2C2C]">
+                      <span className="w-8 text-center text-sm font-medium text-[#212121]">
                         {cartItem.quantity}
                       </span>
                       <button
                         onClick={() => updateQuantity(cartItem.quantity + 1)}
-                        className="p-1 text-[#2C2C2C]/60 hover:text-[#2C2C2C]"
+                        className="p-1 text-[#212121]/60 hover:text-[#212121]"
                       >
                         <Plus className="h-3 w-3" />
                       </button>
@@ -222,7 +222,7 @@ export function SiteHeader() {
 
                     <button
                       onClick={() => updateQuantity(0)}
-                      className="p-2 text-[#2C2C2C]/40 hover:text-[#B87A7A] transition-colors"
+                      className="p-2 text-[#212121]/40 hover:text-[#A5D6A7] transition-colors"
                     >
                       <Trash2 className="h-4 w-4" />
                     </button>
@@ -233,15 +233,15 @@ export function SiteHeader() {
           </div>
 
           {cartQuantity > 0 && cartItem && (
-            <div className="border-t border-[#E5E0DA] bg-[#F7F4F0] p-6">
-              <div className="mb-4 flex items-center justify-between font-serif text-lg text-[#2C2C2C]">
-                <span className="text-[#A88B67] text-sm tracking-wide uppercase font-sans">Subtotal</span>
-                <span className="text-[#A88B67]">₹{(parseFloat(cartItem.price) * cartItem.quantity).toFixed(2)}</span>
+            <div className="border-t border-[#B2EBF2] bg-[#FFFFFF] p-6">
+              <div className="mb-4 flex items-center justify-between font-serif text-lg text-[#212121]">
+                <span className="text-[#4DD0E1] text-sm tracking-wide uppercase font-sans">Subtotal</span>
+                <span className="text-[#4DD0E1]">₹{(parseFloat(cartItem.price) * cartItem.quantity).toFixed(2)}</span>
               </div>
               <button
                 onClick={handleCheckout}
                 disabled={isCheckingOut}
-                className="flex w-full items-center justify-center gap-2 rounded-full bg-[#B87A7A] px-8 py-4 text-sm font-medium uppercase tracking-wider text-white transition-all hover:bg-[#B87A7A]/90 disabled:opacity-70"
+                className="flex w-full items-center justify-center gap-2 rounded-full bg-[#A5D6A7] px-8 py-4 text-sm font-medium uppercase tracking-wider text-white transition-all hover:bg-[#A5D6A7]/90 disabled:opacity-70"
               >
                 {isCheckingOut ? (
                   <Loader2 className="h-5 w-5 animate-spin" />
@@ -249,7 +249,7 @@ export function SiteHeader() {
                   "Proceed to Checkout"
                 )}
               </button>
-              <p className="mt-4 text-center text-xs text-[#2C2C2C]/70">
+              <p className="mt-4 text-center text-xs text-[#212121]/70">
                 Shipping & taxes calculated at checkout
               </p>
             </div>

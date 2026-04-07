@@ -11,15 +11,15 @@ export default function Store() {
   
   if (!product) {
     return (
-      <main className="flex min-h-screen flex-col items-center justify-center p-24 bg-[#F7F4F0]">
-        <h1 className="text-2xl text-[#2C2C2C] mb-4">Connection Issue</h1>
-        <p className="text-[#B87A7A]">Could not load store data. Please try again.</p>
+      <main className="flex min-h-screen flex-col items-center justify-center p-24 bg-[#FFFFFF]">
+        <h1 className="text-2xl text-[#212121] mb-4">Connection Issue</h1>
+        <p className="text-[#A5D6A7]">Could not load store data. Please try again.</p>
       </main>
     );
   }
 
   return (
-    <main className="min-h-screen bg-[#F7F4F0]">
+    <main className="min-h-screen bg-[#FFFFFF]">
       <ProductHero 
         title={product.title} 
         description={product.description} 

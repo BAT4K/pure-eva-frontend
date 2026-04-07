@@ -26,17 +26,17 @@ export function WhyChooseUs() {
   ]
 
   return (
-    <section className="border-t border-[#E5E0DA] bg-white/40 px-6 py-20 md:px-12 md:py-28 lg:px-20 lg:py-32">
+    <section className="border-t border-[#B2EBF2] bg-white/40 px-6 py-20 md:px-12 md:py-28 lg:px-20 lg:py-32">
       <div className="mx-auto max-w-7xl">
         {/* Section Header */}
         <div className="mb-16 text-center">
-          <span className="mb-4 inline-block text-xs uppercase tracking-[0.2em] text-[#A88B67]">
+          <span className="mb-4 inline-block text-xs uppercase tracking-[0.2em] text-[#4DD0E1]">
             Our Promise
           </span>
-          <h2 className="font-serif text-3xl text-[#2C2C2C] md:text-4xl lg:text-5xl">
+          <h2 className="font-serif text-3xl text-[#212121] md:text-4xl lg:text-5xl">
             Why Choose Pure Eva
           </h2>
-          <p className="mx-auto mt-4 max-w-xl text-[#2C2C2C]/60">
+          <p className="mx-auto mt-4 max-w-xl text-[#212121]/60">
             We believe in skincare that works in harmony with your body, 
             not against it. Here&apos;s what sets us apart.
           </p>
@@ -47,47 +47,47 @@ export function WhyChooseUs() {
           {reasons.map((reason, index) => (
             <div 
               key={reason.title}
-              className="group relative overflow-hidden rounded-3xl bg-[#F7F4F0] p-8 transition-all hover:shadow-lg lg:p-10"
+              className="group relative overflow-hidden rounded-3xl bg-[#FFFFFF] p-8 transition-all hover:shadow-lg lg:p-10"
             >
               {/* Decorative number */}
-              <span className="absolute -right-4 -top-6 font-serif text-[120px] leading-none text-[#B87A7A]/5">
+              <span className="absolute -right-4 -top-6 font-serif text-[120px] leading-none text-[#A5D6A7]/5">
                 {index + 1}
               </span>
 
               {/* Icon */}
               <div className="relative mb-6 inline-flex h-16 w-16 items-center justify-center rounded-2xl bg-white shadow-md transition-transform group-hover:-translate-y-1 group-hover:shadow-lg">
-                <reason.icon className="h-7 w-7 text-[#B87A7A]" />
+                <reason.icon className="h-7 w-7 text-[#A5D6A7]" />
               </div>
 
               {/* Content */}
-              <h3 className="relative mb-3 font-serif text-2xl text-[#2C2C2C]">
+              <h3 className="relative mb-3 font-serif text-2xl text-[#212121]">
                 {reason.title}
               </h3>
               
-              <p className="relative mb-6 leading-relaxed text-[#2C2C2C]/60">
+              <p className="relative mb-6 leading-relaxed text-[#212121]/60">
                 {reason.description}
               </p>
 
               {/* Stat */}
-              <div className="relative flex items-baseline gap-2 border-t border-[#E5E0DA] pt-6">
-                <span className="font-serif text-3xl text-[#B87A7A]">{reason.stat}</span>
-                <span className="text-sm text-[#2C2C2C]/50">{reason.statLabel}</span>
+              <div className="relative flex items-baseline gap-2 border-t border-[#B2EBF2] pt-6">
+                <span className="font-serif text-3xl text-[#A5D6A7]">{reason.stat}</span>
+                <span className="text-sm text-[#212121]/50">{reason.statLabel}</span>
               </div>
 
               {/* Hover accent */}
-              <div className="absolute bottom-0 left-0 h-1 w-0 bg-[#B87A7A] transition-all duration-300 group-hover:w-full" />
+              <div className="absolute bottom-0 left-0 h-1 w-0 bg-[#A5D6A7] transition-all duration-300 group-hover:w-full" />
             </div>
           ))}
         </div>
 
         {/* Bottom CTA */}
         <div className="mt-16 text-center">
-          <p className="mb-6 text-[#2C2C2C]/60">
+          <p className="mb-6 text-[#212121]/60">
             Ready to experience the Pure Eva difference?
           </p>
           <a
             href="/about"
-            className="inline-flex items-center gap-2 text-sm font-medium uppercase tracking-wider text-[#B87A7A] transition-colors hover:text-[#A66B6B]"
+            className="inline-flex items-center gap-2 text-sm font-medium uppercase tracking-wider text-[#A5D6A7] transition-colors hover:text-[#81C784]"
           >
             Learn More About Us
             <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">

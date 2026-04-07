@@ -34,15 +34,15 @@ export function FullIngredientList() {
         {/* Section Header */}
         <div className="mb-10 text-center">
           <div className="mb-4 flex items-center justify-center gap-2">
-            <FileText className="h-5 w-5 text-[#A88B67]" />
-            <span className="text-xs uppercase tracking-[0.2em] text-[#A88B67]">
+            <FileText className="h-5 w-5 text-[#4DD0E1]" />
+            <span className="text-xs uppercase tracking-[0.2em] text-[#4DD0E1]">
               Full Transparency
             </span>
           </div>
-          <h2 className="font-serif text-3xl text-[#2C2C2C] md:text-4xl">
+          <h2 className="font-serif text-3xl text-[#212121] md:text-4xl">
             Complete Ingredient Lists
           </h2>
-          <p className="mx-auto mt-4 max-w-xl text-[#2C2C2C]/60">
+          <p className="mx-auto mt-4 max-w-xl text-[#212121]/60">
             We believe in complete transparency. Here you&apos;ll find the exact 
             formulation and concentration ranges for the Urban Reset Gel Cleanser.
           </p>
@@ -55,23 +55,23 @@ export function FullIngredientList() {
               <AccordionItem 
                 key={index} 
                 value={`item-${index}`}
-                className="border-[#E5E0DA]"
+                className="border-[#B2EBF2]"
               >
-                <AccordionTrigger className="py-5 text-left font-serif text-lg text-[#2C2C2C] hover:text-[#A88B67] hover:no-underline">
+                <AccordionTrigger className="py-5 text-left font-serif text-lg text-[#212121] hover:text-[#4DD0E1] hover:no-underline">
                   {category.title}
                 </AccordionTrigger>
                 <AccordionContent className="pb-6">
-                  <div className="rounded-xl bg-[#F7F4F0] p-5">
-                    <ul className="grid gap-2 text-sm text-[#2C2C2C]/70 sm:grid-cols-2">
+                  <div className="rounded-xl bg-[#FFFFFF] p-5">
+                    <ul className="grid gap-2 text-sm text-[#212121]/70 sm:grid-cols-2">
                       {category.ingredients.map((ingredient, i) => (
                         <li key={i} className="flex items-start gap-2">
-                          <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-[#A88B67]" />
+                          <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-[#4DD0E1]" />
                           <span>{ingredient}</span>
                         </li>
                       ))}
                     </ul>
                   </div>
-                  <p className="mt-4 text-xs text-[#2C2C2C]/50">
+                  <p className="mt-4 text-xs text-[#212121]/50">
                     * All ingredients are ethically sourced and cruelty-free. 
                     No parabens, sulfates, or synthetic fragrances.
                   </p>
@@ -82,9 +82,9 @@ export function FullIngredientList() {
         </div>
 
         {/* Trust note */}
-        <div className="mt-8 rounded-xl border border-[#A88B67]/20 bg-[#A88B67]/5 p-5 text-center">
-          <p className="text-sm text-[#2C2C2C]/70">
-            <span className="font-medium text-[#A88B67]">Our Promise:</span>{" "}
+        <div className="mt-8 rounded-xl border border-[#4DD0E1]/20 bg-[#4DD0E1]/5 p-5 text-center">
+          <p className="text-sm text-[#212121]/70">
+            <span className="font-medium text-[#4DD0E1]">Our Promise:</span>{" "}
             Every ingredient serves a purpose. We never use fillers, and we always 
             list ingredients in order of concentration as required by international standards.
           </p>

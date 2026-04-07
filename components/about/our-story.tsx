@@ -21,41 +21,41 @@ export function OurStory() {
               />
               
               {/* Subtle dark overlay */}
-              <div className="absolute inset-0 bg-[#2C2C2C]/5 z-10" />
+              <div className="absolute inset-0 bg-[#212121]/5 z-10" />
 
               {/* Year badge - Moved to TOP LEFT to avoid bottle text */}
               <div className="absolute top-6 left-6 rounded-full bg-white/90 px-4 py-2 shadow-lg backdrop-blur-sm z-20">
-                <span className="font-serif text-sm text-[#A88B67]">Est. 2025</span>
+                <span className="font-serif text-sm text-[#4DD0E1]">Est. 2025</span>
               </div>
             </div>
 
             {/* Floating accent card - Moved to TOP RIGHT to clear the bottom area */}
             <div className="absolute -top-6 -right-6 hidden rounded-2xl bg-white p-6 shadow-xl lg:block z-30">
-              <p className="font-serif text-3xl text-[#B87A7A]">6</p>
-              <p className="text-sm text-[#2C2C2C]/60">Boys on a Mission</p>
+              <p className="font-serif text-3xl text-[#A5D6A7]">6</p>
+              <p className="text-sm text-[#212121]/60">Boys on a Mission</p>
             </div>
           </ScrollReveal>
 
           <div>
             <ScrollReveal delay={0.1}>
               <div className="mb-4 flex items-center gap-2">
-                <div className="h-px w-6 bg-[#A88B67]/40" />
-                <span className="text-xs uppercase tracking-[0.2em] text-[#A88B67]">
+                <div className="h-px w-6 bg-[#4DD0E1]/40" />
+                <span className="text-xs uppercase tracking-[0.2em] text-[#4DD0E1]">
                   Our Journey
                 </span>
               </div>
             </ScrollReveal>
 
             <ScrollReveal delay={0.2}>
-              <h2 className="mb-6 font-serif text-3xl leading-tight text-[#2C2C2C] md:text-4xl lg:text-5xl">
+              <h2 className="mb-6 font-serif text-3xl leading-tight text-[#212121] md:text-4xl lg:text-5xl">
                 From Curiosity
                 <br />
-                <span className="text-[#B87A7A]">To Creation</span>
+                <span className="text-[#A5D6A7]">To Creation</span>
               </h2>
             </ScrollReveal>
 
             <ScrollReveal delay={0.3}>
-              <div className="space-y-6 text-[#2C2C2C]/70">
+              <div className="space-y-6 text-[#212121]/70">
                 <p className="leading-relaxed">
                   Six boys, all from different backgrounds, but with one common frustration — every skincare product they used felt either too harsh, too chemical-heavy, or simply not made for them. Late-night conversations slowly turned into curiosity, and curiosity turned into a question: Why isn&apos;t skincare simple, honest, and natural anymore?
                 </p>
@@ -73,16 +73,16 @@ export function OurStory() {
             <ScrollReveal delay={0.4}>
               <div className="mt-10 flex gap-10">
                 <div>
-                  <p className="font-serif text-3xl text-[#2C2C2C]">1</p>
-                  <p className="text-sm text-[#2C2C2C]/50">Hero Product</p>
+                  <p className="font-serif text-3xl text-[#212121]">1</p>
+                  <p className="text-sm text-[#212121]/50">Hero Product</p>
                 </div>
                 <div>
-                  <p className="font-serif text-3xl text-[#2C2C2C]">11</p>
-                  <p className="text-sm text-[#2C2C2C]/50">Clean Actives</p>
+                  <p className="font-serif text-3xl text-[#212121]">11</p>
+                  <p className="text-sm text-[#212121]/50">Clean Actives</p>
                 </div>
                 <div>
-                  <p className="font-serif text-3xl text-[#2C2C2C]">100%</p>
-                  <p className="text-sm text-[#2C2C2C]/50">Honest</p>
+                  <p className="font-serif text-3xl text-[#212121]">100%</p>
+                  <p className="text-sm text-[#212121]/50">Honest</p>
                 </div>
               </div>
             </ScrollReveal>

@@ -169,7 +169,7 @@ export function PoliciesContent() {
           {/* Sticky Sidebar Navigation */}
           <aside className="lg:w-72 lg:flex-shrink-0">
             <nav className="lg:sticky lg:top-8">
-              <h2 className="mb-4 text-xs font-medium uppercase tracking-wider text-[#2C2C2C]/50">
+              <h2 className="mb-4 text-xs font-medium uppercase tracking-wider text-[#212121]/50">
                 Policies
               </h2>
               <ul className="flex flex-row gap-2 overflow-x-auto pb-2 lg:flex-col lg:gap-1 lg:pb-0">
@@ -183,13 +183,13 @@ export function PoliciesContent() {
                         onClick={() => setActivePolicy(policy.id as keyof typeof policyContent)}
                         className={`flex w-full items-center gap-3 whitespace-nowrap rounded-xl px-4 py-3 text-left transition-all lg:rounded-lg ${
                           isActive
-                            ? "bg-white text-[#B87A7A] shadow-md shadow-[#B87A7A]/5"
-                            : "text-[#2C2C2C]/70 hover:bg-white/50 hover:text-[#2C2C2C]"
+                            ? "bg-white text-[#A5D6A7] shadow-md shadow-[#A5D6A7]/5"
+                            : "text-[#212121]/70 hover:bg-white/50 hover:text-[#212121]"
                         }`}
                       >
-                        <Icon className={`h-4 w-4 flex-shrink-0 ${isActive ? "text-[#B87A7A]" : "text-[#2C2C2C]/40"}`} />
+                        <Icon className={`h-4 w-4 flex-shrink-0 ${isActive ? "text-[#A5D6A7]" : "text-[#212121]/40"}`} />
                         <span className="text-sm font-medium">{policy.label}</span>
-                        <ChevronRight className={`ml-auto hidden h-4 w-4 lg:block ${isActive ? "text-[#B87A7A]" : "text-[#2C2C2C]/20"}`} />
+                        <ChevronRight className={`ml-auto hidden h-4 w-4 lg:block ${isActive ? "text-[#A5D6A7]" : "text-[#212121]/20"}`} />
                       </button>
                     </li>
                   )
@@ -197,16 +197,16 @@ export function PoliciesContent() {
               </ul>
               
               {/* Help Box */}
-              <div className="mt-8 hidden rounded-2xl border border-[#E5E0DA] bg-white/60 p-6 lg:block">
-                <h3 className="mb-2 font-serif text-lg text-[#2C2C2C]">
+              <div className="mt-8 hidden rounded-2xl border border-[#B2EBF2] bg-white/60 p-6 lg:block">
+                <h3 className="mb-2 font-serif text-lg text-[#212121]">
                   Need Help?
                 </h3>
-                <p className="mb-4 text-sm leading-relaxed text-[#2C2C2C]/60">
+                <p className="mb-4 text-sm leading-relaxed text-[#212121]/60">
                   Our customer service team is here to assist you with any questions.
                 </p>
                 <a
                   href="mailto:pureeva25@gmail.com"
-                  className="inline-flex items-center gap-2 text-sm font-medium text-[#B87A7A] transition-colors hover:text-[#A66B6B]"
+                  className="inline-flex items-center gap-2 text-sm font-medium text-[#A5D6A7] transition-colors hover:text-[#81C784]"
                 >
                   Contact Us
                   <ChevronRight className="h-4 w-4" />
@@ -217,13 +217,13 @@ export function PoliciesContent() {
 
           {/* Policy Content */}
           <article className="min-w-0 flex-1">
-            <div className="rounded-3xl border border-[#E5E0DA] bg-white/80 p-8 shadow-xl shadow-[#2C2C2C]/[0.02] md:p-10 lg:p-12">
+            <div className="rounded-3xl border border-[#B2EBF2] bg-white/80 p-8 shadow-xl shadow-[#212121]/[0.02] md:p-10 lg:p-12">
               {/* Header */}
-              <header className="mb-10 border-b border-[#E5E0DA] pb-8">
-                <h1 className="font-serif text-3xl text-[#2C2C2C] md:text-4xl">
+              <header className="mb-10 border-b border-[#B2EBF2] pb-8">
+                <h1 className="font-serif text-3xl text-[#212121] md:text-4xl">
                   {currentPolicy.title}
                 </h1>
-                <p className="mt-3 text-sm text-[#2C2C2C]/50">
+                <p className="mt-3 text-sm text-[#212121]/50">
                   Last updated: {currentPolicy.lastUpdated}
                 </p>
               </header>
@@ -232,10 +232,10 @@ export function PoliciesContent() {
               <div className="space-y-10">
                 {currentPolicy.sections.map((section, index) => (
                   <div key={index}>
-                    <h2 className="mb-4 font-serif text-xl text-[#2C2C2C] md:text-2xl">
+                    <h2 className="mb-4 font-serif text-xl text-[#212121] md:text-2xl">
                       {section.heading}
                     </h2>
-                    <div className="prose prose-sm max-w-none text-[#2C2C2C]/70">
+                    <div className="prose prose-sm max-w-none text-[#212121]/70">
                       {section.content.split("\n\n").map((paragraph, pIndex) => (
                         <p key={pIndex} className="mb-4 whitespace-pre-line leading-relaxed">
                           {paragraph}
@@ -247,19 +247,19 @@ export function PoliciesContent() {
               </div>
 
               {/* Footer */}
-              <footer className="mt-12 rounded-2xl bg-[#F7F4F0] p-6 md:p-8">
+              <footer className="mt-12 rounded-2xl bg-[#FFFFFF] p-6 md:p-8">
                 <div className="flex flex-col items-start gap-4 md:flex-row md:items-center md:justify-between">
                   <div>
-                    <h3 className="font-serif text-lg text-[#2C2C2C]">
+                    <h3 className="font-serif text-lg text-[#212121]">
                       Still have questions?
                     </h3>
-                    <p className="mt-1 text-sm text-[#2C2C2C]/60">
+                    <p className="mt-1 text-sm text-[#212121]/60">
                       We&apos;re here to help and answer any questions you might have.
                     </p>
                   </div>
                   <a
                     href="mailto:pureeva25@gmail.com"
-                    className="inline-flex items-center justify-center gap-2 rounded-full bg-[#B87A7A] px-6 py-3 text-sm font-medium text-white shadow-lg shadow-[#B87A7A]/20 transition-all hover:bg-[#A66B6B] hover:shadow-xl"
+                    className="inline-flex items-center justify-center gap-2 rounded-full bg-[#A5D6A7] px-6 py-3 text-sm font-medium text-white shadow-lg shadow-[#A5D6A7]/20 transition-all hover:bg-[#81C784] hover:shadow-xl"
                   >
                     Contact Support
                   </a>

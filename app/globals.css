@@ -4,30 +4,30 @@
 
 :root {
   /* Pure Eva Brand Colors */
-  --eva-beige: #F7F4F0;
-  --eva-rose: #B87A7A;
-  --eva-gold: #A88B67;
-  --eva-charcoal: #2C2C2C;
+  --eva-beige: #FFFFFF;
+  --eva-rose: #A5D6A7;
+  --eva-gold: #4DD0E1;
+  --eva-charcoal: #212121;
   
-  --background: #F7F4F0;
-  --foreground: #2C2C2C;
+  --background: #FFFFFF;
+  --foreground: #212121;
   --card: #FFFFFF;
-  --card-foreground: #2C2C2C;
+  --card-foreground: #212121;
   --popover: #FFFFFF;
-  --popover-foreground: #2C2C2C;
-  --primary: #B87A7A;
+  --popover-foreground: #212121;
+  --primary: #A5D6A7;
   --primary-foreground: #FFFFFF;
-  --secondary: #A88B67;
+  --secondary: #4DD0E1;
   --secondary-foreground: #FFFFFF;
-  --muted: #EDE9E4;
+  --muted: #E0F7FA;
   --muted-foreground: #6B6B6B;
-  --accent: #A88B67;
+  --accent: #4DD0E1;
   --accent-foreground: #FFFFFF;
   --destructive: oklch(0.577 0.245 27.325);
   --destructive-foreground: oklch(0.577 0.245 27.325);
-  --border: #E5E0DA;
-  --input: #E5E0DA;
-  --ring: #B87A7A;
+  --border: #B2EBF2;
+  --input: #B2EBF2;
+  --ring: #A5D6A7;
   --chart-1: oklch(0.646 0.222 41.116);
   --chart-2: oklch(0.6 0.118 184.704);
   --chart-3: oklch(0.398 0.07 227.392);

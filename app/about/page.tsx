@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 
 export default function AboutPage() {
   return (
-    <main className="min-h-screen bg-[#F7F4F0]">
+    <main className="min-h-screen bg-[#FFFFFF]">
       <AboutHero />
       <OurStory />
       <CoreValues />

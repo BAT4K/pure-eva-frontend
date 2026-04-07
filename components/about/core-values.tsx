@@ -5,19 +5,19 @@ const values = [
     icon: Droplets,
     title: "Pure",
     description: "We source only the finest natural ingredients, free from parabens, sulfates, and synthetic fragrances. Every formula is a testament to nature's power.",
-    accent: "#B87A7A",
+    accent: "#A5D6A7",
   },
   {
     icon: Heart,
     title: "Conscious",
     description: "From sustainable sourcing to recyclable packaging, we make choices that honor our planet. Beauty should never come at the earth's expense.",
-    accent: "#A88B67",
+    accent: "#4DD0E1",
   },
   {
     icon: Sparkles,
     title: "Effective",
     description: "We blend traditional botanical wisdom with modern science to create products that deliver visible results. Your glow is our proof.",
-    accent: "#B87A7A",
+    accent: "#A5D6A7",
   },
 ]
 
@@ -28,19 +28,19 @@ export function CoreValues() {
         {/* Section Header */}
         <div className="mb-16 text-center lg:mb-20">
           <div className="mb-4 flex items-center justify-center gap-2">
-            <div className="h-px w-6 bg-[#A88B67]/40" />
-            <span className="text-xs uppercase tracking-[0.2em] text-[#A88B67]">
+            <div className="h-px w-6 bg-[#4DD0E1]/40" />
+            <span className="text-xs uppercase tracking-[0.2em] text-[#4DD0E1]">
               What We Believe
             </span>
-            <div className="h-px w-6 bg-[#A88B67]/40" />
+            <div className="h-px w-6 bg-[#4DD0E1]/40" />
           </div>
           
-          <h2 className="mx-auto max-w-2xl font-serif text-3xl leading-tight text-[#2C2C2C] md:text-4xl lg:text-5xl">
+          <h2 className="mx-auto max-w-2xl font-serif text-3xl leading-tight text-[#212121] md:text-4xl lg:text-5xl">
             Our Core
-            <span className="text-[#B87A7A]"> Values</span>
+            <span className="text-[#A5D6A7]"> Values</span>
           </h2>
           
-          <p className="mx-auto mt-6 max-w-xl text-[#2C2C2C]/60">
+          <p className="mx-auto mt-6 max-w-xl text-[#212121]/60">
             Three principles guide everything we do - from formulation to 
             packaging to the way we treat our community.
           </p>
@@ -73,11 +73,11 @@ export function CoreValues() {
                 </div>
 
                 {/* Content */}
-                <h3 className="mb-4 font-serif text-2xl text-[#2C2C2C]">
+                <h3 className="mb-4 font-serif text-2xl text-[#212121]">
                   {value.title}
                 </h3>
                 
-                <p className="leading-relaxed text-[#2C2C2C]/60">
+                <p className="leading-relaxed text-[#212121]/60">
                   {value.description}
                 </p>
 
