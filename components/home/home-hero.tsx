@@ -6,7 +6,7 @@ export function HomeHero() {
   return (
     <section className="relative min-h-screen overflow-hidden bg-[#F7F4F0]">
       {/* Hero Content */}
-      <div className="relative px-6 pb-20 pt-32 md:px-12 md:pb-28 md:pt-40 lg:px-20 lg:pb-32 lg:pt-48">
+      <div className="relative px-6 pb-20 pt-16 md:px-12 md:pb-28 md:pt-24 lg:px-20 lg:pb-32 lg:pt-32">
         <div className="mx-auto grid max-w-7xl items-center gap-12 lg:grid-cols-2 lg:gap-20">
           {/* Left - Text Content */}
           <div className="order-2 lg:order-1">

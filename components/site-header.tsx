@@ -16,7 +16,7 @@ export function SiteHeader() {
 
   return (
     <>
-      <header className="absolute top-0 left-0 w-full z-30 px-6 py-8 md:px-12 lg:px-20">
+      <header className="fixed top-0 left-0 w-full z-50 bg-[#F7F4F0]/80 backdrop-blur-md border-b border-[#E5E0DA]/40 px-6 py-4 md:px-12 lg:px-20">
         <div className="mx-auto flex max-w-7xl items-center justify-between">
           <Link href="/" className="relative z-[60] font-serif text-2xl tracking-wide text-[#2C2C2C] hover:opacity-80 transition-opacity">
             Pure Eva
@@ -146,7 +146,7 @@ export function SiteHeader() {
 
       {/* --- CART DRAWER UI --- */}
       <div 
-        className={`fixed top-0 right-0 z-50 h-full w-full max-w-md bg-white shadow-2xl transition-transform duration-300 ease-in-out ${
+        className={`fixed top-0 right-0 z-50 h-full w-full max-w-md bg-[#F7F4F0] shadow-2xl transition-transform duration-300 ease-in-out ${
           isCartOpen ? "translate-x-0" : "translate-x-full"
         }`}
       >
@@ -217,15 +217,15 @@ export function SiteHeader() {
           </div>
 
           {cartQuantity > 0 && cartItem && (
-            <div className="border-t border-[#E5E0DA] bg-[#F7F4F0]/50 p-6">
+            <div className="border-t border-[#E5E0DA] bg-[#F7F4F0] p-6">
               <div className="mb-4 flex items-center justify-between font-serif text-lg text-[#2C2C2C]">
-                <span>Subtotal</span>
-                <span>₹{(parseFloat(cartItem.price) * cartItem.quantity).toFixed(2)}</span>
+                <span className="text-[#A88B67] text-sm tracking-wide uppercase font-sans">Subtotal</span>
+                <span className="text-[#A88B67]">₹{(parseFloat(cartItem.price) * cartItem.quantity).toFixed(2)}</span>
               </div>
               <button 
                 onClick={handleCheckout}
                 disabled={isCheckingOut}
-                className="flex w-full items-center justify-center gap-2 rounded-full bg-[#2C2C2C] px-8 py-4 text-sm font-medium uppercase tracking-wider text-white transition-all hover:bg-black disabled:opacity-70"
+                className="flex w-full items-center justify-center gap-2 rounded-full bg-[#B87A7A] px-8 py-4 text-sm font-medium uppercase tracking-wider text-white transition-all hover:bg-[#B87A7A]/90 disabled:opacity-70"
               >
                 {isCheckingOut ? (
                   <Loader2 className="h-5 w-5 animate-spin" />
@@ -233,7 +233,7 @@ export function SiteHeader() {
                   "Proceed to Checkout"
                 )}
               </button>
-              <p className="mt-4 text-center text-xs text-[#2C2C2C]/50">
+              <p className="mt-4 text-center text-xs text-[#2C2C2C]/70">
                 Shipping & taxes calculated at checkout
               </p>
             </div>

@@ -2,9 +2,9 @@ import { FileText } from "lucide-react"
 
 export function PoliciesHero() {
   return (
-    <section className="relative overflow-hidden">
-      {/* Hero Content */}
-      <div className="relative px-6 pb-12 pt-32 md:px-12 md:pb-16 md:pt-40 lg:px-20 lg:pb-20 lg:pt-48">
+    <section className="relative overflow-hidden bg-[#F7F4F0]">
+      {/* Hero Content - Adjusted for fixed header */}
+      <div className="relative px-6 pb-12 pt-16 md:px-12 md:pb-16 md:pt-24 lg:px-20 lg:pb-20 lg:pt-32">
         {/* Decorative elements */}
         <div className="absolute -right-20 top-0 h-64 w-64 rounded-full bg-[#B87A7A]/5 blur-3xl" />
         
