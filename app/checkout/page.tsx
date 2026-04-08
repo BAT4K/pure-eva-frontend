@@ -95,7 +95,7 @@ export default function CheckoutPage() {
         <p className="mb-8 text-[#212121]/60 text-center">Add our signature cleanser to proceed to checkout.</p>
         <Link 
           href="/store"
-          className="flex items-center justify-center whitespace-nowrap rounded-full px-8 py-3.5 text-sm font-medium uppercase tracking-wider text-white shadow-lg transition-all active:scale-95 bg-[#34D399] shadow-[#34D399]/20 hover:bg-[#10B981] hover:shadow-xl hover:shadow-[#34D399]/25"
+          className="flex items-center justify-center whitespace-nowrap rounded-full px-8 py-3.5 text-sm font-medium uppercase tracking-wider text-[#212121] shadow-lg transition-all active:scale-95 bg-[#A5D6A7] shadow-[#A5D6A7]/20 hover:bg-[#81C784] hover:shadow-xl hover:shadow-[#A5D6A7]/25"
         >
           Return to Store
         </Link>
@@ -109,7 +109,7 @@ export default function CheckoutPage() {
         
         {/* Left Side - Checkout Form */}
         <div className="flex-1 px-6 pb-12 pt-8 md:px-12 lg:pb-20 lg:pt-8 lg:pr-20">
-          <Link href="/store" className="mb-8 flex items-center gap-2 text-sm text-[#34D399] transition-colors hover:text-[#10B981]">
+          <Link href="/store" className="mb-8 flex items-center gap-2 text-sm text-[#A5D6A7] transition-colors hover:text-[#81C784]">
             <ArrowLeft className="h-4 w-4" />
             <span className="font-medium uppercase tracking-wider">Back to Store</span>
           </Link>
@@ -124,9 +124,9 @@ export default function CheckoutPage() {
             <section>
               <h2 className="mb-4 text-sm font-medium uppercase tracking-widest text-[#4DD0E1]">Contact Information</h2>
               <div className="space-y-4">
-                 <input required type="text" name="firstName" value={formData.firstName} onChange={handleInputChange} placeholder="First name" className="w-full rounded-lg border border-[#B2EBF2] bg-background/50 px-4 py-3 outline-none transition-colors focus:border-[#34D399] focus:bg-background text-sm text-[#212121]" />
-                 <input required type="text" name="lastName" value={formData.lastName} onChange={handleInputChange} placeholder="Last name" className="w-full rounded-lg border border-[#B2EBF2] bg-background/50 px-4 py-3 outline-none transition-colors focus:border-[#34D399] focus:bg-background text-sm text-[#212121]" />
-                <input required type="tel" name="phone" value={formData.phone} onChange={handleInputChange} placeholder="Phone number" className="w-full rounded-lg border border-[#B2EBF2] bg-background/50 px-4 py-3 outline-none transition-colors focus:border-[#34D399] focus:bg-background text-sm text-[#212121]" />
+                 <input required type="text" name="firstName" value={formData.firstName} onChange={handleInputChange} placeholder="First name" className="w-full rounded-lg border border-[#B2EBF2] bg-background/50 px-4 py-3 outline-none transition-colors focus:border-[#A5D6A7] focus:bg-background text-sm text-[#212121]" />
+                 <input required type="text" name="lastName" value={formData.lastName} onChange={handleInputChange} placeholder="Last name" className="w-full rounded-lg border border-[#B2EBF2] bg-background/50 px-4 py-3 outline-none transition-colors focus:border-[#A5D6A7] focus:bg-background text-sm text-[#212121]" />
+                <input required type="tel" name="phone" value={formData.phone} onChange={handleInputChange} placeholder="Phone number" className="w-full rounded-lg border border-[#B2EBF2] bg-background/50 px-4 py-3 outline-none transition-colors focus:border-[#A5D6A7] focus:bg-background text-sm text-[#212121]" />
               </div>
             </section>
 
@@ -134,16 +134,16 @@ export default function CheckoutPage() {
             <section>
               <h2 className="mb-4 text-sm font-medium uppercase tracking-widest text-[#4DD0E1]">Shipping Address</h2>
               <div className="grid grid-cols-2 gap-4">
-                <input required type="text" name="address" value={formData.address} onChange={handleInputChange} placeholder="Full Address" className="col-span-2 w-full rounded-lg border border-[#B2EBF2] bg-background/50 px-4 py-3 outline-none transition-colors focus:border-[#34D399] focus:bg-background text-sm text-[#212121]" />
-                <input required type="text" name="city" value={formData.city} onChange={handleInputChange} placeholder="City" className="w-full rounded-lg border border-[#B2EBF2] bg-background/50 px-4 py-3 outline-none transition-colors focus:border-[#34D399] focus:bg-background text-sm text-[#212121]" />
-                <input required type="text" name="pincode" value={formData.pincode} onChange={handleInputChange} placeholder="PIN code" className="w-full rounded-lg border border-[#B2EBF2] bg-background/50 px-4 py-3 outline-none transition-colors focus:border-[#34D399] focus:bg-background text-sm text-[#212121]" />
+                <input required type="text" name="address" value={formData.address} onChange={handleInputChange} placeholder="Full Address" className="col-span-2 w-full rounded-lg border border-[#B2EBF2] bg-background/50 px-4 py-3 outline-none transition-colors focus:border-[#A5D6A7] focus:bg-background text-sm text-[#212121]" />
+                <input required type="text" name="city" value={formData.city} onChange={handleInputChange} placeholder="City" className="w-full rounded-lg border border-[#B2EBF2] bg-background/50 px-4 py-3 outline-none transition-colors focus:border-[#A5D6A7] focus:bg-background text-sm text-[#212121]" />
+                <input required type="text" name="pincode" value={formData.pincode} onChange={handleInputChange} placeholder="PIN code" className="w-full rounded-lg border border-[#B2EBF2] bg-background/50 px-4 py-3 outline-none transition-colors focus:border-[#A5D6A7] focus:bg-background text-sm text-[#212121]" />
               </div>
             </section>
 
             <button 
               type="submit" 
               disabled={isLoading}
-              className="mt-8 flex w-full items-center justify-center gap-2 rounded-full px-8 py-3.5 text-sm font-medium uppercase tracking-wider text-white shadow-lg transition-all active:scale-95 bg-[#34D399] shadow-[#34D399]/20 hover:bg-[#10B981] hover:shadow-xl hover:shadow-[#34D399]/25 disabled:opacity-70 disabled:active:scale-100 disabled:hover:bg-[#34D399] disabled:hover:shadow-lg"
+              className="mt-8 flex w-full items-center justify-center gap-2 rounded-full px-8 py-3.5 text-sm font-medium uppercase tracking-wider text-[#212121] shadow-lg transition-all active:scale-95 bg-[#A5D6A7] shadow-[#A5D6A7]/20 hover:bg-[#81C784] hover:shadow-xl hover:shadow-[#A5D6A7]/25 disabled:opacity-70 disabled:active:scale-100 disabled:hover:bg-[#A5D6A7] disabled:hover:shadow-lg"
             >
               {isLoading ? <Loader2 className="h-5 w-5 animate-spin" /> : "Place Order (Cash on Delivery)"}
             </button>

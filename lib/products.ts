@@ -8,7 +8,7 @@ export const products = [
     compareAtPrice: "299",
     imageUrl: "/product-hero.jpg",
     imageAlt: "Urban Reset Gel Cleanser details",
-    variantId: "mock-variant-123",
+    variantId: "",
   }
 ];
 

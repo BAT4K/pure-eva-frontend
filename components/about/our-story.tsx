@@ -3,7 +3,7 @@ import { ScrollReveal } from "@/components/ui/scroll-reveal"
 
 export function OurStory() {
   return (
-    <section className="bg-white px-6 py-20 md:px-12 md:py-28 lg:px-20 lg:py-36 overflow-x-hidden">
+    <section className="bg-[#FAFAF9] px-6 py-20 md:px-12 md:py-28 lg:px-20 lg:py-36 overflow-x-hidden">
       <div className="mx-auto max-w-7xl">
         <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-20">
           <ScrollReveal delay={0.2} className="relative">

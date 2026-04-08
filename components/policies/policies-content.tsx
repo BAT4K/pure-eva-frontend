@@ -164,7 +164,7 @@ export function PoliciesContent() {
   const currentPolicy = policyContent[activePolicy]
 
   return (
-    <section className="bg-[#FAFAF9] px-6 py-12 md:px-12 md:py-16 lg:px-20 lg:py-20 overflow-x-hidden">
+    <section className="bg-[#FAFAF9] px-6 pb-12 pt-6 md:px-12 md:pb-16 md:pt-8 lg:px-20 lg:pb-20 lg:pt-10 overflow-x-hidden">
       <div className="mx-auto max-w-7xl">
         <div className="grid grid-cols-1 gap-12 lg:grid-cols-12 lg:gap-8 xl:gap-16">
           {/* Sticky Sidebar Navigation */}

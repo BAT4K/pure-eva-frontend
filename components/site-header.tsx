@@ -16,7 +16,7 @@ export function SiteHeader() {
 
   return (
     <>
-      <header className="sticky top-0 z-50 backdrop-blur-md bg-[#FAFAF9]/85 border-b border-gray-200/50 px-6 py-4 md:px-12 lg:px-20">
+      <header className="sticky top-0 z-50 backdrop-blur-md bg-[#FAFAF9]/85 border-b border-[#B2EBF2]/60 px-6 py-4 md:px-12 lg:px-20">
         <div className="mx-auto flex max-w-7xl items-center justify-between">
           <Link href="/" className="relative z-[60] flex items-center hover:opacity-80 transition-opacity">
             <Image
@@ -33,34 +33,34 @@ export function SiteHeader() {
           <nav className="hidden items-center gap-8 text-base tracking-wide md:flex">
             <Link
               href="/store"
-              className={`group relative transition-colors duration-300 ${pathname === '/store' ? 'text-[#34D399] font-medium' : 'text-[#212121]/80 hover:text-[#34D399]'}`}
+              className={`group relative transition-colors duration-300 ${pathname === '/store' ? 'text-[#A5D6A7] font-medium' : 'text-[#212121]/80 hover:text-[#A5D6A7]'}`}
             >
               Store
-              <span className={`absolute inset-x-0 -bottom-1 h-[1px] bg-[#34D399] transition-transform duration-500 ease-out origin-center ${pathname === '/store' ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'}`} />
+              <span className={`absolute inset-x-0 -bottom-1 h-[1px] bg-[#A5D6A7] transition-transform duration-500 ease-out origin-center ${pathname === '/store' ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'}`} />
             </Link>
             <Link
               href="/about"
-              className={`group relative transition-colors duration-300 ${pathname === '/about' ? 'text-[#34D399] font-medium' : 'text-[#212121]/80 hover:text-[#34D399]'}`}
+              className={`group relative transition-colors duration-300 ${pathname === '/about' ? 'text-[#A5D6A7] font-medium' : 'text-[#212121]/80 hover:text-[#A5D6A7]'}`}
             >
               About
-              <span className={`absolute inset-x-0 -bottom-1 h-[1px] bg-[#34D399] transition-transform duration-500 ease-out origin-center ${pathname === '/about' ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'}`} />
+              <span className={`absolute inset-x-0 -bottom-1 h-[1px] bg-[#A5D6A7] transition-transform duration-500 ease-out origin-center ${pathname === '/about' ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'}`} />
             </Link>
             <Link
               href="/track"
-              className={`group relative transition-colors duration-300 ${pathname === '/track' ? 'text-[#34D399] font-medium' : 'text-[#212121]/80 hover:text-[#34D399]'}`}
+              className={`group relative transition-colors duration-300 ${pathname === '/track' ? 'text-[#A5D6A7] font-medium' : 'text-[#212121]/80 hover:text-[#A5D6A7]'}`}
             >
               Track Order
-              <span className={`absolute inset-x-0 -bottom-1 h-[1px] bg-[#34D399] transition-transform duration-500 ease-out origin-center ${pathname === '/track' ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'}`} />
+              <span className={`absolute inset-x-0 -bottom-1 h-[1px] bg-[#A5D6A7] transition-transform duration-500 ease-out origin-center ${pathname === '/track' ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'}`} />
             </Link>
           </nav>
           <div className="relative z-[60] flex items-center gap-2">
             <button
               onClick={() => setIsCartOpen(true)}
-              className="relative p-2 text-[#212121] transition-colors hover:text-[#34D399]"
+              className="relative p-2 text-[#212121] transition-colors hover:text-[#A5D6A7]"
             >
               <ShoppingBag className="h-6 w-6" />
               {cartQuantity > 0 && (
-                <span className="absolute -right-0 -top-0 flex h-4 w-4 items-center justify-center rounded-full bg-[#34D399] text-[10px] text-white">
+                <span className="absolute -right-0 -top-0 flex h-4 w-4 items-center justify-center rounded-full bg-[#A5D6A7] text-[10px] text-white">
                   {cartQuantity}
                 </span>
               )}
@@ -133,7 +133,7 @@ export function SiteHeader() {
                     <Link
                       href={item.href}
                       onClick={() => setIsMobileMenuOpen(false)}
-                      className={`block py-2 font-serif text-4xl transition-colors ${pathname === item.href ? 'text-[#34D399]' : 'text-[#212121] hover:text-[#34D399]'}`}
+                      className={`block py-2 font-serif text-4xl transition-colors ${pathname === item.href ? 'text-[#A5D6A7]' : 'text-[#212121] hover:text-[#A5D6A7]'}`}
                     >
                       {item.name}
                     </Link>
@@ -148,12 +148,12 @@ export function SiteHeader() {
                 transition={{ delay: 0.5, duration: 0.5 }}
                 className="border-t border-[#B2EBF2] px-6 py-8"
               >
-                <a href="mailto:pureeva25@gmail.com" className="mb-4 block text-sm text-[#212121]/60 hover:text-[#34D399]">
+                <a href="mailto:pureeva25@gmail.com" className="mb-4 block text-sm text-[#212121]/60 hover:text-[#A5D6A7]">
                   pureeva25@gmail.com
                 </a>
                 <div className="flex gap-6 text-sm text-[#212121]/60">
-                  <a href="https://www.instagram.com/pure.eva25/" target="_blank" rel="noopener noreferrer" className="hover:text-[#34D399]">Instagram</a>
-                  <a href="https://www.linkedin.com/company/pure-eva/" target="_blank" rel="noopener noreferrer" className="hover:text-[#34D399]">LinkedIn</a>
+                  <a href="https://www.instagram.com/pure.eva25/" target="_blank" rel="noopener noreferrer" className="hover:text-[#A5D6A7]">Instagram</a>
+                  <a href="https://www.linkedin.com/company/pure-eva/" target="_blank" rel="noopener noreferrer" className="hover:text-[#A5D6A7]">LinkedIn</a>
                 </div>
               </motion.div>
             </motion.div>
@@ -192,7 +192,7 @@ export function SiteHeader() {
                 <p className="text-[#212121]/60">Your cart is beautifully empty.</p>
                 <button
                   onClick={() => setIsCartOpen(false)}
-                  className="mt-6 text-sm font-medium uppercase tracking-wide text-[#34D399] hover:underline"
+                  className="mt-6 text-sm font-medium uppercase tracking-wide text-[#A5D6A7] hover:underline"
                 >
                   Continue Shopping
                 </button>
@@ -230,7 +230,7 @@ export function SiteHeader() {
 
                     <button
                       onClick={() => updateQuantity(0)}
-                      className="p-2 text-[#212121]/40 hover:text-[#34D399] transition-colors"
+                      className="p-2 text-[#212121]/40 hover:text-[#A5D6A7] transition-colors"
                     >
                       <Trash2 className="h-4 w-4" />
                     </button>
@@ -249,7 +249,7 @@ export function SiteHeader() {
               <button
                 onClick={handleCheckout}
                 disabled={isCheckingOut}
-                className="flex w-full items-center justify-center gap-2 rounded-full px-8 py-3.5 text-sm font-medium uppercase tracking-wider text-white shadow-lg transition-all active:scale-95 bg-[#34D399] shadow-[#34D399]/20 hover:bg-[#10B981] hover:shadow-xl hover:shadow-[#34D399]/25 disabled:opacity-70 disabled:active:scale-100"
+                className="flex w-full items-center justify-center gap-2 rounded-full px-8 py-3.5 text-sm font-medium uppercase tracking-wider text-[#212121] shadow-lg transition-all active:scale-95 bg-[#A5D6A7] shadow-[#A5D6A7]/20 hover:bg-[#81C784] hover:shadow-xl hover:shadow-[#A5D6A7]/25 disabled:opacity-70 disabled:active:scale-100"
               >
                 {isCheckingOut ? (
                   <Loader2 className="h-5 w-5 animate-spin" />

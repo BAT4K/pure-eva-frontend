@@ -2,11 +2,12 @@ import { FileText } from "lucide-react"
 
 export function PoliciesHero() {
   return (
-    <section className="relative overflow-hidden bg-[#FFFFFF]">
+    <section className="relative overflow-hidden bg-[#FAFAF9]">
       {/* Hero Content - Adjusted for fixed header */}
-      <div className="relative px-6 pb-12 pt-12 md:px-12 md:pb-16 lg:px-20 lg:pb-20 lg:pt-20">
+      <div className="relative px-6 pb-8 pt-12 md:px-12 md:pb-10 lg:px-20 lg:pb-12 lg:pt-20">
         {/* Decorative elements */}
         <div className="absolute -right-20 top-0 h-64 w-64 rounded-full bg-[#A5D6A7]/10 blur-3xl" />
+        <div className="absolute -left-20 bottom-0 h-48 w-48 rounded-full bg-[#4DD0E1]/8 blur-3xl" />
         
         <div className="relative mx-auto max-w-7xl text-center">
           {/* Tagline */}
