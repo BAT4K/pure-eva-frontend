@@ -10,6 +10,7 @@ import { ArrowLeft, Loader2, ShoppingBag, Truck } from 'lucide-react';
 export default function CheckoutPage() {
   const { cartItem, updateQuantity } = useCart();
   const [isLoading, setIsLoading] = useState(false);
+  const [isRedirecting, setIsRedirecting] = useState(false);
   const router = useRouter();
   
   const [formData, setFormData] = useState({
@@ -61,6 +62,9 @@ export default function CheckoutPage() {
         throw new Error(data.error || "Failed to place order.");
       }
 
+      // Mark redirecting BEFORE clearing cart to prevent empty-cart flash
+      setIsRedirecting(true);
+
       // Clear cart
       updateQuantity(0);
 
@@ -73,6 +77,15 @@ export default function CheckoutPage() {
       setIsLoading(false);
     }
   };
+
+  // Show a clean loading screen while navigating to avoid empty-cart flash
+  if (!cartItem && isRedirecting) {
+    return (
+      <div className="flex h-screen flex-col items-center justify-center bg-[#FAFAF9]">
+        <div className="h-8 w-8 animate-spin rounded-full border-2 border-[#A5D6A7] border-t-transparent" />
+      </div>
+    );
+  }
 
   if (!cartItem) {
     return (
