@@ -103,7 +103,7 @@ For approved refund claims, our team will contact you to collect your preferred 
 
 • Personal details such as your name, email, phone number, and delivery address.
 • Payment transaction details processed securely via Cash on Delivery or designated UPI tools. We do not store your complete UPI, credit, or debit card information.
-• Browsing behavior and device information when you visit pureeva.com.`,
+• Browsing behavior and device information when you visit pureeva.shop.`,
       },
       {
         heading: "How We Use Your Data",
@@ -132,7 +132,7 @@ We do not sell, rent, or trade your personal information to third parties. Data 
     sections: [
       {
         heading: "Agreement to Terms",
-        content: `By accessing www.pureeva.com and purchasing our botanical cleanser, you agree to be bound by these Terms of Service. These terms apply to all visitors and customers in India. We reserve the right to update these terms at our discretion to better serve our community.`,
+        content: `By accessing www.pureeva.shop and purchasing our botanical cleanser, you agree to be bound by these Terms of Service. These terms apply to all visitors and customers in India. We reserve the right to update these terms at our discretion to better serve our community.`,
       },
       {
         heading: "Product Information & Usage",
@@ -217,7 +217,7 @@ export function PoliciesContent() {
           </aside>
 
           {/* Policy Content */}
-          <article className="min-w-0 lg:col-span-8 xl:col-span-9">
+          <article key={activePolicy} className="policy-fade min-w-0 lg:col-span-8 xl:col-span-9">
             <div className="rounded-3xl border border-[#B2EBF2] bg-white p-8 shadow-lg shadow-[#212121]/[0.04] md:p-10 lg:p-12">
               {/* Header */}
               <header className="mb-10 border-b border-[#B2EBF2] pb-8">
