@@ -29,13 +29,13 @@ const ingredientCategories = [
 
 export function FullIngredientList() {
   return (
-    <section className="px-6 pb-24 md:px-12 lg:px-20">
+    <section className="bg-[#FAFAF9] px-6 pb-24 md:px-12 lg:px-20 overflow-x-hidden">
       <div className="mx-auto max-w-4xl">
         {/* Section Header */}
         <div className="mb-10 text-center">
           <div className="mb-4 flex items-center justify-center gap-2">
             <FileText className="h-5 w-5 text-[#4DD0E1]" />
-            <span className="text-xs uppercase tracking-[0.2em] text-[#4DD0E1]">
+            <span className="text-xs font-semibold uppercase tracking-[0.2em] text-[#4DD0E1]">
               Full Transparency
             </span>
           </div>
@@ -49,7 +49,7 @@ export function FullIngredientList() {
         </div>
 
         {/* Accordion */}
-        <div className="rounded-2xl bg-white p-6 shadow-[0_4px_20px_-4px_rgba(0,0,0,0.06)] md:p-8">
+        <div className="rounded-2xl bg-white border border-[#B2EBF2] p-6 shadow-[0_4px_20px_-4px_rgba(0,0,0,0.06)] md:p-8">
           <Accordion type="single" collapsible className="w-full">
             {ingredientCategories.map((category, index) => (
               <AccordionItem 
@@ -57,11 +57,11 @@ export function FullIngredientList() {
                 value={`item-${index}`}
                 className="border-[#B2EBF2]"
               >
-                <AccordionTrigger className="py-5 text-left font-serif text-lg text-[#212121] hover:text-[#4DD0E1] hover:no-underline">
+                <AccordionTrigger className="py-5 text-left font-serif text-lg text-[#212121] hover:text-[#A5D6A7] hover:no-underline">
                   {category.title}
                 </AccordionTrigger>
                 <AccordionContent className="pb-6">
-                  <div className="rounded-xl bg-[#FFFFFF] p-5">
+                  <div className="rounded-xl bg-[#FAFAF9] p-5">
                     <ul className="grid gap-2 text-sm text-[#212121]/70 sm:grid-cols-2">
                       {category.ingredients.map((ingredient, i) => (
                         <li key={i} className="flex items-start gap-2">
@@ -82,9 +82,9 @@ export function FullIngredientList() {
         </div>
 
         {/* Trust note */}
-        <div className="mt-8 rounded-xl border border-[#4DD0E1]/20 bg-[#4DD0E1]/5 p-5 text-center">
+        <div className="mt-8 rounded-xl border border-[#B2EBF2] bg-[#4DD0E1]/5 p-5 text-center">
           <p className="text-sm text-[#212121]/70">
-            <span className="font-medium text-[#4DD0E1]">Our Promise:</span>{" "}
+            <span className="font-semibold text-[#4DD0E1]">Our Promise:</span>{" "}
             Every ingredient serves a purpose. We never use fillers, and we always 
             list ingredients in order of concentration as required by international standards.
           </p>

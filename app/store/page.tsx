@@ -11,9 +11,9 @@ export default function Store() {
   
   if (!product) {
     return (
-      <main className="flex min-h-screen flex-col items-center justify-center p-24 bg-[#FFFFFF]">
+      <main className="flex min-h-screen flex-col items-center justify-center p-24 bg-[#FAFAF9]">
         <h1 className="text-2xl text-[#212121] mb-4">Connection Issue</h1>
-        <p className="text-[#34D399]">Could not load store data. Please try again.</p>
+        <p className="text-[#4DD0E1]">Could not load store data. Please try again.</p>
       </main>
     );
   }

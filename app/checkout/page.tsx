@@ -4,14 +4,15 @@ import { useState } from 'react';
 import { useCart } from '@/components/cart-provider';
 import Image from 'next/image';
 import Link from 'next/link';
-import { ArrowLeft, Loader2, ShieldCheck, ShoppingBag } from 'lucide-react';
+import { useRouter } from 'next/navigation';
+import { ArrowLeft, Loader2, ShoppingBag, Truck } from 'lucide-react';
 
 export default function CheckoutPage() {
   const { cartItem, updateQuantity } = useCart();
   const [isLoading, setIsLoading] = useState(false);
-  const [isSuccess, setIsSuccess] = useState(false);
+  const router = useRouter();
+  
   const [formData, setFormData] = useState({
-    email: '',
     firstName: '',
     lastName: '',
     address: '',
@@ -29,82 +30,51 @@ export default function CheckoutPage() {
     setFormData(prev => ({ ...prev, [e.target.name]: e.target.value }));
   };
 
-  const loadRazorpayScript = () => {
-    return new Promise((resolve) => {
-      const script = document.createElement("script");
-      script.src = "https://checkout.razorpay.com/v1/checkout.js";
-      script.onload = () => resolve(true);
-      script.onerror = () => resolve(false);
-      document.body.appendChild(script);
-    });
-  };
-
-  const handlePayment = async (e: React.FormEvent) => {
+  const handleCheckout = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!cartItem) return;
     setIsLoading(true);
 
     try {
-      const isLoaded = await loadRazorpayScript();
-      if (!isLoaded) {
-        alert("Payment gateway failed to load. Please check your connection.");
-        setIsLoading(false);
-        return;
-      }
+      // Generate unique short ID: e.g., ORD-A7B2
+      const randomString = Math.random().toString(36).substring(2, 6).toUpperCase();
+      const order_id = `ORD-${randomString}`;
 
-      const res = await fetch('/api/razorpay', {
+      const customer_name = `${formData.firstName} ${formData.lastName}`.trim();
+      const full_address = `${formData.address}, ${formData.city}, ${formData.pincode}`;
+
+      const res = await fetch('/api/checkout', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ amount: totalAmount })
+        body: JSON.stringify({
+          order_id,
+          customer_name,
+          address: full_address,
+          phone: formData.phone,
+          cart_total: totalAmount
+        })
       });
 
-      const orderNode = await res.json();
+      const data = await res.json();
 
-      if (orderNode.error) {
-        alert("Server Error: " + orderNode.error);
-        setIsLoading(false);
-        return;
+      if (!res.ok || data.error) {
+        throw new Error(data.error || "Failed to place order.");
       }
 
-      const options = {
-        key: orderNode.key_id || 'rzp_test_dummy', 
-        amount: orderNode.amount,
-        currency: orderNode.currency,
-        name: "Pure Eva",
-        description: "Botanical Skincare Order",
-        order_id: orderNode.id,
-        image: window.location.origin + '/pure-eva-logov2.png',
-        handler: function (response: any) {
-          setIsSuccess(true);
-          updateQuantity(0); 
-          window.location.href = `/checkout/success?payment_id=${response.razorpay_payment_id}`;
-        },
-        prefill: {
-          name: `${formData.firstName} ${formData.lastName}`.trim(),
-          email: formData.email,
-          contact: formData.phone
-        },
-        theme: {
-          color: "#34D399"
-        }
-      };
+      // Clear cart
+      updateQuantity(0);
 
-      const rzp = new (window as any).Razorpay(options);
-      
-      rzp.on('payment.failed', function (response: any){
-        alert("Payment Failed: " + response.error.description);
-      });
+      // Redirect
+      router.push(`/order-success?id=${order_id}`);
 
-      rzp.open();
     } catch (error: any) {
       console.error(error);
       alert("Checkout failed: " + error.message);
-    } finally {
       setIsLoading(false);
     }
   };
 
-  if (!cartItem && !isSuccess) {
+  if (!cartItem) {
     return (
       <div className="flex h-screen flex-col items-center justify-center bg-background px-6">
         <ShoppingBag className="mb-6 h-16 w-16 text-[#4DD0E1]/40" />
@@ -112,25 +82,13 @@ export default function CheckoutPage() {
         <p className="mb-8 text-[#212121]/60 text-center">Add our signature cleanser to proceed to checkout.</p>
         <Link 
           href="/store"
-          className="rounded-full bg-[#34D399] px-8 py-3 text-sm font-medium uppercase tracking-wide text-white transition-colors hover:bg-[#10B981]"
+          className="flex items-center justify-center whitespace-nowrap rounded-full px-8 py-3.5 text-sm font-medium uppercase tracking-wider text-white shadow-lg transition-all active:scale-95 bg-[#34D399] shadow-[#34D399]/20 hover:bg-[#10B981] hover:shadow-xl hover:shadow-[#34D399]/25"
         >
           Return to Store
         </Link>
       </div>
     );
   }
-
-  if (isSuccess) {
-    return (
-      <div className="flex h-screen flex-col items-center justify-center bg-background px-6">
-        <Loader2 className="h-10 w-10 animate-spin text-[#34D399] mb-4" />
-        <p className="font-serif text-xl tracking-wide text-[#212121]">Finalizing your order...</p>
-      </div>
-    );
-  }
-
-  // TypeScript strict type guard override
-  if (!cartItem) return null;
 
   return (
     <div className="min-h-screen bg-background">
@@ -145,16 +103,17 @@ export default function CheckoutPage() {
           
           <div className="mb-10">
             <h1 className="mb-2 font-serif text-3xl text-[#212121]">Checkout</h1>
-            <p className="text-sm text-[#212121]/60">Complete your shipping & payment details safely</p>
+            <p className="text-sm text-[#212121]/60">Complete your shipping details for Cash on Delivery</p>
           </div>
 
-          <form onSubmit={handlePayment} className="space-y-8">
+          <form onSubmit={handleCheckout} className="space-y-8">
             {/* Contact Info */}
             <section>
               <h2 className="mb-4 text-sm font-medium uppercase tracking-widest text-[#4DD0E1]">Contact Information</h2>
               <div className="space-y-4">
-                <input required type="email" name="email" value={formData.email} onChange={handleInputChange} placeholder="Email address" className="w-full rounded-lg border border-[#B2EBF2] bg-background/50 px-4 py-3 outline-none transition-colors focus:border-[#34D399] focus:bg-background text-sm" />
-                <input required type="tel" name="phone" value={formData.phone} onChange={handleInputChange} placeholder="Phone number" className="w-full rounded-lg border border-[#B2EBF2] bg-background/50 px-4 py-3 outline-none transition-colors focus:border-[#34D399] focus:bg-background text-sm" />
+                 <input required type="text" name="firstName" value={formData.firstName} onChange={handleInputChange} placeholder="First name" className="w-full rounded-lg border border-[#B2EBF2] bg-background/50 px-4 py-3 outline-none transition-colors focus:border-[#34D399] focus:bg-background text-sm text-[#212121]" />
+                 <input required type="text" name="lastName" value={formData.lastName} onChange={handleInputChange} placeholder="Last name" className="w-full rounded-lg border border-[#B2EBF2] bg-background/50 px-4 py-3 outline-none transition-colors focus:border-[#34D399] focus:bg-background text-sm text-[#212121]" />
+                <input required type="tel" name="phone" value={formData.phone} onChange={handleInputChange} placeholder="Phone number" className="w-full rounded-lg border border-[#B2EBF2] bg-background/50 px-4 py-3 outline-none transition-colors focus:border-[#34D399] focus:bg-background text-sm text-[#212121]" />
               </div>
             </section>
 
@@ -162,25 +121,23 @@ export default function CheckoutPage() {
             <section>
               <h2 className="mb-4 text-sm font-medium uppercase tracking-widest text-[#4DD0E1]">Shipping Address</h2>
               <div className="grid grid-cols-2 gap-4">
-                <input required type="text" name="firstName" value={formData.firstName} onChange={handleInputChange} placeholder="First name" className="w-full rounded-lg border border-[#B2EBF2] bg-background/50 px-4 py-3 outline-none transition-colors focus:border-[#34D399] focus:bg-background text-sm" />
-                <input required type="text" name="lastName" value={formData.lastName} onChange={handleInputChange} placeholder="Last name" className="w-full rounded-lg border border-[#B2EBF2] bg-background/50 px-4 py-3 outline-none transition-colors focus:border-[#34D399] focus:bg-background text-sm" />
-                <input required type="text" name="address" value={formData.address} onChange={handleInputChange} placeholder="Address" className="col-span-2 w-full rounded-lg border border-[#B2EBF2] bg-background/50 px-4 py-3 outline-none transition-colors focus:border-[#34D399] focus:bg-background text-sm" />
-                <input required type="text" name="city" value={formData.city} onChange={handleInputChange} placeholder="City" className="w-full rounded-lg border border-[#B2EBF2] bg-background/50 px-4 py-3 outline-none transition-colors focus:border-[#34D399] focus:bg-background text-sm" />
-                <input required type="text" name="pincode" value={formData.pincode} onChange={handleInputChange} placeholder="PIN code" className="w-full rounded-lg border border-[#B2EBF2] bg-background/50 px-4 py-3 outline-none transition-colors focus:border-[#34D399] focus:bg-background text-sm" />
+                <input required type="text" name="address" value={formData.address} onChange={handleInputChange} placeholder="Full Address" className="col-span-2 w-full rounded-lg border border-[#B2EBF2] bg-background/50 px-4 py-3 outline-none transition-colors focus:border-[#34D399] focus:bg-background text-sm text-[#212121]" />
+                <input required type="text" name="city" value={formData.city} onChange={handleInputChange} placeholder="City" className="w-full rounded-lg border border-[#B2EBF2] bg-background/50 px-4 py-3 outline-none transition-colors focus:border-[#34D399] focus:bg-background text-sm text-[#212121]" />
+                <input required type="text" name="pincode" value={formData.pincode} onChange={handleInputChange} placeholder="PIN code" className="w-full rounded-lg border border-[#B2EBF2] bg-background/50 px-4 py-3 outline-none transition-colors focus:border-[#34D399] focus:bg-background text-sm text-[#212121]" />
               </div>
             </section>
 
             <button 
               type="submit" 
               disabled={isLoading}
-              className="mt-8 flex w-full items-center justify-center gap-2 rounded-full bg-[#34D399] px-8 py-4 text-sm font-medium uppercase tracking-wider text-white shadow-lg transition-all hover:bg-[#10B981] disabled:opacity-70"
+              className="mt-8 flex w-full items-center justify-center gap-2 rounded-full px-8 py-3.5 text-sm font-medium uppercase tracking-wider text-white shadow-lg transition-all active:scale-95 bg-[#34D399] shadow-[#34D399]/20 hover:bg-[#10B981] hover:shadow-xl hover:shadow-[#34D399]/25 disabled:opacity-70 disabled:active:scale-100 disabled:hover:bg-[#34D399] disabled:hover:shadow-lg"
             >
-              {isLoading ? <Loader2 className="h-5 w-5 animate-spin" /> : "Pay SECURELY Now"}
+              {isLoading ? <Loader2 className="h-5 w-5 animate-spin" /> : "Place Order (Cash on Delivery)"}
             </button>
             
-            <div className="flex items-center justify-center gap-2 mt-4 text-xs text-[#212121]/50">
-              <ShieldCheck className="h-4 w-4 text-[#4DD0E1]" />
-              <span>Payments are processed securely via Razorpay</span>
+            <div className="flex items-center justify-center gap-2 mt-4 text-xs text-[#212121]/60">
+              <Truck className="h-4 w-4 text-[#4DD0E1]" />
+              <span>Pay with cash or UPI upon delivery</span>
             </div>
           </form>
         </div>
@@ -192,7 +149,7 @@ export default function CheckoutPage() {
             
             <div className="mb-8 flex items-start gap-4">
               <div className="relative h-20 w-16 shrink-0 overflow-hidden rounded-xl border border-[#B2EBF2] bg-white">
-                <Image src={cartItem.imageUrl} alt={cartItem.imageAlt} fill sizes="64px" className="object-cover" />
+                <Image src={cartItem.imageUrl} alt={cartItem.imageAlt || "Product"} fill sizes="64px" className="object-cover" />
                 <span className="absolute -right-2 -top-2 flex h-5 w-5 items-center justify-center rounded-full bg-[#212121]/60 text-[10px] text-white shadow backdrop-blur-md">
                   {cartItem.quantity}
                 </span>

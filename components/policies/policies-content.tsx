@@ -41,8 +41,9 @@ We understand the excitement of receiving your Pure Eva botanical cleanser, and 
         heading: "Shipping Across India",
         content: `We deliver pan-India using trusted courier partners.
 
-• Standard Shipping (3-5 business days): Free on all prepaid orders.
-• Cash on Delivery (COD): Available for an additional handling charge of ₹50.
+• Standard Shipping (3–5 business days): Free on all orders above ₹500.
+• We currently accept Cash on Delivery (COD) only — no advance payment required.
+• There is no extra handling charge or surcharge for COD orders.
 
 Please note that delivery times may vary depending on your location, with metropolitan areas generally receiving orders faster than remote locations.`,
       },
@@ -86,9 +87,9 @@ You must notify us within 3 days of delivery to be eligible for a replacement or
       },
       {
         heading: "Refund Processing",
-        content: `For approved refunds on prepaid orders, the amount will be automatically credited to your original payment method within 5-7 business days. 
+        content: `Since we exclusively accept Cash on Delivery (COD), refunds are processed directly to your bank account or UPI ID.
 
-For approved refunds on Cash on Delivery (COD) orders, our team will request your bank account details or UPI ID to process the transfer safely.`,
+For approved refund claims, our team will contact you to collect your preferred payment details and initiate the transfer within 5–7 business days of approval.`,
       },
     ],
   },
@@ -101,7 +102,7 @@ For approved refunds on Cash on Delivery (COD) orders, our team will request you
         content: `We collect information necessary to fulfill your orders and enhance your skincare journey, complying with the Information Technology Act, 2000, and other applicable Indian laws.
 
 • Personal details such as your name, email, phone number, and delivery address.
-• Payment transaction details processed securely via our trusted payment gateways (like Razorpay/Cashfree). We do not store your complete UPI, credit, or debit card information.
+• Payment transaction details processed securely via Cash on Delivery or designated UPI tools. We do not store your complete UPI, credit, or debit card information.
 • Browsing behavior and device information when you visit pureeva.com.`,
       },
       {
@@ -163,7 +164,7 @@ export function PoliciesContent() {
   const currentPolicy = policyContent[activePolicy]
 
   return (
-    <section className="px-6 py-12 md:px-12 md:py-16 lg:px-20 lg:py-20">
+    <section className="bg-[#FAFAF9] px-6 py-12 md:px-12 md:py-16 lg:px-20 lg:py-20 overflow-x-hidden">
       <div className="mx-auto max-w-7xl">
         <div className="grid grid-cols-1 gap-12 lg:grid-cols-12 lg:gap-8 xl:gap-16">
           {/* Sticky Sidebar Navigation */}
@@ -183,13 +184,13 @@ export function PoliciesContent() {
                         onClick={() => setActivePolicy(policy.id as keyof typeof policyContent)}
                         className={`flex w-full items-center gap-3 whitespace-nowrap rounded-xl px-4 py-3 text-left transition-all lg:whitespace-normal xl:whitespace-nowrap lg:rounded-lg ${
                           isActive
-                            ? "bg-white text-[#34D399] shadow-md shadow-[#34D399]/5"
-                            : "text-[#212121]/70 hover:bg-white/50 hover:text-[#212121]"
+                            ? "bg-white text-[#A5D6A7] shadow-md shadow-[#A5D6A7]/10 border border-[#B2EBF2]"
+                            : "text-[#212121]/70 hover:bg-white/70 hover:text-[#212121]"
                         }`}
                       >
-                        <Icon className={`h-4 w-4 flex-shrink-0 ${isActive ? "text-[#34D399]" : "text-[#212121]/40"}`} />
+                        <Icon className={`h-4 w-4 flex-shrink-0 ${isActive ? "text-[#4DD0E1]" : "text-[#212121]/40"}`} />
                         <span className="text-sm font-medium">{policy.label}</span>
-                        <ChevronRight className={`ml-auto hidden h-4 w-4 lg:block ${isActive ? "text-[#34D399]" : "text-[#212121]/20"}`} />
+                        <ChevronRight className={`ml-auto hidden h-4 w-4 lg:block ${isActive ? "text-[#4DD0E1]" : "text-[#212121]/20"}`} />
                       </button>
                     </li>
                   )
@@ -206,7 +207,7 @@ export function PoliciesContent() {
                 </p>
                 <a
                   href="mailto:pureeva25@gmail.com"
-                  className="inline-flex items-center gap-2 text-sm font-medium text-[#34D399] transition-colors hover:text-[#10B981]"
+                  className="inline-flex items-center gap-2 text-sm font-medium text-[#A5D6A7] transition-colors hover:text-[#81C784]"
                 >
                   Contact Us
                   <ChevronRight className="h-4 w-4" />
@@ -217,7 +218,7 @@ export function PoliciesContent() {
 
           {/* Policy Content */}
           <article className="min-w-0 lg:col-span-8 xl:col-span-9">
-            <div className="rounded-3xl border border-[#B2EBF2] bg-white p-8 shadow-2xl shadow-[#212121]/[0.05] md:p-10 lg:p-12">
+            <div className="rounded-3xl border border-[#B2EBF2] bg-white p-8 shadow-lg shadow-[#212121]/[0.04] md:p-10 lg:p-12">
               {/* Header */}
               <header className="mb-10 border-b border-[#B2EBF2] pb-8">
                 <h1 className="font-serif text-3xl text-[#212121] md:text-4xl">
@@ -247,7 +248,7 @@ export function PoliciesContent() {
               </div>
 
               {/* Footer */}
-              <footer className="mt-12 rounded-2xl bg-[#FFFFFF] p-6 md:p-8">
+              <footer className="mt-12 rounded-2xl border border-[#B2EBF2] bg-[#FAFAF9] p-6 md:p-8">
                 <div className="flex flex-col items-start gap-4 md:flex-row md:items-center md:justify-between">
                   <div>
                     <h3 className="font-serif text-lg text-[#212121]">
@@ -259,7 +260,7 @@ export function PoliciesContent() {
                   </div>
                   <a
                     href="mailto:pureeva25@gmail.com"
-                    className="inline-flex items-center justify-center gap-2 rounded-full bg-[#34D399] px-6 py-3 text-sm font-medium text-white shadow-lg shadow-[#34D399]/20 transition-all hover:bg-[#10B981] hover:shadow-xl"
+                    className="inline-flex items-center justify-center gap-2 rounded-full bg-[#A5D6A7] px-6 py-3 text-sm font-medium text-[#212121] shadow-lg shadow-[#A5D6A7]/20 transition-all hover:bg-[#81C784] hover:shadow-xl active:scale-95"
                   >
                     Contact Support
                   </a>

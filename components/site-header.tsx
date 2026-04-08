@@ -45,6 +45,13 @@ export function SiteHeader() {
               About
               <span className={`absolute inset-x-0 -bottom-1 h-[1px] bg-[#34D399] transition-transform duration-500 ease-out origin-center ${pathname === '/about' ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'}`} />
             </Link>
+            <Link
+              href="/track"
+              className={`group relative transition-colors duration-300 ${pathname === '/track' ? 'text-[#34D399] font-medium' : 'text-[#212121]/80 hover:text-[#34D399]'}`}
+            >
+              Track Order
+              <span className={`absolute inset-x-0 -bottom-1 h-[1px] bg-[#34D399] transition-transform duration-500 ease-out origin-center ${pathname === '/track' ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'}`} />
+            </Link>
           </nav>
           <div className="relative z-[60] flex items-center gap-2">
             <button
@@ -115,6 +122,7 @@ export function SiteHeader() {
                   { name: 'Store', href: '/store' },
                   { name: 'About', href: '/about' },
                   { name: 'Policies', href: '/policies' },
+                  { name: 'Track Order', href: '/track' },
                 ].map((item, i) => (
                   <motion.div
                     key={item.href}
@@ -241,7 +249,7 @@ export function SiteHeader() {
               <button
                 onClick={handleCheckout}
                 disabled={isCheckingOut}
-                className="flex w-full items-center justify-center gap-2 rounded-full bg-[#34D399] px-8 py-4 text-sm font-medium uppercase tracking-wider text-white transition-all hover:bg-[#34D399]/90 disabled:opacity-70"
+                className="flex w-full items-center justify-center gap-2 rounded-full px-8 py-3.5 text-sm font-medium uppercase tracking-wider text-white shadow-lg transition-all active:scale-95 bg-[#34D399] shadow-[#34D399]/20 hover:bg-[#10B981] hover:shadow-xl hover:shadow-[#34D399]/25 disabled:opacity-70 disabled:active:scale-100"
               >
                 {isCheckingOut ? (
                   <Loader2 className="h-5 w-5 animate-spin" />

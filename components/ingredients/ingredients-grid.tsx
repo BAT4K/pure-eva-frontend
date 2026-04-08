@@ -44,7 +44,7 @@ const ingredients = [
 
 export function IngredientsGrid() {
   return (
-    <section className="px-6 pb-20 md:px-12 lg:px-20">
+    <section className="bg-[#FAFAF9] px-6 pb-20 md:px-12 lg:px-20 overflow-x-hidden">
       <div className="mx-auto max-w-7xl">
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {ingredients.map((ingredient, index) => (
@@ -69,14 +69,14 @@ function IngredientCard({
   
   return (
     <article 
-      className="group relative overflow-hidden rounded-2xl bg-white p-6 shadow-[0_4px_20px_-4px_rgba(0,0,0,0.06)] transition-all duration-300 hover:shadow-[0_8px_30px_-4px_rgba(0,0,0,0.1)]"
+      className="group relative overflow-hidden rounded-2xl bg-white border border-[#B2EBF2] p-6 shadow-[0_4px_20px_-4px_rgba(0,0,0,0.06)] transition-all duration-300 hover:shadow-[0_8px_30px_-4px_rgba(0,0,0,0.10)]"
       style={{ animationDelay: `${index * 100}ms` }}
     >
       {/* Decorative accent */}
-      <div className="absolute -right-8 -top-8 h-24 w-24 rounded-full bg-[#4DD0E1]/5 transition-transform duration-500 group-hover:scale-150" />
+      <div className="absolute -right-8 -top-8 h-24 w-24 rounded-full bg-[#4DD0E1]/8 transition-transform duration-500 group-hover:scale-150" />
       
-      {/* Botanical illustration placeholder */}
-      <div className="relative mb-6 flex aspect-square max-w-[140px] items-center justify-center overflow-hidden rounded-2xl bg-gradient-to-br from-[#FFFFFF] to-[#E0F7FA]">
+      {/* Icon area */}
+      <div className="relative mb-6 flex aspect-square max-w-[140px] items-center justify-center overflow-hidden rounded-2xl bg-gradient-to-br from-[#F0FFF4] to-[#E0F7FA]">
         <div className="absolute inset-0 flex flex-col items-center justify-center transition-transform duration-700 ease-out group-hover:scale-105">
           <div className="rounded-full bg-white/80 p-4 shadow-sm">
             <Icon className="h-10 w-10 text-[#4DD0E1]" strokeWidth={1.5} />
@@ -99,7 +99,7 @@ function IngredientCard({
       </div>
 
       {/* Bottom accent line */}
-      <div className="absolute bottom-0 left-0 h-1 w-0 bg-gradient-to-r from-[#4DD0E1] to-[#34D399] transition-all duration-300 group-hover:w-full" />
+      <div className="absolute bottom-0 left-0 h-1 w-0 bg-gradient-to-r from-[#A5D6A7] to-[#4DD0E1] transition-all duration-300 group-hover:w-full" />
     </article>
   )
 }
