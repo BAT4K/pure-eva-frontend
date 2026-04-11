@@ -49,13 +49,13 @@ Please note that delivery times may vary depending on your location, with metrop
       },
       {
         heading: "International Shipping",
-        content: `Currently, we only ship within India. If you reside outside of India and wish to experience our botanical skincare, please contact us directly at pureeva25@gmail.com and we can explore custom shipping arrangements.`,
+        content: `Currently, we only ship within India. If you reside outside of India and wish to experience our botanical skincare, please contact us directly at support@pureeva.shop and we can explore custom shipping arrangements.`,
       },
       {
         heading: "Order Tracking",
         content: `Once your order has shipped, you will receive a tracking link via email and SMS. You can use this link to track your package's journey through our courier partner's portal.
 
-If your tracking information hasn't updated for a few days or if you experience any delivery issues, please contact our customer service team at pureeva25@gmail.com.`,
+If your tracking information hasn't updated for a few days or if you experience any delivery issues, please contact our customer service team at support@pureeva.shop.`,
       },
     ],
   },
@@ -80,7 +80,7 @@ You must notify us within 3 days of delivery to be eligible for a replacement or
         heading: "How to Initiate a Claim",
         content: `If you received a damaged or incorrect order, please follow these steps:
 
-1. Email us at pureeva25@gmail.com within 3 days of receiving your order.
+1. Email us at support@pureeva.shop within 3 days of receiving your order.
 2. Include your Order Number and a clear unboxing video or photographs of the damaged/incorrect product.
 3. Our team will review your claim within 48 hours.
 4. If approved, we will arrange for a reverse pickup and dispatch a fresh replacement, or issue a full refund to your original payment method.`,
@@ -122,7 +122,7 @@ We do not sell, rent, or trade your personal information to third parties. Data 
       },
       {
         heading: "Your Rights",
-        content: `You have the right to request a copy of the data we hold about you or request its deletion. To opt out of marketing communications or manage your data preferences, simply contact our Privacy team at pureeva25@gmail.com. We respond to all data requests promptly under applicable Indian legal timelines.`,
+        content: `You have the right to request a copy of the data we hold about you or request its deletion. To opt out of marketing communications or manage your data preferences, simply contact our Privacy team at support@pureeva.shop. We respond to all data requests promptly under applicable Indian legal timelines.`,
       },
     ],
   },
@@ -152,7 +152,7 @@ Prices are displayed in Indian Rupees (INR) and are inclusive of relevant taxes 
         heading: "Contact Information",
         content: `For any legal inquiries regarding these Terms of Service, or for general customer support, please reach out to us:
 
-Email: pureeva25@gmail.com
+Email: support@pureeva.shop
 Customer Care hours: Monday to Saturday, 10:00 AM to 6:00 PM (IST).`,
       },
     ],
@@ -206,7 +206,7 @@ export function PoliciesContent() {
                   Our customer service team is here to assist you with any questions.
                 </p>
                 <a
-                  href="mailto:pureeva25@gmail.com"
+                  href="mailto:support@pureeva.shop"
                   className="inline-flex items-center gap-2 text-sm font-medium text-[#A5D6A7] transition-colors hover:text-[#81C784]"
                 >
                   Contact Us
@@ -259,7 +259,7 @@ export function PoliciesContent() {
                     </p>
                   </div>
                   <a
-                    href="mailto:pureeva25@gmail.com"
+                    href="mailto:support@pureeva.shop"
                     className="inline-flex items-center justify-center gap-2 rounded-full bg-[#A5D6A7] px-6 py-3 text-sm font-medium text-[#212121] shadow-lg shadow-[#A5D6A7]/20 transition-all hover:bg-[#81C784] hover:shadow-xl active:scale-95"
                   >
                     Contact Support

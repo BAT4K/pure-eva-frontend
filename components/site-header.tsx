@@ -148,8 +148,8 @@ export function SiteHeader() {
                 transition={{ delay: 0.5, duration: 0.5 }}
                 className="border-t border-[#B2EBF2] px-6 py-8"
               >
-                <a href="mailto:pureeva25@gmail.com" className="mb-4 block text-sm text-[#212121]/60 hover:text-[#A5D6A7]">
-                  pureeva25@gmail.com
+                <a href="mailto:support@pureeva.shop" className="mb-4 block text-sm text-[#212121]/60 hover:text-[#A5D6A7]">
+                  support@pureeva.shop
                 </a>
                 <div className="flex gap-6 text-sm text-[#212121]/60">
                   <a href="https://www.instagram.com/pure.eva25/" target="_blank" rel="noopener noreferrer" className="hover:text-[#A5D6A7]">Instagram</a>

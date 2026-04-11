@@ -180,7 +180,7 @@ export function buildOrderEmailHtml({
             <td style="padding:24px 32px 32px;text-align:center;">
               <p style="margin:0;font-size:12px;line-height:1.5;color:#212121;opacity:0.45;">
                 If you have questions about your order, reply to this email or reach us at
-                <a href="mailto:pureeva25@gmail.com" style="color:#2E7D32;text-decoration:underline;">pureeva25@gmail.com</a>.
+                <a href="mailto:support@pureeva.shop" style="color:#2E7D32;text-decoration:underline;">support@pureeva.shop</a>.
               </p>
               <p style="margin:16px 0 0;font-size:11px;color:#212121;opacity:0.3;letter-spacing:1px;">
                 &copy; ${new Date().getFullYear()} Pure Eva
