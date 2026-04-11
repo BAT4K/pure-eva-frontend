@@ -83,9 +83,9 @@ export function buildOrderEmailHtml({
 
           <!-- Header with Logo -->
           <tr>
-            <td style="background-color:#FFFFFF;padding:32px 32px 24px;text-align:center;border-bottom:2px solid #A5D6A7;">
+            <td style="background-color:#FFFFFF;padding:32px 32px 24px;text-align:center;border-bottom:2px solid #A5D6A7;box-shadow:inset 0 0 0 600px #FFFFFF;">
               <a href="https://pureeva.shop" style="text-decoration:none;">
-                <img src="https://pureeva.shop/pure-eva-logov2.png" alt="Pure Eva" width="160" style="display:block;margin:0 auto;max-width:160px;height:auto;" />
+                <img src="https://pureeva.shop/pure-eva-logov2.png" alt="Pure Eva" width="160" style="display:block;margin:0 auto;max-width:160px;height:auto;background:#FFFFFF;padding:8px;border-radius:8px;" />
               </a>
             </td>
           </tr>
