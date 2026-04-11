@@ -1,6 +1,7 @@
 import { Droplets, Leaf, Sparkles, ShoppingBag } from "lucide-react"
 import Link from "next/link"
 import Image from "next/image"
+import cleanserIngredientsImg from "@/public/pure-eva-cleanser-ingredients.jpg"
 
 interface HeroProductProps {
   price?: number;
@@ -58,9 +59,10 @@ export function HeroProduct({ price = 229, compareAtPrice = 299 }: HeroProductPr
               {/* Actual Image */}
               <div className="absolute inset-0 transition-transform duration-700 ease-out group-hover:scale-105">
                 <Image
-                  src="/pure-eva-cleanser-ingredients.jpg"
+                  src={cleanserIngredientsImg}
                   alt="Pure Eva Cleanser Ingredients"
                   fill
+                  placeholder="blur"
                   className="object-cover"
                   sizes="(max-width: 1024px) 100vw, 50vw"
                 />

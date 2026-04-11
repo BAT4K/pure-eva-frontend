@@ -2,6 +2,7 @@ import { ShoppingBag, Leaf } from "lucide-react"
 import Link from "next/link"
 import Image from "next/image"
 import { ScrollReveal } from "@/components/ui/scroll-reveal"
+import heroBotanicalCleanser from "@/public/hero-botanical-cleanser.jpg"
 
 export function HomeHero() {
   return (
@@ -79,10 +80,11 @@ export function HomeHero() {
                 <div className="group relative aspect-[4/5] w-full overflow-hidden rounded-[2rem] bg-gradient-to-br from-[#F0FFF4] to-[#B2EBF2] shadow-[0_30px_80px_-20px_rgba(0,0,0,0.12)]">
                   <div className="absolute inset-0 transition-transform duration-700 ease-out group-hover:scale-105">
                     <Image
-                      src="/hero-botanical-cleanser.jpg"
+                      src={heroBotanicalCleanser}
                       alt="Botanical Cleanser"
                       fill
                       priority
+                      placeholder="blur"
                       className="object-cover"
                       sizes="(max-width: 1024px) 100vw, 50vw"
                     />

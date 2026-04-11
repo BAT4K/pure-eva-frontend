@@ -16,6 +16,7 @@ export default function CheckoutPage() {
   const [formData, setFormData] = useState({
     firstName: '',
     lastName: '',
+    email: '',
     address: '',
     city: '',
     pincode: '',
@@ -50,6 +51,7 @@ export default function CheckoutPage() {
         body: JSON.stringify({
           order_id,
           customer_name,
+          customer_email: formData.email,
           address: full_address,
           phone: formData.phone,
           cart_total: totalAmount
@@ -126,6 +128,7 @@ export default function CheckoutPage() {
               <div className="space-y-4">
                  <input required type="text" name="firstName" value={formData.firstName} onChange={handleInputChange} placeholder="First name" className="w-full rounded-lg border border-[#B2EBF2] bg-background/50 px-4 py-3 outline-none transition-colors focus:border-[#A5D6A7] focus:bg-background text-sm text-[#212121]" />
                  <input required type="text" name="lastName" value={formData.lastName} onChange={handleInputChange} placeholder="Last name" className="w-full rounded-lg border border-[#B2EBF2] bg-background/50 px-4 py-3 outline-none transition-colors focus:border-[#A5D6A7] focus:bg-background text-sm text-[#212121]" />
+                 <input required type="email" name="email" value={formData.email} onChange={handleInputChange} placeholder="Email address" className="w-full rounded-lg border border-[#B2EBF2] bg-background/50 px-4 py-3 outline-none transition-colors focus:border-[#A5D6A7] focus:bg-background text-sm text-[#212121]" />
                 <input required type="tel" name="phone" value={formData.phone} onChange={handleInputChange} placeholder="Phone number" className="w-full rounded-lg border border-[#B2EBF2] bg-background/50 px-4 py-3 outline-none transition-colors focus:border-[#A5D6A7] focus:bg-background text-sm text-[#212121]" />
               </div>
             </section>

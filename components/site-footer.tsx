@@ -107,7 +107,7 @@ export function SiteFooter() {
               
               <div className="mt-6 flex flex-col gap-1 text-sm text-[#212121]/70">
                 <p>Questions? Reach out to us:</p>
-                <a href="mailto:pureeva25@gmail.com" className="text-[#A5D6A7] hover:underline">
+                <a href="mailto:pureeva25@gmail.com" className="font-medium text-[#212121]/80 underline hover:text-[#A5D6A7] transition-colors">
                   pureeva25@gmail.com
                 </a>
               </div>

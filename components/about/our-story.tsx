@@ -1,5 +1,6 @@
 import Image from "next/image"
 import { ScrollReveal } from "@/components/ui/scroll-reveal"
+import aboutHeroImg from "@/public/about-hero-v2.jpeg"
 
 export function OurStory() {
   return (
@@ -10,10 +11,11 @@ export function OurStory() {
             {/* The Image Container */}
             <div className="group relative aspect-[4/5] w-full overflow-hidden rounded-3xl shadow-[0_25px_60px_-15px_rgba(0,0,0,0.08)]">
               <Image 
-                src="/about-hero-v2.jpeg" 
+                src={aboutHeroImg} 
                 alt="Pure Eva Journey" 
                 fill 
                 priority 
+                placeholder="blur"
                 sizes="(max-width: 768px) 100vw, 50vw"
                 className="object-cover transition-transform duration-1000 ease-out group-hover:scale-105 z-0"
               />
