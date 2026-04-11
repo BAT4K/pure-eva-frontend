@@ -77,7 +77,7 @@ export function OurStory() {
                   <p className="text-sm text-[#212121]/50">Hero Product</p>
                 </div>
                 <div>
-                  <p className="font-serif text-3xl text-[#212121]">11</p>
+                  <p className="font-serif text-3xl text-[#212121]">10</p>
                   <p className="text-sm text-[#212121]/50">Clean Actives</p>
                 </div>
                 <div>

@@ -190,7 +190,7 @@ export default function ProductHero({ title, description, descriptionHtml, price
                   transition={{ duration: 0.4, ease: [0.25, 0.1, 0.25, 1] }}
                   className="overflow-hidden"
                 >
-                  {/* Part A: Hero Actives */}
+                  {/* All Actives with Benefits */}
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pt-6">
                     <div>
                       <h4 className="font-serif text-[#212121] text-base">Salicylic Acid (BHA)</h4>
@@ -204,23 +204,57 @@ export default function ProductHero({ title, description, descriptionHtml, price
                         Visibly minimizes enlarged pores, improves uneven skin tone, and fortifies the lipid barrier.
                       </p>
                     </div>
+                    <div>
+                      <h4 className="font-serif text-[#212121] text-base">Glycerin</h4>
+                      <p className="text-xs text-[#212121]/70 mt-1 leading-relaxed">
+                        A powerful humectant that draws moisture into the skin, keeping it soft, supple, and hydrated all day.
+                      </p>
+                    </div>
+                    <div>
+                      <h4 className="font-serif text-[#212121] text-base">Cocamidopropyl Betaine</h4>
+                      <p className="text-xs text-[#212121]/70 mt-1 leading-relaxed">
+                        A coconut-derived gentle surfactant that cleanses without stripping, producing a mild and soothing lather.
+                      </p>
+                    </div>
+                    <div>
+                      <h4 className="font-serif text-[#212121] text-base">Allantoin</h4>
+                      <p className="text-xs text-[#212121]/70 mt-1 leading-relaxed">
+                        Soothes irritation, promotes cell regeneration, and leaves skin feeling calm and smooth after every wash.
+                      </p>
+                    </div>
+                    <div>
+                      <h4 className="font-serif text-[#212121] text-base">Citric Acid</h4>
+                      <p className="text-xs text-[#212121]/70 mt-1 leading-relaxed">
+                        A natural AHA that brightens dull skin, evens out texture, and helps maintain the formula&apos;s optimal pH.
+                      </p>
+                    </div>
+                    <div>
+                      <h4 className="font-serif text-[#212121] text-base">Aloe Barbadensis Leaf Extract</h4>
+                      <p className="text-xs text-[#212121]/70 mt-1 leading-relaxed">
+                        Calms redness and inflammation, delivers deep hydration, and accelerates the skin&apos;s natural healing process.
+                      </p>
+                    </div>
+                    <div>
+                      <h4 className="font-serif text-[#212121] text-base">Chamomilla Recutita Extract</h4>
+                      <p className="text-xs text-[#212121]/70 mt-1 leading-relaxed">
+                        Anti-inflammatory chamomile extract that reduces puffiness, soothes sensitive skin, and adds a natural glow.
+                      </p>
+                    </div>
+                    <div>
+                      <h4 className="font-serif text-[#212121] text-base">Panthenol (Vitamin B5)</h4>
+                      <p className="text-xs text-[#212121]/70 mt-1 leading-relaxed">
+                        Deeply moisturizes and repairs the skin barrier, reducing water loss and improving overall skin elasticity.
+                      </p>
+                    </div>
+                    <div>
+                      <h4 className="font-serif text-[#212121] text-base">Sodium Hyaluronate</h4>
+                      <p className="text-xs text-[#212121]/70 mt-1 leading-relaxed">
+                        A low-molecular-weight form of hyaluronic acid that penetrates deep to plump, hydrate, and smooth fine lines.
+                      </p>
+                    </div>
                   </div>
 
-                  {/* Part B: Full List as Pills */}
-                  <div className="h-px w-full bg-[#B2EBF2] my-6" />
-                  <p className="text-xs uppercase tracking-widest text-[#4DD0E1] mb-4">
-                    All Ingredients
-                  </p>
-                  <div className="flex flex-wrap gap-2 pb-2">
-                    {["Aqua", "Glycerin", "Cocamidopropyl Betaine", "Allantoin", "Citric Acid", "Aloe Barbadensis Leaf Extract", "Chamomilla Recutita Extract", "Panthenol", "Sodium Hyaluronate"].map((ingredient) => (
-                      <span 
-                        key={ingredient}
-                        className="rounded-full border border-[#B2EBF2] bg-white px-3 py-1.5 text-[11px] font-medium text-[#212121] shadow-sm transition-all hover:border-[#4DD0E1]"
-                      >
-                        {ingredient}
-                      </span>
-                    ))}
-                  </div>
+
                 </motion.div>
               </div>
             </ScrollReveal>
