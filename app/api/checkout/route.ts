@@ -73,7 +73,13 @@ export function buildOrderEmailHtml({
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="color-scheme" content="light only" />
+  <meta name="supported-color-schemes" content="light only" />
   <title>Order Confirmation</title>
+  <style>
+    :root { color-scheme: light only; }
+    * { color-scheme: light only; }
+  </style>
 </head>
 <body style="margin:0;padding:0;background-color:#FAFAF9;font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;color:#212121;">
   <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background-color:#FAFAF9;padding:40px 16px;">
