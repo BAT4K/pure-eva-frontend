@@ -3,7 +3,6 @@
 import { useState, Suspense, useEffect } from 'react';
 import { useSearchParams } from 'next/navigation';
 import { Search, Package2, MapPin, CreditCard, Clock } from 'lucide-react';
-import { supabase } from '@/lib/supabase';
 
 function TrackOrderContent() {
   const searchParams = useSearchParams();
@@ -28,16 +27,12 @@ function TrackOrderContent() {
   const fetchOrder = async (id: string) => {
     setOrderState({ isLoading: true, order: null, error: '' });
     try {
-      const { data, error } = await supabase
-        .from('orders')
-        .select('*')
-        .eq('order_id', id)
-        .single();
-        
-      if (error) throw error;
-      if (!data) throw new Error("Order not found");
-      
-      setOrderState({ isLoading: false, order: data, error: '' });
+      const res = await fetch(`/api/track?id=${encodeURIComponent(id)}`);
+      const json = await res.json();
+
+      if (!res.ok || !json.order) throw new Error('Not found');
+
+      setOrderState({ isLoading: false, order: json.order, error: '' });
     } catch (err: any) {
       setOrderState({ isLoading: false, order: null, error: 'Could not find an order with that ID.' });
     }
